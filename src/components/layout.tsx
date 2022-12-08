@@ -7,7 +7,7 @@ type PropsChildren = {
 
 export default function Layout({ children }: PropsChildren) {
     return (
-        <div className="h-screen w-full">
+        <div className="h-screen w-full font-pontserrat">
             <NavBar />
             <main className="">
                 {children}
