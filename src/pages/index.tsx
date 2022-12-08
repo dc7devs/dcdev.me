@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       
       <Layout>
-        
+        <h1>Ola mundo</h1>
       </Layout>
     </div>
   )
