@@ -1,12 +1,12 @@
 import '../../styles/globals.css'
 import type { AppProps } from 'next/app'
 
-import B from '../components/background'
+import Bg from '../components/background'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <B>
+    <Bg>
       <Component {...pageProps} />
-    </B>
+    </Bg>
   )
 }
