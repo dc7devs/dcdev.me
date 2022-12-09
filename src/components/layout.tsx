@@ -25,34 +25,34 @@ export default function Layout({ children }: PropsChildren) {
                 <div className={`px-4 py-7 sm:p-y sm:pr-0 sm:w-4/5 h-full mx-auto overflow-y-auto relative ${checkRouter ? "" : "md:border-l-2 border-dotted border-black-25"}`}>
                     {children}
                     <div className={`hidden sm:block ${checkRouter ? "sm:absolute sm:bottom-4 sm:right-2 lg:absolute lg:bottom-10 lg:left-0" : "sm:absolute sm:bottom-4 sm:right-2 lg:fixed lg:top-1/2 lg:bottom-1/2 lg:right-[91%]"}`}>
-                        <ul className={`flex gap-3 ${checkRouter ? "sm:flex-row" : "sm:flex-row lg:flex-col"} items-center`}>
-                            <li>
+                        <ul className={`flex gap-3 md:gap-4 ${checkRouter ? "sm:flex-row" : "sm:flex-row lg:flex-col"} items-center`}>
+                            <li className="hover:text-black">
                                 <Link href="https://github.com/dc7devs" target="__blank">
-                                    <img className="hover:fill-black" src="/icons/Github.svg" alt="Github" />
+                                    <img src="/icons/Github.svg" alt="Github" />
                                 </Link>
                             </li>
 
-                            <li>
+                            <li className="hover:text-black">
                                 <Link href="https://www.linkedin.com/in/diego-c-silva-487b171a5/" target="__blank">
-                                    <img className="hover:fill-black" src="/icons/Linkedin.svg" alt="Linkedin" />
+                                    <img src="/icons/Linkedin.svg" alt="Linkedin" />
                                 </Link>
                             </li>
 
-                            <li>
+                            <li className="hover:text-black">
                                 <Link href="https://www.youtube.com/channel/UCQCBtV_fonx-JZj-OnIFcSw" target="__blank">
-                                    <img className="hover:fill-black" src="/icons/Youtube.svg" alt="Youtube" />
+                                    <img src="/icons/Youtube.svg" alt="Youtube" />
                                 </Link>
                             </li>
 
-                            <li>
+                            <li className="hover:text-black">
                                 <Link href="https://discord.com/users/687863744541491294" target="__blank">
-                                    <img className="hover:fill-black" src="/icons/Discord.svg" alt="Discord" />
+                                    <img src="/icons/Discord.svg" alt="Discord" />
                                 </Link>
                             </li>
 
-                            <li>
+                            <li className="hover:text-black">
                                 <Link href="mailto:diegocaetano444@outlook.com" target="__blank">
-                                    <img className="hover:fill-black" src="/icons/email.svg" alt="E-mail" />
+                                    <img src="/icons/email.svg" alt="E-mail" />
                                 </Link>
                             </li>
                         </ul>
