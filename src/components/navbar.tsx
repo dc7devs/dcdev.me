@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 import { SquaresFour, X } from 'phosphor-react'
 import { useState } from 'react';
+import Image from 'next/image'
 import Modal from './modal';
 
 export default function NavBar() {
@@ -15,11 +16,11 @@ export default function NavBar() {
 
     return (
         <nav className="h-12 w-full text-base text-black-70 flex justify-between items-center px-8 border-b border-dashed border-black-50 md:px-0 md:justify-around md:border-0 md:h-16">
-            <div className="text-xl font-medium hover:text-black-90">
-                <Link href="/">
-                    DS-DEVS
-                </Link>
-            </div>
+            <Link href="/">
+                <div className="w-12 h-12 rounded-full border-2 border-violet-700 relative"> 
+                    <img className="object-cove rounded-full" src="/images/My.png" alt="Althor image" />
+                </div>
+            </Link>
 
             <div className="flex justify-center items-center sm:">
                 <ul className="hidden sm:flex justify-stretch items-cente gap-x-3">
