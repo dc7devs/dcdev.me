@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 
 import { SquaresFour, X } from 'phosphor-react'
 import { useState } from 'react';
-import Image from 'next/image'
 import Modal from './modal';
 
 export default function NavBar() {
@@ -15,14 +14,14 @@ export default function NavBar() {
     }
 
     return (
-        <nav className="h-12 w-full text-base text-black-70 flex justify-between items-center px-8 border-b border-dashed border-black-50 md:px-0 md:justify-around md:border-0 md:h-16">
+        <nav className="h-12 w-full text-base text-black-70 flex justify-between items-center px-8 border-b border-dashed border-black-50 md:px-0 md:justify-around md:border-0 md:h-16 absolute top-0">
             <Link href="/">
-                <div className="w-12 h-12 rounded-full border-2 border-violet-700 relative"> 
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-violet-700 relative"> 
                     <img className="object-cove rounded-full" src="/images/My.png" alt="Althor image" />
                 </div>
             </Link>
 
-            <div className="flex justify-center items-center sm:">
+            <div className="flex justify-center items-center">
                 <ul className="hidden sm:flex justify-stretch items-cente gap-x-3">
                     <li className={`${router.pathname == "/" ?  "text-black-90 font-semibold" : "text-base" } font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:medium transition duration-75 ease-in-out md:text-lg md:w-20 focus:`}>
                         <Link href="/">Home</Link>
@@ -42,7 +41,7 @@ export default function NavBar() {
 
                 <button
                     onClick={() => changeCurrentStateModal()}
-                    className="relative z-10 text-3xl hover:text-black-90 transition duration-75 ease-in-out"
+                    className="relative z-50 text-3xl hover:text-black-90 transition duration-75 ease-in-out"
                 >
                     {isOpenedModal ? <X size={32} /> : <SquaresFour />}
                 </button>
