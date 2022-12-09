@@ -20,6 +20,7 @@ module.exports = {
         'black-90': 'rgba(22, 22, 22, .9)',
 
         white: '#FFFFFF',
+        'white-10': 'rgba(255, 255, 255, .10)',
         'white-25': 'rgba(255, 255, 255, .25)',
         'white-35': 'rgba(255, 255, 255, .35)',
         'white-70': 'rgba(255, 255, 255, .7)',
