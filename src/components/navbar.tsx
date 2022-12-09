@@ -16,16 +16,16 @@ export default function NavBar() {
 
             <div className="flex justify-center items-center sm:">
                 <ul className="hidden sm:flex justify-stretch items-cente gap-x-3">
-                    <li className={`${router.pathname == "/" ?  "text-black-90" : "text-base" } font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:font-semibold transition duration-75 ease-in-out md:text-lg md:w-20`}>
+                    <li className={`${router.pathname == "/" ?  "text-black-90 font-semibold" : "text-base" } font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:medium transition duration-75 ease-in-out md:text-lg md:w-20 focus:`}>
                         <Link href="/">Home</Link>
                     </li>
-                    <li className={`${router.pathname == "/about" ?  "text-black-90" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:font-semibold transition duration-75 ease-in-out md:text-lg md:w-20`}>
+                    <li className={`${router.pathname == "/about" ?  "text-black-90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:medium transition duration-75 ease-in-out md:text-lg md:w-20`}>
                         <Link href="/about">About</Link>
                     </li>
-                    <li className={`${router.pathname == "/contact" ?  "text-black-90" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:font-semibold transition duration-75 ease-in-out md:text-lg md:w-20`}>
+                    <li className={`${router.pathname == "/contact" ?  "text-black-90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:medium transition duration-75 ease-in-out md:text-lg md:w-20`}>
                         <Link href="/contact">Contact</Link>
                     </li>
-                    <li className={`${router.pathname == "/projects" ?  "text-black-90" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:font-semibold transition duration-75 ease-in-out md:text-lg md:w-20`}>
+                    <li className={`${router.pathname == "/projects" ?  "text-black-90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-black-80 sm:hover:medium transition duration-75 ease-in-out md:text-lg md:w-20`}>
                         <Link href="/projects">Projects</Link>
                     </li>
                 </ul>
