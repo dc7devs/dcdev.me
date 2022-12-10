@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  purge: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
@@ -15,7 +15,7 @@ module.exports = {
         black: '#161616',
         white: '#FFFFFF',
 
-        gray: '#AEAEAE'
+        gray: '#AEAEAE',
       },
       backgroundImage: {
         'paper-pattern': "radial-gradient(50% 50% at 50% 50%, rgba(174, 174, 174, 0) 0%, rgba(174, 174, 174, 0.94) 100%), linear-gradient(rgba(22, 22, 22, 0.1) 1.6px, transparent 1.6px), linear-gradient(90deg, rgba(22, 22, 22, 0.1) 1.6px, transparent 1.6px), linear-gradient(rgba(22, 22, 22, 0.1) 0.8px, transparent 0.8px), linear-gradient(90deg, rgba(22, 22, 22, 0.1) 0.8px, rgba(173, 173, 173, 0) 0.8px)",

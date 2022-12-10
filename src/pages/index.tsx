@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import Layout from '../components/layout'
+import ToggleThemeBtn from '../components/toggle-theme'
 
 export default function Home() {
   return (
