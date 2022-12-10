@@ -12,5 +12,14 @@
     ::-webkit-scrollbar {
         width: 0;
     }
+
+    body {
+        @apply bg-gray/[.7]
+        dark:bg-black 
+        bg-paper-pattern 
+        bg-paper-pattern-size 
+        bg-paper-pattern-position 
+        dark:bg-paper-pattern-dark
+    }
 }
   
