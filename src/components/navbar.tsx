@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { SquaresFour, X } from "phosphor-react";
+import { CircleDashed, CirclesFour, CirclesThreePlus, Plus, X } from "phosphor-react";
 import { useState } from "react";
 import Modal from "./modal";
 import ToggleThemeBtn from "./toggle-theme";
@@ -8,6 +8,7 @@ import ToggleThemeBtn from "./toggle-theme";
 export default function NavBar() {
     const router = useRouter();
     const [isOpenedModal, setIsOpenedModal] = useState(false);
+    const [effect, setEffect] = useState(false);
 
     function changeCurrentStateModal() {
         setIsOpenedModal(!isOpenedModal);
@@ -40,10 +41,16 @@ export default function NavBar() {
                 <hr className="hidden sm:block w-0.5 h-5 bg-separator/80 dark:bg-white/25 mx-5 md:mx-7 shadow-md rounded-full" />
 
                 <button
-                    onClick={() => changeCurrentStateModal()}
-                    className="relative z-50 text-2xl hover:text-violet-900/80 dark:hover:text-violet-300/70 transition duration-75 ease-in-out mr-3"
+                    className={`relative z-50 text-2xl hover:text-violet-900/80 dark:hover:text-violet-300/70 transition ${effect ? "md:animate-effect" : "md:animate-close"} duration-75 ease-in-out mr-3`}
+                    onClick={() => {
+                        setEffect(true);
+                        changeCurrentStateModal();
+                    }}
+                    onAnimationEnd={() => setEffect(false)}
                 >
-                    {isOpenedModal ? <X size={32} /> : <SquaresFour />}
+                    {
+                        effect ? <CirclesFour size={25} /> : (isOpenedModal ? <X size={25} /> : <CirclesThreePlus size={25} />)
+                    }
                 </button>
 
                 <ToggleThemeBtn />

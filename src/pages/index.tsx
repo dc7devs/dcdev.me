@@ -23,7 +23,7 @@ export default function Home() {
                 developer
               </Link>
             </strong>!</p>
-            <button className="max-w-max h-8 px-2 text-xl font-regular rounded-lg text-black bg-black/25 md:ml-5 shadow-lg shadow-violet-700/25 bakcdrop-blur transition ring-1 ring-violet-700/50">
+            <button className="max-w-max h-8 px-2 text-xl font-regular rounded-lg text-black dark:text-white bg-black/25 dark:bg-white/25 md:ml-5 dark:border-1 shadow-md dark:shadow-none shadow-violet-700/25 dark:shadow-violet-300/25 bakcdrop-blur transition ring-2 ring-violet-700/30 dark:ring-violet-300/10">
               <Link href="/about">
                 more...
               </Link>

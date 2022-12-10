@@ -8,6 +8,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        effect: {
+          "0%, 100%": { transform: "rotate(50deg)" },
+          "25%": { transform: "rotate(-50deg) scale(0.5)"},
+          "50%": { transform: "translate(-30%, -20%)"},
+          "80%": {transform: "translate(-40%, 10%) rotate(0deg)"},
+          "100%": {transform: "rotate(0deg)"},
+        },
+        'effect-2': {
+          "0%, 100%": { transform: "translate(100%) rotate(20deg)" },
+          "50%": { transform: "translate(50%) rotate(-20deg)" },
+          "100%": { transform: "translate(0) rotate(0deg)" },
+        }
+      },
+      animation: {
+        effect: "effect 1s ease-in-out",
+        'effect-2': "effect-2 1s ease-in"
+      },
       colors: {
         primary: '#1E1E1E',
         separator: '#3F3F3F',
