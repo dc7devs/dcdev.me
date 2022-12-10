@@ -41,7 +41,7 @@ export default function NavBar() {
                 <hr className="hidden sm:block w-0.5 h-5 bg-separator/80 dark:bg-white/25 mx-5 md:mx-7 shadow-md rounded-full" />
 
                 <button
-                    className={`relative z-50 text-2xl hover:text-violet-900/80 dark:hover:text-violet-300/70 transition ${effect ? "md:animate-effect" : "md:animate-close"} duration-75 ease-in-out mr-3`}
+                    className={`relative z-50 text-2xl hover:text-violet-900/80 dark:hover:text-violet-300/70 transition ${effect && "animate-effect"} duration-75 ease-in-out mr-3`}
                     onClick={() => {
                         setEffect(true);
                         changeCurrentStateModal();

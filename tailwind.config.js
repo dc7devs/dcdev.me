@@ -10,21 +10,20 @@ module.exports = {
     extend: {
       keyframes: {
         effect: {
-          "0%, 100%": { transform: "rotate(50deg)" },
-          "25%": { transform: "rotate(-50deg) scale(0.5)"},
-          "50%": { transform: "translate(-30%, -20%)"},
-          "80%": {transform: "translate(-40%, 10%) rotate(0deg)"},
+          "0%, 100%": { transform: "rotate(-180deg)" },
+          "25%": { transform: "rotate(90deg) scale(0.5)"},
+          "50%": { transform: "translate(-20%, -20%) rotate(-90deg)"},
           "100%": {transform: "rotate(0deg)"},
         },
         'effect-2': {
-          "0%, 100%": { transform: "translate(100%) rotate(20deg)" },
-          "50%": { transform: "translate(50%) rotate(-20deg)" },
-          "100%": { transform: "translate(0) rotate(0deg)" },
+          "0%, 100%": { transform: "scale(0.7) translate(100%, -100%) rotate(-50deg)" },
+          "50%": { transform: "translate(50%, -50%) scale(1.2) rotate(-20deg)"},
+          "100%": { transform: "translate(0) scale(1) rotate(0deg)" },
         }
       },
       animation: {
         effect: "effect 1s ease-in-out",
-        'effect-2': "effect-2 1s ease-in"
+        'effect-2': "effect-2 1.5s ease-in-out"
       },
       colors: {
         primary: '#1E1E1E',

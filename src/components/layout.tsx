@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Link from "next/link"
 import { ReactNode, useState } from "react"
 import NavBar from "./navbar"
+import { DiscordLogo, EnvelopeSimple, GithubLogo, LinkedinLogo, YoutubeLogo } from "phosphor-react"
 
 type PropsChildren = {
     children: ReactNode
@@ -23,37 +24,37 @@ export default function Layout({ children }: PropsChildren) {
             <NavBar />
             
             <main className="w-full h-full pt-16 sm:pt-24">
-                <div className={`px-4 py-7 sm:p-y sm:pr-0 sm:w-4/5 h-full mx-auto overflow-y-auto relative ${checkRouter ? "" : "md:border-l-2 border-dotted border-black/25"}`}>
+                <div className={`px-4 py-7 sm:p-y sm:pr-0 sm:w-4/5 h-full mx-auto overflow-y-auto relative ${checkRouter ? "" : "md:border-l-2 border-dotted border-black/25 dark:border-white/25"}`}>
                     {children}
                     <div className={`hidden sm:block ${checkRouter ? "sm:absolute sm:bottom-4 sm:right-2 lg:absolute lg:bottom-10 lg:left-0" : "sm:absolute sm:bottom-4 sm:right-2 lg:fixed lg:top-1/2 lg:bottom-1/2 lg:right-[91%]"}`}>
                         <ul className={`flex gap-3 md:gap-4 ${checkRouter ? "sm:flex-row" : "sm:flex-row lg:flex-col"} items-center`}>
-                            <li className="hover:text-zinc">
+                            <li>
                                 <Link href="https://github.com/dc7devs" target="__blank">
-                                    <img src="/icons/Github.svg" alt="Github" />
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"></path></svg>
                                 </Link>
                             </li>
 
-                            <li className="hover:text-zinc">
+                            <li>
                                 <Link href="https://www.linkedin.com/in/diego-c-silva-487b171a5/" target="__blank">
-                                    <img src="/icons/Linkedin.svg" alt="Linkedin" />
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" xmlns="http://www.w3.org/2000/svg"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V411.9h118.7v381.8zm-59.3-434a68.8 68.8 0 1 1 68.8-68.8c-.1 38-30.9 68.8-68.8 68.8zm503.7 434H675.1V608c0-44.3-.8-101.2-61.7-101.2-61.7 0-71.2 48.2-71.2 98v188.9H423.7V411.9h113.8v52.2h1.6c15.8-30 54.5-61.7 112.3-61.7 120.2 0 142.3 79.1 142.3 181.9v209.4z"></path></svg>
                                 </Link>
                             </li>
 
-                            <li className="hover:text-zinc">
+                            <li>
                                 <Link href="https://www.youtube.com/channel/UCQCBtV_fonx-JZj-OnIFcSw" target="__blank">
-                                    <img src="/icons/Youtube.svg" alt="Youtube" />
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" xmlns="http://www.w3.org/2000/svg"><path d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"></path></svg>
                                 </Link>
                             </li>
 
-                            <li className="hover:text-zinc">
+                            <li>
                                 <Link href="https://discord.com/users/687863744541491294" target="__blank">
-                                    <img src="/icons/Discord.svg" alt="Discord" />
+                                    <img className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" src="/images/discord.svg" alt="Discord" />
                                 </Link>
                             </li>
 
-                            <li className="hover:text-zinc">
+                            <li>
                                 <Link href="mailto:diegocaetano444@outlook.com" target="__blank">
-                                    <img src="/icons/email.svg" alt="E-mail" />
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"><path fill-rule="evenodd" d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"></path></svg>
                                 </Link>
                             </li>
                         </ul>
