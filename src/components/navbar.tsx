@@ -24,16 +24,16 @@ export default function NavBar() {
 
             <div className="flex justify-center items-center">
                 <ul className="hidden sm:flex justify-stretch items-cente gap-x-3">
-                    <li className={`${router.pathname == "/" ?  "text-zinc-900/90 font-semibold" : "text-base" } font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-violet-900/80 sm:hover:medium hover:transition duration-75 ease-in-out md:text-lg md:w-20 `}>
+                    <li className={`${router.pathname == "/" ?  "text-zinc-900/90 font-semibold" : "text-base" } font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-violet-900/80 sm:hover:medium hover:transition duration-75 ease-in-out md:text-lg md:w-20 select-none`}>
                         <Link href="/">Home</Link>
                     </li>
-                    <li className={`${router.pathname == "/about" ?  "text-zinc-900/90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-violet-900/80 sm:hover:medium hover:transition duration-75 ease-in-out md:text-lg md:w-20`}>
+                    <li className={`${router.pathname == "/about" ?  "text-zinc-900/90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-violet-900/80 sm:hover:medium hover:transition duration-75 ease-in-out md:text-lg md:w-20 select-none`}>
                         <Link href="/about">About</Link>
                     </li>
-                    <li className={`${router.pathname == "/projects" ?  "text-zinc-900/90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-violet-900/80 sm:hover:medium hover:transition duration-75 ease-in-out md:text-lg md:w-20`}>
+                    <li className={`${router.pathname == "/projects" ?  "text-zinc-900/90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-violet-900/80 sm:hover:medium hover:transition duration-75 ease-in-out md:text-lg md:w-20 select-none`}>
                         <Link href="/projects">Projects</Link>
                     </li>
-                    <li className={`${router.pathname == "/contact" ?  "text-zinc-900/90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-violet-900/80 sm:hover:medium hover:transition duration-75 ease-in-out md:text-lg md:w-20`}>
+                    <li className={`${router.pathname == "/contact" ?  "text-zinc-900/90 font-semibold" : "text-base"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center sm:hover:text-violet-900/80 sm:hover:medium hover:transition duration-75 ease-in-out md:text-lg md:w-20 select-none`}>
                         <Link href="/contact">Contact</Link>
                     </li>
                 </ul>
