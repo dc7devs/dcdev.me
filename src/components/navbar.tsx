@@ -20,16 +20,16 @@ export default function NavBar({ isOpenedModal, setIsOpenedModal }: useEffectPro
     return (
         <nav className="flex justify-center items-center">
             <ul className="hidden sm:flex justify-stretch items-cente gap-x-3">
-                <li className={`${router.pathname == "/" &&  "text-zinc-900/90 dark:fill-zinc-400/90 font-semibold" } font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center hover:text-violet-900/80 hover:transition hover:duration-75 hover:ease-in-out md:text-lg md:w-20 select-none`}>
+                <li className={`${router.pathname == "/" &&  "light:text-zinc-900/90 dark:fill-zinc-400/90 font-medium" } font-normal sm:min-w-max sm:w-16 sm:flex sm:justify-center hover:text-violet-900/80 hover:transition hover:duration-75 hover:ease-in-out md:text-lg md:w-20 select-none`}>
                     <Link href="/">Home</Link>
                 </li>
-                <li className={`${router.pathname == "/about" &&  "text-zinc-900/90 dark:fill-zinc-400/90 font-semibold"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center hover:text-violet-900/80 hover:transition hover:duration-75 hover:ease-in-out md:text-lg md:w-20 select-none`}>
+                <li className={`${router.pathname == "/about" &&  "light:text-zinc-900/90 dark:fill-zinc-400/90 font-medium"} font-normal sm:min-w-max sm:w-16 sm:flex sm:justify-center hover:text-violet-900/80 hover:transition hover:duration-75 hover:ease-in-out md:text-lg md:w-20 select-none`}>
                     <Link href="/about">About</Link>
                 </li>
-                <li className={`${router.pathname == "/projects" &&  "text-zinc-900/90 dark:fill-zinc-400/90 font-semibold"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center hover:text-violet-900/80 hover:transition hover:duration-75 hover:ease-in-out md:text-lg md:w-20 select-none`}>
+                <li className={`${router.pathname == "/projects" &&  "light:text-zinc-900/90 dark:fill-zinc-400/90 font-medium"} font-normal sm:min-w-max sm:w-16 sm:flex sm:justify-center hover:text-violet-900/80 hover:transition hover:duration-75 hover:ease-in-out md:text-lg md:w-20 select-none`}>
                     <Link href="/projects">Projects</Link>
                 </li>
-                <li className={`${router.pathname == "/contact" &&  "text-zinc-900/90 dark:fill-zinc-400/90 font-semibold"} font-medium sm:min-w-max sm:w-16 sm:flex sm:justify-center hover:text-violet-900/80 hover:transition hover:duration-75 hover:ease-in-out md:text-lg md:w-20 select-none`}>
+                <li className={`${router.pathname == "/contact" &&  "light:text-zinc-900/90 dark:fill-zinc-400/90 font-medium"} font-normal sm:min-w-max sm:w-16 sm:flex sm:justify-center hover:text-violet-900/80 hover:transition hover:duration-75 hover:ease-in-out md:text-lg md:w-20 select-none`}>
                     <Link href="/contact">Contact</Link>
                 </li>
             </ul>
