@@ -7,9 +7,9 @@ export default function Home() {
       <Layout>
         <div className="sm:w-full sm:h-full flex mt-24 sm:m-0 sm:items-center select-none">
           <div className="flex flex-col gap-10 md:gap-5 px-4">
-            <h2 className="flex flex-col text-zinc">
+            <h2 className="flex flex-col text-zinc md:gap-[3px]">
               <div className="text-4xl font-semibold">
-                Hi!, my name is
+                Hi! my name is
               </div>
               <div className="text-5xl md:text-7xl md:ml-5 font-extralight">
                 DIEGO SILVA
