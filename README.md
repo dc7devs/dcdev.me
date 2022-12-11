@@ -1,4 +1,4 @@
-<img src=".github/home-page.png" alt="layout">
+<a href="https://dcdevs.me" target="__blank"><img src=".github/home-page.png" alt="layout"></a>
 
 ---
 
@@ -15,4 +15,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
