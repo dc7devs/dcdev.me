@@ -7,6 +7,8 @@
 @layer utilities {
     * {
         scrollbar-color: #111 #050505;
+        @apply text-zinc-700/90
+        dark:text-white/50
     }
 
     ::-webkit-scrollbar {
