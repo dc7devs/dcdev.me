@@ -13,11 +13,12 @@ interface PropsChildren {
 export default function Layout({ children }: PropsChildren) {
     const router = useRouter();
     const checkRouter = (router.pathname == "/");
+    const title = cx(router.pathname != "/" ? router.pathname.slice(1).toLowerCase()+" - " : "", "Diego Silva");
     
     return (
         <div className="h-screen w-full font-pontserrat">
             <Head>
-                <title>{cx(router.pathname != "/" ? router.pathname.slice(1).toLowerCase()+" - " : "")}Diego Silva</title>
+                <title>{title}</title>
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <NextProgress color="rgb(139 92 246)" delay={500} />
