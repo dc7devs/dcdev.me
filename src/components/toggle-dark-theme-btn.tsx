@@ -1,13 +1,14 @@
 import { useTheme } from "next-themes";
 import { CircleDashed, MoonStars, SunDim } from "phosphor-react";
-import { useLayoutEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import cx from "clsx";
 
 export default function ToggleThemeBtn() {
     const [mounted, setMounted] = useState(false);
     const {theme, setTheme} = useTheme();
     const [effect, setEffect] = useState(false);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setMounted(true);
         setEffect(true);
     }, [])
@@ -18,7 +19,7 @@ export default function ToggleThemeBtn() {
         <>{
             mounted ?
             <button
-                className={`text-2xl hover:text-violet-900/80 dark:hover:text-violet-300/70 ${effect && 'animate-effect-2'}`} 
+                className={cx("text-2xl hover:text-violet-900/80 dark:hover:text-violet-300/70",  effect && "animate-effect-2")}
                 onClick={() => {
                     setTheme(isDark() ? "light" : "dark")
                 }}
