@@ -1,16 +1,20 @@
 import { useTheme } from "next-themes";
 import { CircleDashed, MoonStars, SunDim } from "phosphor-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import cx from "clsx";
 
-export default function ToggleThemeBtn() {
+interface Props {
+    hasAnimation?: boolean
+}
+
+export default function ToggleThemeBtn({ hasAnimation=false }: Props) {
     const [mounted, setMounted] = useState(false);
     const {theme, setTheme} = useTheme();
     const [effect, setEffect] = useState(false);
 
     useEffect(() => {
         setMounted(true);
-        setEffect(true);
+        setEffect(hasAnimation);
     }, [])
 
     function isDark() {return theme == "dark"}

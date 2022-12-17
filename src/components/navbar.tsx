@@ -53,7 +53,7 @@ export default function NavBar({
                 }
             </button>
 
-            <ToggleThemeBtn />
+            <ToggleThemeBtn hasAnimation />
         </nav>
     )
 }
