@@ -1,14 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { CirclesFour, CirclesThreePlus, X } from "phosphor-react";
-import { Dispatch, SetStateAction, useState } from "react";
-import cx from "clsx";
+import { useState } from "react";
+import { useEffectProps } from "../@Types/useeffectprops";
 import ToggleThemeBtn from "./toggle-dark-theme-btn";
-
-type useEffectProps = {
-    isOpenedModal: boolean
-    setIsOpenedModal: Dispatch<SetStateAction<boolean>>
-}
+import cx from "clsx";
 
 export default function NavBar({
     isOpenedModal,
