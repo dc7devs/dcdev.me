@@ -14,14 +14,14 @@ interface PropsCardButton {
 
 export default function CardButton() {
     return (
-        <div className={"w-full sm:w-96 md:w-96 lg:w-[350px] h-48 dark:bg-black/45 bg-white/45 flex flex-col px-4 py-2.5 rounded backdrop-blur-sm ring-1 dark:ring-white/50 ring-black/50"}>
+        <div className={"w-full sm:w-96 md:w-96 lg:w-[350px] h-48 dark:bg-black/45 bg-white/45 flex flex-col px-4 py-2.5 rounded backdrop-blur-sm ring-1 dark:ring-white/25 ring-black/25"}>
             <div className={"flex justify-between items-center px-1"}>
                 <div className={"text-2xl text-black dark:text-white"}>ui-notion.so</div>
-                <Link href={cx("")} className={"text-3xl text-zinc-500 hover:text-black dark:hover:text-zinc-100 hover:transition-colors ease-in select-none"}>▲</Link>
+                <Link href={cx("")} className={"text-4xl text-zinc-500 hover:text-black dark:hover:text-zinc-100 hover:transition-colors ease-in select-none"}>▲</Link>
             </div>
 
-            <div className={"flex-1 text-ellipsis"}>
-                <p>Notion's product interface, a project developed as a way of retaining knowledge acquired in the discipline of programming for the web</p>
+            <div className={"flex-1 overflow-hidden text-ellipsis py-3 pl-2"}>
+                Notion's product interface, a project developed as a way of retaining knowledge acquired in the discipline of programming for the web
             </div>
 
             <div className={"flex justify-between items-center"}>
