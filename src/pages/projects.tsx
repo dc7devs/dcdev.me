@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import CardBox from "../components/card-project";
 import { useEffect, useState } from "react";
-import api from "../service/api";
+import { gh_api } from "../service/api";
 
 import { PropsCardBox } from "../@Types/api.github";
 
@@ -9,7 +9,7 @@ export default function Projects() {
     const [repositories, setRepositories] = useState<PropsCardBox[]>([]);
 
     useEffect(() => {
-        api.get("/users/dc7devs/repos")
+        gh_api.get("/users/dc7devs/repos")
         .then((repos: any) => {
             setRepositories(
                 repos.data.map((repo: any) => {
@@ -20,14 +20,14 @@ export default function Projects() {
                         amountStars: repo.stargazers_count,
                         language: repo.language,
                         lastEdition: repo.updated_at,
-                        githubUrl: repo.html_url,
+                        githubURL: repo.html_url,
                     };
 
                     return nowDataFormat;
                 })
             );
         }).catch((err) => {
-            console.error("ops! ocorreu um erro" + err);
+            console.error("ops! ocorreu um erro: " + err);
         })
     }, [])
 
@@ -43,7 +43,7 @@ export default function Projects() {
                         amountStars={dataProps.amountStars}
                         language={dataProps.language}
                         lastEdition={dataProps.lastEdition}
-                        githubUrl={dataProps.githubUrl}
+                        githubURL={dataProps.githubURL}
                     />
                 ))
             }</div>

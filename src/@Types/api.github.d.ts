@@ -5,6 +5,6 @@ export type PropsCardBox = {
     repoDescription: string
     amountStars: number
     language: string
-    lastEdition: string
-    githubUrl: string
+    lastEdition: string | date | number
+    githubURL: string
 }
