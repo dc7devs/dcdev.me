@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
 import { CircleDashed, MoonStars, SunDim } from "phosphor-react";
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useReducer } from "react";
 import cx from "clsx";
 
 interface Props {
