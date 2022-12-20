@@ -5,8 +5,6 @@ import { PropsCardBox } from "../@Types/api.github";
 import { intlFormatDistance, parseISO } from 'date-fns';
 import cx from "clsx";
 
-import { useEffect, useState } from "react";
-
 export default function CardBox({
     repoTitle,
     vercelURL,
