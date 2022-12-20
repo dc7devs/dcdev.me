@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import CardBox from "../components/card-project";
 import { useEffect, useState } from "react";
-import { gh_api } from "../service/api";
+import gh_api from "../service/api";
 
 import { PropsCardBox } from "../@Types/api.github";
 
