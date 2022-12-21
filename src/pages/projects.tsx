@@ -35,16 +35,7 @@ export default function Projects() {
         <Layout>
             <div className="w-full h-auto flex flex-wrap justify-center lg:justify-start gap-1 sm:gap-1.5">{
                 repositories.map((dataProps: PropsCardBox) => (
-                    <CardBox
-                        key={dataProps.id}
-                        repoTitle={dataProps.repoTitle}
-                        vercelURL={dataProps.vercelURL}
-                        repoDescription={dataProps.repoDescription}
-                        amountStars={dataProps.amountStars}
-                        language={dataProps.language}
-                        lastEdition={dataProps.lastEdition}
-                        githubURL={dataProps.githubURL}
-                    />
+                    <CardBox key={dataProps.id} {...dataProps} />
                 ))
             }</div>
         </Layout>
