@@ -28,7 +28,7 @@ export default function Home() {
           </strong> de software!</p>
           <button className="max-w-max h-8 px-2 text-xl hover:text-zinc-700 dark:hover:text-white/70 font-regular rounded-lg bg-black/25 dark:bg-white/25 md:ml-5 dark:border-1 md:shadow-sm hover:shadow-violet-500/25 bakcdrop-blur ring-4 dark:ring-2 ring-violet-300/10 border border-transparent hover:transition-colors hover:ease-in hover:border-zinc-700 dark:hover:border-white/50">
             <Link href="/about">
-              sobre min...
+              sobre mim...
             </Link>
           </button>
         </div>
