@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Star } from "phosphor-react";
-import { PropsCardBox } from "../@Types/api.github";
+import { PropsCardBox } from "@/@Types/api.github";
 
 import { intlFormatDistance, parseISO } from 'date-fns';
 import cx from "clsx";
@@ -36,12 +36,12 @@ export default function CardBox({
                     
                     <div className="text-xs">{language}</div>
 
-                    <span className="w-1 h-1 rounded-full dark:bg-white bg-black rounded-full mx-2"></span>
+                    <span className="w-1 h-1 dark:bg-white bg-black rounded-full mx-2"></span>
                     <div className="text-xs flex">
                         <Star size={15} />
                         <div className="ml-1">{cx(amountStars ? amountStars : "0")}</div>
                     </div>
-                    <span className="w-1 h-1 rounded-full dark:bg-white bg-black rounded-full mx-2"></span>
+                    <span className="w-1 h-1 dark:bg-white bg-black rounded-full mx-2"></span>
 
                     <div className="text-xs">Atualizado {
                         intlFormatDistance(parseISO(lastEdition), new Date)

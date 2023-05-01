@@ -1,9 +1,9 @@
-import Layout from "../components/layout";
-import CardBox from "../components/card-project";
+import Layout from "@/components/layout";
+import CardBox from "@/components/@ui/card-project";
 import { useEffect, useState } from "react";
-import gh_api from "../service/api";
+import gh_api from "@/service/api";
 
-import { PropsCardBox } from "../@Types/api.github";
+import { PropsCardBox } from "@/@Types/api.github";
 
 export default function Projects() {
     const [repositories, setRepositories] = useState<PropsCardBox[]>([]);
@@ -32,7 +32,9 @@ export default function Projects() {
     }, [])
 
     return (
-        <Layout>
+        <Layout
+            className="dark:bg-img-project-page-dark bg-img-project-page-light bg-paper-pattern-size"
+        >
             <div className="w-full h-auto flex flex-wrap justify-center lg:justify-start gap-1 sm:gap-1.5">{
                 repositories.map((dataProps: PropsCardBox) => (
                     <CardBox key={dataProps.id} {...dataProps} />
