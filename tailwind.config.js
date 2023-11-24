@@ -1,10 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  purge: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
+    "./**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -30,15 +28,12 @@ module.exports = {
         separator: '#3F3F3F',
 
         black: '#161616',
-        white: '#FFFFFF',
-
+        
         gray: '#AEAEAE',
       },
       backgroundImage: {
         'paper-pattern': "radial-gradient(50% 50% at 50% 50%, rgba(174, 174, 174, 0) 0%, rgba(174, 174, 174, 0.94) 100%), linear-gradient(rgba(22, 22, 22, 0.1) 1.6px, transparent 1.6px), linear-gradient(90deg, rgba(22, 22, 22, 0.1) 1.6px, transparent 1.6px), linear-gradient(rgba(22, 22, 22, 0.1) 0.8px, transparent 0.8px), linear-gradient(90deg, rgba(22, 22, 22, 0.1) 0.8px, rgba(173, 173, 173, 0) 0.8px)",
-        'paper-pattern-dark': "radial-gradient(50% 50% at 50% 50%, rgba(22, 22, 22, 0) 0%, rgba(22, 22, 22, 0.94) 100%), linear-gradient(rgba(174, 174, 174, 0.1) 1.6px, transparent 1.6px), linear-gradient(90deg, rgba(174, 174, 174, 0.1) 1.6px, transparent 1.6px), linear-gradient(rgba(174, 174, 174, 0.1) 0.8px, transparent 0.8px), linear-gradient(90deg, rgba(174, 174, 174, 0.1) 0.8px, rgba(22, 22, 22, 0) 0.8px)",
-        'img-project-page-light': "url('/images/background_to-light.png')",
-        'img-project-page-dark': "url('/images/backgrond_to-dark.png')",
+        'paper-pattern-dark': "radial-gradient(50% 50% at 50% 50%, rgba(22, 22, 22, 0) 0%, rgba(22, 22, 22, 0.94) 100%), linear-gradient(rgba(174, 174, 174, 0.1) 1.6px, transparent 1.6px), linear-gradient(90deg, rgba(174, 174, 174, 0.1) 1.6px, transparent 1.6px), linear-gradient(rgba(174, 174, 174, 0.1) 0.8px, transparent 0.8px), linear-gradient(90deg, rgba(174, 174, 174, 0.1) 0.8px, rgba(22, 22, 22, 0) 0.8px)"
       },
       fontFamily: {
         'pontserrat': ['Montserrat', 'sans-serif'],

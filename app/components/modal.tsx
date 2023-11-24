@@ -1,4 +1,4 @@
-import ToggleThemeBtn from "./toggle-dark-theme-btn";
+import ToggleThemeBtn from "./toggle-theme-button";
 
 export default function Modal() {
 

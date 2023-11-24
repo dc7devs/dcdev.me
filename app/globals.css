@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    * {
+        /* text-zinc-700 */
+        scrollbar-color: #111 #050505;
+        @apply text-black/90
+        dark:text-white/90
+    }
+
+    /* ::-webkit-scrollbar {
+        width: 1;
+    } */
+
+    ::selection {
+        color: white;
+        background-color: rgb(139 92 246);
+    }
+
+    body {
+        @apply overflow-auto scroll-smooth
+        bg-fixed
+        bg-gray/[.7]
+        dark:bg-black
+        bg-paper-pattern
+        bg-paper-pattern-size
+        bg-paper-pattern-position
+        dark:bg-paper-pattern-dark
+    }
+}
