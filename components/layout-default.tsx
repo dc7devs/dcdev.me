@@ -1,7 +1,5 @@
 'use client'
-import Link from "next/link";
 import { ReactNode } from "react";
-import cx from 'clsx';
 
 import NextProgress from "next-progress";
 import { ThemeProvider } from "next-themes";
@@ -19,7 +17,7 @@ export function LayoutDefault({ children }: { children: ReactNode }) {
 
                     <Header />
 
-                    <main className={cx("h-auto px-4 pb-7 pt-20 sm:px-0 sm:pt-24 mt-5 sm:w-4/5 mx-auto")}>
+                    <main className={"h-auto px-4 pb-7 pt-20 sm:px-0 sm:pt-24 mt-5 sm:w-5/6 md:w-3/4 mx-auto"}>
                         {children}
                     </main>
 
