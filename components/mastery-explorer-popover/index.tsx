@@ -14,7 +14,7 @@ import CompCertificateSlide, { tCertificates } from "./comp-certificate-slide";
 
 interface MasteryExplorerPopoverProps {
     children: ReactNode;
-    certificateList?: tCertificates;
+    certificates?: tCertificates;
     articleContent?: tArticle;
     videoContent?: tVideo;
     projectContent?: tProject;
@@ -22,28 +22,28 @@ interface MasteryExplorerPopoverProps {
 
 export default function MasteryPopover({
     children,
-    certificateList,
-    articleContent,
-    videoContent,
-    projectContent,
-}: MasteryExplorerPopoverProps) {
+    certificates,
+    article,
+    video,
+    project,
+}: any) {
 
     const nav_tabs = {
-        certificates: {
+        certificates_list: {
             iconTab: <Icons.TabCertificate className="w-4 h-4" />,
-            contentComponent: certificateList ? <CompCertificateSlide certificateData={certificateList} /> : <CompDefault />
+            contentComponent: certificates ? <CompCertificateSlide certificateData={certificates} /> : <CompDefault />
         },
-        article: {
+        article_tab: {
             iconTab: <Icons.TabDocumentAddBold className="w-4 h-4" />,
-            contentComponent: articleContent ? <CompArticle articleData={articleContent} /> : <CompDefault />
+            contentComponent: article ? <CompArticle articleData={article} /> : <CompDefault />
         },
-        video: {
+        video_tab: {
             iconTab: <Icons.TabPlayCircle className="w-4 h-4" />,
-            contentComponent: videoContent ? <CompVideo videoData={videoContent} /> : <CompDefault />
+            contentComponent: video ? <CompVideo videoData={video} /> : <CompDefault />
         },
-        project: {
+        project_tab: {
             iconTab: <Icons.TabOpenSourceFill className="w-4 h-4" />,
-            contentComponent: projectContent ? <CompProject projectData={projectContent} /> : <CompDefault /> 
+            contentComponent: project ? <CompProject projectData={project} /> : <CompDefault /> 
         }
     }
 
@@ -91,7 +91,7 @@ const TabsComponent = ({ navTabs }: {
     })
 
     return (
-        <Tabs defaultValue="certificates" className="w-full h-50">
+        <Tabs defaultValue="certificates_list" className="w-full h-50">
             {tabsListContent}
 
             <TabsList className="bg-zinc-200/80 dark:bg-zinc-800/80 backdrop-blur-sm space-x-1">

@@ -1,6 +1,7 @@
-import { withContentlayer } from 'next-contentlayer'
-
 /** @type {import('next').NextConfig} */
+
+const { withContentlayer } = require('next-contentlayer');
+
 const nextConfig = {
   images: {
       remotePatterns: [
@@ -13,4 +14,4 @@ const nextConfig = {
   swcMinify: true,
 }
 
-export default withContentlayer(nextConfig);
+module.exports = withContentlayer({ ...nextConfig });

@@ -5,7 +5,8 @@ import Icons from "../ui/icons";
 import { Button } from "../ui/button";
 
 export type tProject = {
-    githubURL: string
+    githubURL: string,
+    screenshot?: string
 }
 
 const CompProject = ({ projectData: { githubURL } }: { projectData: tProject }) => {

@@ -6,10 +6,10 @@ import { Button } from "../ui/button"
 
 export type tVideo = {
     youtubeURL: string,
-    youtubeThumbnailURL: string
+    youtubeThumbURL: string
 }
 
-const CompVideo = ({ videoData: { youtubeURL, youtubeThumbnailURL } }: { videoData: tVideo }) => {
+const CompVideo = ({ videoData: { youtubeURL, youtubeThumbURL } }: { videoData: tVideo }) => {
 
     // const randomNumber = Math.floor(Math.random() * 1000000);
     // await genereteScreenshot(youtubeURL, `content/mastery/screenshots/youtube_${randomNumber}.png`);

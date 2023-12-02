@@ -45,7 +45,7 @@ const CompCertificateSlide = ({ certificateData }: { certificateData: tCertifica
 
                 return (
                     <div
-                        key={credentialCode}
+                        key={index} // credentialCode
                         className={cn("relative h-full w-full transition-opacity", "slide", index === currentIndex ? "visible" : "hidden")}
                         style={{ opacity: index === currentIndex ? 1 : 0, transform: `translateX(${100 * (index - currentIndex)}%)` }}
                     >
