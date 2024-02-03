@@ -1,49 +1,52 @@
 'use client';
-import Link from "next/link";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
+import Link from 'next/link';
+// import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
-import NavBar from "./navbar";
-import { useCallback, useEffect, useState } from "react";
+import NavBar from './navbar';
+import { Logotipo } from './logotipo';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export default function Header() {
-    const [didScroll, setDidiScroll] = useState(true);
+  const [didScroll, setDidiScroll] = useState(false);
+  const lastScrollY = useRef(0);
 
-    const onScroll = useCallback(() => {
-        const { scrollY } = window;
+  const onScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
 
-        if (scrollY > 25) {
-            setDidiScroll(true);
-        } else {
-            setDidiScroll(false);
+    if (currentScrollY < lastScrollY.current && currentScrollY > 25) {
+      setDidiScroll(true);
+    } else {
+      setDidiScroll(false);
+    }
+
+    lastScrollY.current = currentScrollY;
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [onScroll]);
+
+  return (
+    <header
+      className={cn(
+        'h-auto w-full pt-5 flex md:px-0',
+        didScroll && 'sticky top-0 z-10'
+      )}
+    >
+      <div
+        className={
+          'w-full sm:gap-5 flex justify-between items-center px-4 py-2 sm:py-0 sm:px-10 2xl:max-w-screen-2xl 2xl:mx-auto'
         }
-    }, []);
+      >
+        <Link href="/">{!didScroll && <Logotipo />}</Link>
 
-    useEffect(() => {
-        window.addEventListener("scroll", onScroll);
-
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-        }
-    }, []);
-
-    return(
-        <header className={cn("h-auto w-full pt-4 flex md:px-0", didScroll && "sticky top-0")}>
-            <div className={"w-full sm:w-2/3 sm:gap-5 m-auto flex justify-between items-center px-5 py-2 sm:p-2"}>
-                <Link href="/">
-                    <div className={"w-9 h-9 rounded-full ring-4 ring-violet-700/5 shadow-sm shadow-violet-700/10 bakcdrop-blur relative select-none"}>
-                        <Image
-                            className={"object-cover rounded-full"}
-                            src="/images/My.png"
-                            alt="Diego Image"
-                            fill
-                            sizes=""
-                        />
-                    </div>
-                </Link>
-
-                <NavBar didScroll={didScroll} />
-            </div>
-        </header>
-    )
+        <NavBar didScroll={didScroll} />
+      </div>
+    </header>
+  );
 }
