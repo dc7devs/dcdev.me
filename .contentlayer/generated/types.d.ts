@@ -8,15 +8,22 @@ export { isType } from 'contentlayer/client'
 export type { Markdown, MDX, ImageFieldData, IsoDateTimeString }
 
 /** Document types */
-export type Mastery = {
+export type Project = {
   /** File path relative to `contentDirPath` */
   _id: string
   _raw: Local.RawDocumentData
-  type: 'Mastery'
-  skills?: string[] | undefined
-  /** Markdown file body */
-  body: Markdown
-
+  type: 'Project'
+  title: string
+  description: string
+  status: 'to_begin' | 'doing' | 'progressing' | 'finishing'
+  coreTech: string
+  toolsUsed: string[]
+  projectType: 'FRONTEND' | 'BACKEND' | 'FULL-STACK' | 'API' | 'E-COMMERCE' | 'CMS' | 'LANDING_PAGE' | 'PWA' | 'CORPORATE_PORTALS' | 'RESERVATION & SHEDULING' | 'AUTOMATIONS & INTEGRATIONS' | 'DASHBOARDS' | 'E-LEARNING' | 'BLOGS & PORTFOLIO'
+  imageURL?: string | undefined
+  articleURL?: string | undefined
+  githubSourceCodeURL?: string | undefined
+  deploymentURL?: string | undefined
+  startDate: date
 }  
 
 /** Nested types */
@@ -27,15 +34,15 @@ export type Mastery = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Mastery
-export type DocumentTypeNames = 'Mastery'
+export type DocumentTypes = Project
+export type DocumentTypeNames = 'Project'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
 
 export type DataExports = {
   allDocuments: DocumentTypes[]
-  allMasteries: Mastery[]
+  allProjects: Project[]
 }
 
 
@@ -55,7 +62,7 @@ declare global {
 }
 
 export type DocumentTypeMap = {
-  Mastery: Mastery
+  Project: Project
 }
 
 export type NestedTypeMap = {

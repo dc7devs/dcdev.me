@@ -1,0 +1,11 @@
+title: "API de Autenticação"
+description: "Uma API segura de autenticação e autorização para aplicativos web."
+status: "doing"
+coreTech: "Nodejs"
+toolsUsed:
+  - "Express"
+  - "JWT"
+  - "MongoDB"
+projectType: "BACKEND"
+articleURL: "https://example.com/blog/api-autenticacao"
+githubSourceCodeURL: "https://github.com/seu-usuario/api-autenticacao"

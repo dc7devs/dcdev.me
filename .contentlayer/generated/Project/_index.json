@@ -1,0 +1,299 @@
+[
+  {
+    "title": "API de Autenticação",
+    "description": "Uma API segura de autenticação e autorização para aplicativos web.",
+    "status": "doing",
+    "coreTech": "Nodejs",
+    "toolsUsed": [
+      "Express",
+      "JWT",
+      "MongoDB"
+    ],
+    "projectType": "BACKEND",
+    "articleURL": "https://example.com/blog/api-autenticacao",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/api-autenticacao",
+    "_id": "projects/api-autenticacao.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/api-autenticacao.yaml",
+      "sourceFileName": "api-autenticacao.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/api-autenticacao"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.641Z"
+  },
+  {
+    "title": "Aplicativo de Eventos",
+    "description": "Interface de usuário para um aplicativo de gerenciamento de eventos.",
+    "status": "to_begin",
+    "coreTech": "Angular",
+    "toolsUsed": [
+      "Angular",
+      "RxJS",
+      "Angular Material"
+    ],
+    "projectType": "FRONTEND",
+    "articleURL": "https://example.com/blog/aplicativo-eventos",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/aplicativo-eventos",
+    "deploymentURL": "https://aplicativoeventos.com",
+    "_id": "projects/aplicativo-eventos.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/aplicativo-eventos.yaml",
+      "sourceFileName": "aplicativo-eventos.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/aplicativo-eventos"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.653Z"
+  },
+  {
+    "title": "Dashboard Administrativo",
+    "description": "Um dashboard responsivo para gerenciamento de conteúdo administrativo.",
+    "status": "finishing",
+    "coreTech": "Svelte",
+    "toolsUsed": [
+      "Svelte",
+      "Chart.js",
+      "Bulma"
+    ],
+    "projectType": "FRONTEND",
+    "articleURL": "https://example.com/blog/dashboard-administrativo",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/dashboard-administrativo",
+    "deploymentURL": "https://dashboardadministrativo.com",
+    "_id": "projects/dashboard-administrativo.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/dashboard-administrativo.yaml",
+      "sourceFileName": "dashboard-administrativo.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/dashboard-administrativo"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.662Z"
+  },
+  {
+    "title": "Sistema de Gerenciamento de Inventário",
+    "description": "Sistema full-stack para o gerenciamento de inventário de uma pequena empresa.",
+    "status": "finishing",
+    "coreTech": "Laravel",
+    "toolsUsed": [
+      "Laravel",
+      "Vue.js",
+      "MySQL"
+    ],
+    "projectType": "FULL-STACK",
+    "articleURL": "https://example.com/blog/gerenciamento-inventario",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/gerenciamento-inventario",
+    "deploymentURL": "https://gerenciamentoinventario.com",
+    "_id": "projects/gerenciamento-inventario.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/gerenciamento-inventario.yaml",
+      "sourceFileName": "gerenciamento-inventario.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/gerenciamento-inventario"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.669Z"
+  },
+  {
+    "title": "Loja Virtual Frontend",
+    "description": "Frontend para uma experiência de compra online intuitiva e responsiva.",
+    "status": "progressing",
+    "coreTech": "Vuejs",
+    "toolsUsed": [
+      "Vue.js",
+      "Vuex",
+      "Tailwind CSS"
+    ],
+    "projectType": "FRONTEND",
+    "articleURL": "https://example.com/blog/loja-virtual-frontend",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/loja-virtual-frontend",
+    "deploymentURL": "https://lojavirtualfrontend.com",
+    "_id": "projects/loja-virtual-frontend.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/loja-virtual-frontend.yaml",
+      "sourceFileName": "loja-virtual-frontend.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/loja-virtual-frontend"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.680Z"
+  },
+  {
+    "title": "Microserviços de Pagamento",
+    "description": "Serviço de backend para processamento de pagamentos online.",
+    "status": "progressing",
+    "coreTech": "Java",
+    "toolsUsed": [
+      "Spring Boot",
+      "Kafka",
+      "PostgreSQL"
+    ],
+    "projectType": "BACKEND",
+    "articleURL": "https://example.com/blog/microservicos-pagamento",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/microservicos-pagamento",
+    "_id": "projects/microservicos-pagamento.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/microservicos-pagamento.yaml",
+      "sourceFileName": "microservicos-pagamento.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/microservicos-pagamento"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.700Z"
+  },
+  {
+    "title": "Plataforma de Cursos Online",
+    "description": "Uma plataforma completa para hospedar e vender cursos online.",
+    "status": "doing",
+    "coreTech": "Nextjs",
+    "toolsUsed": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "Stripe"
+    ],
+    "projectType": "FULL-STACK",
+    "articleURL": "https://example.com/blog/plataforma-cursos",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/plataforma-cursos",
+    "deploymentURL": "https://plataformacursos.com",
+    "_id": "projects/plataforma-cursos.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/plataforma-cursos.yaml",
+      "sourceFileName": "plataforma-cursos.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/plataforma-cursos"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.689Z"
+  },
+  {
+    "title": "Portfolio Pessoal",
+    "description": "Um portfolio pessoal para exibir projetos e experiências profissionais.",
+    "status": "doing",
+    "coreTech": "React",
+    "toolsUsed": [
+      "React",
+      "Sass",
+      "Framer Motion"
+    ],
+    "projectType": "FRONTEND",
+    "articleURL": "https://example.com/blog/portfolio-pessoal",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/portfolio-pessoal",
+    "deploymentURL": "https://meuportfolio.com",
+    "_id": "projects/portfolio-pessoal.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/portfolio-pessoal.yaml",
+      "sourceFileName": "portfolio-pessoal.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/portfolio-pessoal"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.707Z"
+  },
+  {
+    "title": "Rede Social para Desenvolvedores",
+    "description": "Uma rede social full-stack focada na comunidade de desenvolvimento de software.",
+    "status": "to_begin",
+    "coreTech": "Ruby on Rails",
+    "toolsUsed": [
+      "Ruby on Rails",
+      "Vue.js",
+      "PostgreSQL"
+    ],
+    "projectType": "FULL-STACK",
+    "articleURL": "https://example.com/blog/rede-social-devs",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/rede-social-devs",
+    "deploymentURL": "https://redesocialdevs.com",
+    "_id": "projects/rede-social-devs.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/rede-social-devs.yaml",
+      "sourceFileName": "rede-social-devs.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/rede-social-devs"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.715Z"
+  },
+  {
+    "title": "Servidor de Blog",
+    "description": "Backend para um sistema de gestão de conteúdo de blog.",
+    "status": "to_begin",
+    "coreTech": "Django",
+    "toolsUsed": [
+      "Django",
+      "Django REST Framework",
+      "SQLite"
+    ],
+    "projectType": "BACKEND",
+    "articleURL": "https://example.com/blog/servidor-blog",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/servidor-blog",
+    "_id": "projects/servidor-blog.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/servidor-blog.yaml",
+      "sourceFileName": "servidor-blog.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/servidor-blog"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.722Z"
+  },
+  {
+    "title": "Sistema de Notificação",
+    "description": "Serviço backend para o envio de notificações push e via e-mail.",
+    "status": "finishing",
+    "coreTech": "Go",
+    "toolsUsed": [
+      "Go",
+      "RabbitMQ",
+      "Redis"
+    ],
+    "projectType": "BACKEND",
+    "articleURL": "https://example.com/blog/sistema-notificacao",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/sistema-notificacao",
+    "_id": "projects/sistema-notificacao.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/sistema-notificacao.yaml",
+      "sourceFileName": "sistema-notificacao.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/sistema-notificacao"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.728Z"
+  },
+  {
+    "title": "Aplicação de Tarefas Compartilhadas",
+    "description": "Aplicativo full-stack para gerenciamento de tarefas em equipe.",
+    "status": "progressing",
+    "coreTech": "Meteor",
+    "toolsUsed": [
+      "Meteor",
+      "React",
+      "MongoDB"
+    ],
+    "projectType": "FULL-STACK",
+    "articleURL": "https://example.com/blog/tarefas-compartilhadas",
+    "githubSourceCodeURL": "https://github.com/seu-usuario/tarefas-compartilhadas",
+    "deploymentURL": "https://tarefascompartilhadas.com",
+    "_id": "projects/tarefas-compartilhadas.yaml",
+    "_raw": {
+      "sourceFilePath": "projects/tarefas-compartilhadas.yaml",
+      "sourceFileName": "tarefas-compartilhadas.yaml",
+      "sourceFileDir": "projects",
+      "contentType": "data",
+      "flattenedPath": "projects/tarefas-compartilhadas"
+    },
+    "type": "Project",
+    "startDate": "2024-02-02T22:25:45.733Z"
+  }
+]

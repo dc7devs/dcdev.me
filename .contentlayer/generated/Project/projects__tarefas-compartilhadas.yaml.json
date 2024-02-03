@@ -1,0 +1,25 @@
+{
+  "title": "Aplicação de Tarefas Compartilhadas",
+  "description": "Aplicativo full-stack para gerenciamento de tarefas em equipe.",
+  "status": "progressing",
+  "coreTech": "Meteor",
+  "toolsUsed": [
+    "Meteor",
+    "React",
+    "MongoDB"
+  ],
+  "projectType": "FULL-STACK",
+  "articleURL": "https://example.com/blog/tarefas-compartilhadas",
+  "githubSourceCodeURL": "https://github.com/seu-usuario/tarefas-compartilhadas",
+  "deploymentURL": "https://tarefascompartilhadas.com",
+  "_id": "projects/tarefas-compartilhadas.yaml",
+  "_raw": {
+    "sourceFilePath": "projects/tarefas-compartilhadas.yaml",
+    "sourceFileName": "tarefas-compartilhadas.yaml",
+    "sourceFileDir": "projects",
+    "contentType": "data",
+    "flattenedPath": "projects/tarefas-compartilhadas"
+  },
+  "type": "Project",
+  "startDate": "2024-02-02T22:25:45.733Z"
+}

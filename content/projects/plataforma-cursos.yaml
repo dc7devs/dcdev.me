@@ -1,0 +1,13 @@
+title: "Plataforma de Cursos Online"
+description: "Uma plataforma completa para hospedar e vender cursos online."
+status: "doing"
+coreTech: "Nextjs"
+toolsUsed:
+  - "Next.js"
+  - "Node.js"
+  - "PostgreSQL"
+  - "Stripe"
+projectType: "FULL-STACK"
+articleURL: "https://example.com/blog/plataforma-cursos"
+githubSourceCodeURL: "https://github.com/seu-usuario/plataforma-cursos"
+deploymentURL: "https://plataformacursos.com"

@@ -1,0 +1,25 @@
+{
+  "title": "Portfolio Pessoal",
+  "description": "Um portfolio pessoal para exibir projetos e experiências profissionais.",
+  "status": "doing",
+  "coreTech": "React",
+  "toolsUsed": [
+    "React",
+    "Sass",
+    "Framer Motion"
+  ],
+  "projectType": "FRONTEND",
+  "articleURL": "https://example.com/blog/portfolio-pessoal",
+  "githubSourceCodeURL": "https://github.com/seu-usuario/portfolio-pessoal",
+  "deploymentURL": "https://meuportfolio.com",
+  "_id": "projects/portfolio-pessoal.yaml",
+  "_raw": {
+    "sourceFilePath": "projects/portfolio-pessoal.yaml",
+    "sourceFileName": "portfolio-pessoal.yaml",
+    "sourceFileDir": "projects",
+    "contentType": "data",
+    "flattenedPath": "projects/portfolio-pessoal"
+  },
+  "type": "Project",
+  "startDate": "2024-02-02T22:25:45.707Z"
+}

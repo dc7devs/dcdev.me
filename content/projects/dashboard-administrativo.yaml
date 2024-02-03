@@ -1,0 +1,12 @@
+title: "Dashboard Administrativo"
+description: "Um dashboard responsivo para gerenciamento de conteúdo administrativo."
+status: "finishing"
+coreTech: "Svelte"
+toolsUsed:
+  - "Svelte"
+  - "Chart.js"
+  - "Bulma"
+projectType: "FRONTEND"
+articleURL: "https://example.com/blog/dashboard-administrativo"
+githubSourceCodeURL: "https://github.com/seu-usuario/dashboard-administrativo"
+deploymentURL: "https://dashboardadministrativo.com"

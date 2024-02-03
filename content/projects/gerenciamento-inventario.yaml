@@ -1,0 +1,12 @@
+title: "Sistema de Gerenciamento de Inventário"
+description: "Sistema full-stack para o gerenciamento de inventário de uma pequena empresa."
+status: "finishing"
+coreTech: "Laravel"
+toolsUsed:
+  - "Laravel"
+  - "Vue.js"
+  - "MySQL"
+projectType: "FULL-STACK"
+articleURL: "https://example.com/blog/gerenciamento-inventario"
+githubSourceCodeURL: "https://github.com/seu-usuario/gerenciamento-inventario"
+deploymentURL: "https://gerenciamentoinventario.com"

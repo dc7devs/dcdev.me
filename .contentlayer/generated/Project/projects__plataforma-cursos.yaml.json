@@ -1,0 +1,26 @@
+{
+  "title": "Plataforma de Cursos Online",
+  "description": "Uma plataforma completa para hospedar e vender cursos online.",
+  "status": "doing",
+  "coreTech": "Nextjs",
+  "toolsUsed": [
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "Stripe"
+  ],
+  "projectType": "FULL-STACK",
+  "articleURL": "https://example.com/blog/plataforma-cursos",
+  "githubSourceCodeURL": "https://github.com/seu-usuario/plataforma-cursos",
+  "deploymentURL": "https://plataformacursos.com",
+  "_id": "projects/plataforma-cursos.yaml",
+  "_raw": {
+    "sourceFilePath": "projects/plataforma-cursos.yaml",
+    "sourceFileName": "plataforma-cursos.yaml",
+    "sourceFileDir": "projects",
+    "contentType": "data",
+    "flattenedPath": "projects/plataforma-cursos"
+  },
+  "type": "Project",
+  "startDate": "2024-02-02T22:25:45.689Z"
+}

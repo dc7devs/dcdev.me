@@ -1,0 +1,12 @@
+title: "Rede Social para Desenvolvedores"
+description: "Uma rede social full-stack focada na comunidade de desenvolvimento de software."
+status: "to_begin"
+coreTech: "Ruby on Rails"
+toolsUsed:
+  - "Ruby on Rails"
+  - "Vue.js"
+  - "PostgreSQL"
+projectType: "FULL-STACK"
+articleURL: "https://example.com/blog/rede-social-devs"
+githubSourceCodeURL: "https://github.com/seu-usuario/rede-social-devs"
+deploymentURL: "https://redesocialdevs.com"

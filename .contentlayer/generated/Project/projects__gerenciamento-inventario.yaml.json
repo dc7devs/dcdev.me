@@ -1,0 +1,25 @@
+{
+  "title": "Sistema de Gerenciamento de Inventário",
+  "description": "Sistema full-stack para o gerenciamento de inventário de uma pequena empresa.",
+  "status": "finishing",
+  "coreTech": "Laravel",
+  "toolsUsed": [
+    "Laravel",
+    "Vue.js",
+    "MySQL"
+  ],
+  "projectType": "FULL-STACK",
+  "articleURL": "https://example.com/blog/gerenciamento-inventario",
+  "githubSourceCodeURL": "https://github.com/seu-usuario/gerenciamento-inventario",
+  "deploymentURL": "https://gerenciamentoinventario.com",
+  "_id": "projects/gerenciamento-inventario.yaml",
+  "_raw": {
+    "sourceFilePath": "projects/gerenciamento-inventario.yaml",
+    "sourceFileName": "gerenciamento-inventario.yaml",
+    "sourceFileDir": "projects",
+    "contentType": "data",
+    "flattenedPath": "projects/gerenciamento-inventario"
+  },
+  "type": "Project",
+  "startDate": "2024-02-02T22:25:45.669Z"
+}

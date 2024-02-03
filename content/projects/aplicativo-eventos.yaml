@@ -1,0 +1,12 @@
+title: "Aplicativo de Eventos"
+description: "Interface de usuário para um aplicativo de gerenciamento de eventos."
+status: "to_begin"
+coreTech: "Angular"
+toolsUsed:
+  - "Angular"
+  - "RxJS"
+  - "Angular Material"
+projectType: "FRONTEND"
+articleURL: "https://example.com/blog/aplicativo-eventos"
+githubSourceCodeURL: "https://github.com/seu-usuario/aplicativo-eventos"
+deploymentURL: "https://aplicativoeventos.com"
