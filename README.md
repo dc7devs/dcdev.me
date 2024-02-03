@@ -1,3 +1,9 @@
+<div align="center">
+<img src=".github/logotipo_light.svg" width="140" align="center" alt="logo" />
+</div>
+
+---
+
 <a href="https://dcdevs.me" target="__blank"><img src=".github/home-page.png" alt="layout"></a>
 
 ---

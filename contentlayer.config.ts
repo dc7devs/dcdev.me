@@ -1,9 +1,9 @@
-import { makeSource, defineDocumentType } from '@contentlayer/source-files';
+import { makeSource } from 'contentlayer/source-files';
 
-import { Mastery } from './content/definitions/Mastery';
+import { Project } from './content/definitions/projects';
 
 export default makeSource({
-    contentDirPath: 'content',
-    documentTypes: [Mastery],
-    disableImportAliasWarning: true,
-})
+  contentDirPath: 'content',
+  documentTypes: [Project],
+  disableImportAliasWarning: true
+});
