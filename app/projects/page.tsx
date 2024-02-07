@@ -14,13 +14,10 @@ import { Cards } from '@/components/projects';
 export default function ProjectPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="flex justify-between items-center">
-        <h1 className="text-black dark:text-white m-0 font-normal text-xl my-3 px-1.5 rounded-sm bg-accent max-w-max">
-          Project portfolio
-        </h1>
-      </div>
+      <h1 className="text-black dark:text-white m-0 font-normal text-xl my-3 md:px-1.5 rounded-sm md:bg-accent max-w-max">
+        My projects
+      </h1>
 
-      {/* projetos recente */}
       <section>
         <h3 className="text-black dark:text-white mb-3 mt-5 text-base font-medium">
           Recent
@@ -35,9 +32,7 @@ export default function ProjectPage() {
         </Carousel>
       </section>
 
-      {/* Projetos categorizados port tipo */}
-
-      <ByProjectType />
+      <SectionBuilderByProjectType />
     </div>
   );
 }
@@ -65,13 +60,12 @@ const RecentProjects = () => {
 };
 
 // projetos por tipo
-const ByProjectType = () => {
+const SectionBuilderByProjectType = () => {
   const organizedProjectsByType = ((projects: Array<Project>) => {
     const organizedProjects: {
       [key: string]: Array<Project>;
     } = {};
 
-    // Itera sobre os projetos e os organiza por 'projectType'
     projects.forEach((project) => {
       const projectType = project.projectType.toLowerCase();
 
