@@ -19,10 +19,13 @@ export default async function RecentWorkUnderDev({
       <CardHeader>
         <CardTitle className="flex align-middle text-primary">
           <Icons.GameIconsCoffeeCup className="size-4 mr-2" />
-          <span>Working...</span>
+          <span>Currently working...</span>
 
           <Link href={'/projects'} className="ml-auto">
-            <small>view all</small>
+            <small className="">
+              view all projects
+              <Icons.PhArrowSquareOutDuotone className="size-2.5 inline ml-1" />
+            </small>
           </Link>
         </CardTitle>
       </CardHeader>

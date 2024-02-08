@@ -81,9 +81,9 @@ export default function Page() {
         <EmailSubscribe className="min-h-40 border-border/50 bg-white/90 dark:bg-black/90 backdrop-blur-sm" />
       </div>
 
-      <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 md:col-span-full lg:col-start-2 lg:col-end-12 2xl:flex-1">
+      <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 md:col-span-full lg:col-start-2 lg:col-end-12 md:mt-3 2xl:mt-0 2xl:flex-1">
         <small className="my-3">
-          <strong>Skills and tools</strong>
+          <strong>I&#39;m in the loop</strong>
         </small>
 
         <div className="inline-flex flex-wrap gap-4 mt-3 not-prose">

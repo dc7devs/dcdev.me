@@ -1,3 +1,4 @@
+'use client';
 import { Artist } from '@/@types';
 import Link from 'next/link';
 

@@ -21,9 +21,9 @@ export default function ToggleThemeBtn() {
       }}
     >
       {isDark() ? (
-        <Icons.MoonStars className="w-[20px] h-[20px] md:w-[23px] md:h-[23px]" />
+        <Icons.MoonStars className="size-5 md:size-[23px]" />
       ) : (
-        <Icons.SunDim className="w-[20px] h-[20px] md:w-[23px] md:h-[23px]" />
+        <Icons.SunDim className="size-5 md:size-[23px]" />
       )}
     </Button>
   );

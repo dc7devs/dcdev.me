@@ -1,3 +1,4 @@
+'use client';
 import { Card } from '@/components/ui/card';
 import Unavailable from '@/components/unavailable';
 
