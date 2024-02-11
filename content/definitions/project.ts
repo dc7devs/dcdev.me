@@ -9,7 +9,7 @@ export const Project = defineDocumentType(() => ({
     description: { type: 'string', required: true },
     status: {
       type: 'enum',
-      options: ['to_begin', 'doing', 'progressing', 'finishing'],
+      options: ['to_begin', 'doing', 'progressing', 'finishing', 'done'],
       required: true
     },
     coreTech: { type: 'string', required: true },
@@ -36,6 +36,11 @@ export const Project = defineDocumentType(() => ({
         'E-LEARNING',
         'BLOGS & PORTFOLIO'
       ],
+      required: true
+    },
+    projectClassification: {
+      type: 'enum',
+      options: ['personal study', 'sketch study', 'professional'],
       required: true
     },
     imageURL: { type: 'string', required: false },
