@@ -1,0 +1,13 @@
+title: "UI Notion"
+description: "Notion's product interface, a project developed as a way of retaining knowledge acquired in the discipline of programming for the web"
+status: "done"
+coreTech: "HTML"
+toolsUsed:
+  - "HTML"
+  - "CSS"
+  - "JavaScript"
+projectType: "FRONTEND"
+projectClassification: "sketch study"
+imageURL: "https://res.cloudinary.com/dyxtcsnna/image/upload/v1707602750/dcdev/images/projects/notion_niodpv.png"
+githubSourceCodeURL: "https://github.com/dc7devs/ui-notion.so"
+deploymentURL: "https://ui-notion.vercel.app/"
