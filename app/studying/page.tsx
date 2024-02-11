@@ -1,4 +1,5 @@
 import { MediaTabs } from '@/components/media-integration-tabs';
+import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 
 import { SVGProps } from 'react';
@@ -69,30 +70,53 @@ const SketchBooksImg = (props: SVGProps<SVGSVGElement>) => {
 export default function LearningPathPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="flex flex-col gap-5 sm:grid sm:grid-cols-2 sm:auto-rows-auto sm:gap-y-8 sm:gap-x-3 lg:flex lg:flex-row lg:h-auto lg:gap-x-2">
-        <div className="sm:col-span-full sm:col-start-1 md:row-span-1 lg:grow">
-          <h1 className="text-black dark:text-white m-0 font-normal text-xl my-3 md:px-1.5 rounded-sm md:bg-accent max-w-max">
-            I&#39;m Learning...
-          </h1>
+      <div className="sm:p-3.5 bg-white dark:bg-black ring-1 ring-input">
+        <div className="flex flex-col gap-5 sm:grid sm:grid-cols-2 sm:auto-rows-auto sm:gap-y-8 sm:gap-x-3 lg:flex lg:flex-row lg:h-auto lg:gap-x-2">
+          <div className="sm:col-span-full sm:col-start-1 md:row-span-1 lg:grow">
+            <h1 className="text-black dark:text-white m-0 font-normal text-xl my-3 md:px-1.5 rounded-sm md:bg-accent max-w-max">
+              I&#39;m Learning...
+            </h1>
 
-          <p className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Necessitatibus hic obcaecati ut veniam dolore libero magnam quam ex
-            ipsam quia qui aliquam officiis consequatur quasi aspernatur odit
-            similique, quo cum?
-          </p>
-        </div>
+            <p className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 italic ">
+              Welcome to my tech labyrinth! Here, I present my bugs, my errors,
+              my learnings, my bugs... Wait, sorry, I need to focus!
+            </p>
 
-        <div className="sm:col-span-1 sm:h-auto lg:w-[420px]">
-          <MediaTabs />
-        </div>
+            <div className="inline-flex space-x-1.5 my-3">
+              <Badge
+                variant={'outline'}
+                className="pointer-events-none ring-1 ring-red-500 text-red-500 border-none px-1 py-0 brightness-75"
+              >
+                error
+              </Badge>
+              <Badge
+                variant={'outline'}
+                className="pointer-events-none ring-1 ring-red-500 text-red-500 border-none px-1 py-0 brightness-75"
+              >
+                error
+              </Badge>
+              <Badge
+                variant={'outline'}
+                className="pointer-events-none ring-1 ring-green-500 text-green-500 border-none px-1 py-0 brightness-75"
+              >
+                ok
+              </Badge>
+            </div>
+          </div>
 
-        <div className="hidden sm:flex sm:row-start-2 sm:col-start-2 sm:mx-auto">
-          <SketchBooksImg className="ring-1 ring-ring/50 w-11/12 sm:size-full xl:size-64 bg-white dark:bg-black" />
+          <div className="sm:col-span-1 sm:h-auto lg:w-[420px]">
+            <MediaTabs />
+          </div>
+
+          <div className="hidden sm:flex sm:row-start-2 sm:col-start-2 sm:mx-auto">
+            <SketchBooksImg className="ring-1 ring-ring/50 w-11/12 sm:size-full xl:size-64 bg-white dark:bg-black" />
+          </div>
         </div>
       </div>
 
       <Separator className="my-4" />
+
+      <p className="italic">Projetos de estudo...</p>
     </div>
   );
 }

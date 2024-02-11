@@ -15,15 +15,29 @@ export type Project = {
   type: 'Project'
   title: string
   description: string
-  status: 'to_begin' | 'doing' | 'progressing' | 'finishing'
+  status: 'to_begin' | 'doing' | 'progressing' | 'finishing' | 'done'
   coreTech: string
   toolsUsed: string[]
   projectType: 'FRONTEND' | 'BACKEND' | 'FULL-STACK' | 'API' | 'E-COMMERCE' | 'CMS' | 'LANDING_PAGE' | 'PWA' | 'CORPORATE_PORTALS' | 'RESERVATION & SHEDULING' | 'AUTOMATIONS & INTEGRATIONS' | 'DASHBOARDS' | 'E-LEARNING' | 'BLOGS & PORTFOLIO'
+  projectClassification: 'personal study' | 'sketch study' | 'professional'
   imageURL?: string | undefined
   articleURL?: string | undefined
   githubSourceCodeURL?: string | undefined
   deploymentURL?: string | undefined
   startDate: date
+}
+
+export type Roadmap = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Roadmap'
+  title: string
+  description: string
+  progressRoadmapURL: string
+  roadmapImagePreviewURL: string
+  status: 'no started' | 'in progress' | 'done'
+
 }  
 
 /** Nested types */
@@ -34,8 +48,8 @@ export type Project = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Project
-export type DocumentTypeNames = 'Project'
+export type DocumentTypes = Project | Roadmap
+export type DocumentTypeNames = 'Project' | 'Roadmap'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -43,6 +57,7 @@ export type NestedTypeNames = never
 export type DataExports = {
   allDocuments: DocumentTypes[]
   allProjects: Project[]
+  allRoadmaps: Roadmap[]
 }
 
 
@@ -63,6 +78,7 @@ declare global {
 
 export type DocumentTypeMap = {
   Project: Project
+  Roadmap: Roadmap
 }
 
 export type NestedTypeMap = {

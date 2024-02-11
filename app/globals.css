@@ -5,6 +5,7 @@
 @layer base {
     * {
         /* scrollbar-color: #111 #050505; */
+        @apply antialiased
     }
 
     :root {

@@ -8,7 +8,7 @@ import { LeetCodeOverviewCard } from './leetcode-overview-card';
 export const MediaTabs = () => {
   return (
     <Tabs
-      defaultValue="spotify"
+      defaultValue="github" // spotify
       className="relative flex flex-col h-full w-full pt-9 sm:p-0 bg-transparent"
     >
       <TabsList className="absolute top-0 z-20 sm:flex-col h-auto w-auto rounded-tl-none gap-1 p-0.5">
