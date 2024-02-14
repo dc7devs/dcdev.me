@@ -59,19 +59,19 @@ const RecentProjects = () => {
 
   return (
     <>
-      {recentProjects
-        ? recentProjects.map((propsProject: Project) => (
-            <li key={propsProject._id}>
-              <Cards.RecentProjectSimpleCard {...propsProject} />
-            </li>
-          ))
-        : [1, 2, 3].map((index) => (
-            <li key={index}>
-              <div className="h-14 w-full bg-background outline-dashed outline-1 outline-secondary relative">
-                <Unavailable />
-              </div>
-            </li>
-          ))}
+      {recentProjects ? (
+        recentProjects.map((propsProject: Project) => (
+          <li key={propsProject._id}>
+            <Cards.RecentProjectSimpleCard {...propsProject} />
+          </li>
+        ))
+      ) : (
+        <li>
+          <div className="h-14 w-full bg-background outline-dashed outline-1 outline-secondary relative">
+            <Unavailable />
+          </div>
+        </li>
+      )}
     </>
   );
 };
