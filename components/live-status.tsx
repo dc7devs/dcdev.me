@@ -4,15 +4,24 @@ export default function LiveStatus({
   status,
   className
 }: {
-  status: 'to_begin' | 'doing' | 'progressing' | 'finishing' | 'done';
+  status:
+    | 'to_begin'
+    | 'doing'
+    | 'progressing'
+    | 'finishing'
+    | 'done'
+    | 'no_started'
+    | 'in_progress';
   className?: string;
 }) {
   const statusColorMap = {
-    to_begin: ['bg-gray-600', 'bg-gray-700'],
-    doing: ['bg-green-600', 'bg-green-700'],
-    progressing: ['bg-yellow-600', 'bg-yellow-700'],
-    finishing: ['bg-lime-600', 'bg-lime-700'],
-    done: ['bg-green-600', 'bg-green-700']
+    no_started: ['bg-stone-400', 'bg-stone-500'],
+    to_begin: ['bg-stone-400', 'bg-stone-500'],
+    doing: ['bg-orange-400', 'bg-orange-500'],
+    in_progress: ['bg-amber-400', 'bg-amber-500'],
+    progressing: ['bg-yellow-400', 'bg-yellow-500'],
+    finishing: ['bg-lime-400', 'bg-lime-500'],
+    done: ['bg-green-400', 'bg-green-500']
   };
 
   return (

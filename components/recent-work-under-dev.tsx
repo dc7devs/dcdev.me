@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 
 import { Cards } from './projects';
 import { Project, allProjects } from '@/.contentlayer/generated';
+import Unavailable from './unavailable';
 
 export default async function RecentWorkUnderDev({
   className
@@ -52,16 +53,25 @@ const RecentProjects = () => {
   const recentProjects = ((projects: Array<Project>) => {
     return projects
       .sort((a, b) => compareDesc(new Date(a.startDate), new Date(b.startDate)))
+      .filter((_) => _.status !== 'done')
       .slice(0, 3);
   })(allProjects);
 
   return (
     <>
-      {recentProjects.map((propsProject: Project) => (
-        <li key={propsProject._id}>
-          <Cards.RecentProjectSimpleCard {...propsProject} />
-        </li>
-      ))}
+      {recentProjects
+        ? recentProjects.map((propsProject: Project) => (
+            <li key={propsProject._id}>
+              <Cards.RecentProjectSimpleCard {...propsProject} />
+            </li>
+          ))
+        : [1, 2, 3].map((index) => (
+            <li key={index}>
+              <div className="h-14 w-full bg-background outline-dashed outline-1 outline-secondary relative">
+                <Unavailable />
+              </div>
+            </li>
+          ))}
     </>
   );
 };

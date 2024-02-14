@@ -10,7 +10,7 @@ export const GithubOverviewCard = async () => {
   const data = await res.json();
 
   return (
-    <Card className="flex flex-col h-full border-none mt-0 sm:ml-9 sm:rounded-none">
+    <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 sm:rounded-none">
       <CardContent className="relative h-28 overflow-hidden p-0">
         <Image
           alt="Muggs Shop"

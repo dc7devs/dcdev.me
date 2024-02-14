@@ -47,7 +47,7 @@ export const SpotifyOverviewCard = () => {
 
   if (error) {
     return (
-      <Card className="flex flex-col h-full border-none mt-0 sm:ml-9 rounded-none">
+      <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 rounded-none">
         <CardContent className="h-full flex items-center justify-center p-6">
           <p className="text-xs text-red-400 font-medium">
             Oops! Something&#39;s wrong with that component!
@@ -59,7 +59,7 @@ export const SpotifyOverviewCard = () => {
 
   if (isFetching) {
     return (
-      <Card className="flex flex-col h-full border-none mt-0 sm:ml-9 rounded-none">
+      <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 rounded-none">
         <CardContent className="relative h-28 overflow-hidden p-0">
           <Skeleton className="h-28 w-full rounded-none" />
         </CardContent>
@@ -96,7 +96,7 @@ export const SpotifyOverviewCard = () => {
       recentlyPlayed?.track?.album?.images[0].url;
 
     return (
-      <Card className="flex flex-col h-full border-none mt-0 sm:ml-9 rounded-none">
+      <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 rounded-none">
         {/* <Unavailable className={'-z-10 ring-1 ring-input rounded-none'} /> */}
 
         <CardContent className="relative h-28 overflow-hidden p-0">

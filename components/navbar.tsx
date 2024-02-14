@@ -10,7 +10,7 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
     <div className={'flex justify-center items-center'}>
       <ul
         className={cn(
-          'flex justify-stretch sm:items-center gap-x-4 sm:gap-x-5 mr-2 sm:m-0',
+          'flex justify-stretch sm:items-center space-x-4 sm:space-x-5 mr-2 sm:m-0',
           'rounded-2xl sm:rounded-sm md:rounded-md px-2.5 py-2 sm:py-1 border border-transparent',
           didScroll &&
             'bg-background/60 backdrop-blur-sm border-border shadow-sm'
@@ -47,27 +47,27 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
 const nav_items = [
   {
     name: 'Home',
-    icon: <Icons.HomeFill className="size-6 sm:size-5" />,
+    icon: <Icons.HomeFill className="size-5 sm:size-5" />,
     path: '/'
   },
   {
     name: 'Projects',
-    icon: <Icons.BoxMultipleSearchFill className="size-6 sm:size-5" />,
+    icon: <Icons.BoxMultipleSearchFill className="size-5 sm:size-5" />,
     path: '/projects'
   },
   // {
   //   name: 'Articles',
-  //   icon: <Icons.NoteStackFill className='size-6 sm:size-5' />,
+  //   icon: <Icons.NoteStackFill className='size-5 sm:size-5' />,
   //   path: '/articles'
   // },
   {
     name: 'Studying...',
-    icon: <Icons.BooksFill className="size-6 sm:size-5" />,
+    icon: <Icons.BooksFill className="size-5 sm:size-5" />,
     path: '/studying'
   },
   {
     name: 'Contact',
-    icon: <Icons.ChatFill className="size-6 sm:size-5" />,
+    icon: <Icons.ChatFill className="size-5 sm:size-5" />,
     path: '/contact'
   }
 ];
