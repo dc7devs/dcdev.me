@@ -18,26 +18,24 @@ import Image from 'next/image';
 import { Project } from '@/.contentlayer/generated';
 import { cn } from '@/lib/utils';
 
-export const RecentProjectCard = (props: Project) => {
-  const {
-    coreTech,
-    title,
-    description,
-    startDate,
-    status,
-    githubSourceCodeURL,
-    articleURL,
-    deploymentURL,
-    imageURL
-  } = props;
-
+export const RecentProjectCard = ({
+  coreTech,
+  title,
+  description,
+  startDate,
+  status,
+  githubSourceCodeURL,
+  articleURL,
+  deploymentURL,
+  imageURL
+}: Project) => {
   return (
     <Card
       className={
-        'flex relative w-full min-h-48 space-x-1 border-input transition duration-100 ease-linear text-balance sm:min-h-full md:rounded-lg lg:w-80 lg:rounded-md bg-background' // min-h-48 sm:min-h-max
+        'flex relative w-full min-h-48 space-x-1 border-input hover:border-black/30 dark:hover:border-white/30 transition duration-100 ease-linear text-balance sm:min-h-full md:rounded-lg lg:w-80 lg:rounded-md bg-background' // min-h-48 sm:min-h-max
       }
     >
-      <div className="flex flex-col basis-4/5">
+      <div className="flex flex-col basis-9/12">
         <CardHeader className="flex-row pb-2 pl-4 pt-4 pr-0">
           <div>
             <CardTitle>{title}</CardTitle>
@@ -88,10 +86,10 @@ export const RecentProjectCard = (props: Project) => {
         </CardFooter>
       </div>
 
-      <div className="relative basis-1/5 overflow-hidden rounded-r-xl md:rounded-r-lg lg:rounded-r-md">
+      <div className="relative basis-3/12 overflow-hidden rounded-r-xl md:rounded-r-lg lg:rounded-r-md">
         <Image
           className={
-            'object-cover object-left overflow-hidden basis-1/5 h-full w-full'
+            'object-cover object-left overflow-hidden basis-3/12 h-full w-full'
           }
           src={cn(
             imageURL ??
@@ -99,6 +97,7 @@ export const RecentProjectCard = (props: Project) => {
           )}
           alt="Preview project"
           fill
+          priority
         />
       </div>
     </Card>
