@@ -11,7 +11,7 @@ export const Roadmap = defineDocumentType(() => ({
     roadmapImagePreviewURL: { type: 'string', required: true },
     status: {
       type: 'enum',
-      options: ['no started', 'in progress', 'done'],
+      options: ['no_started', 'in_progress', 'done'],
       required: true
     }
   }

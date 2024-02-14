@@ -36,7 +36,7 @@ export type Roadmap = {
   description: string
   progressRoadmapURL: string
   roadmapImagePreviewURL: string
-  status: 'no started' | 'in progress' | 'done'
+  status: 'no_started' | 'in_progress' | 'done'
 
 }  
 

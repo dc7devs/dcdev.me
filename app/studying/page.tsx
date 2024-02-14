@@ -1,6 +1,22 @@
-import { MediaTabs } from '@/components/media-integration-tabs';
+import {
+  Project,
+  Roadmap,
+  allProjects,
+  allRoadmaps
+} from '@/.contentlayer/generated';
+import { ChallengeTabs, MediaTabs } from '@/components/media-integration-tabs';
+import { Cards } from '@/components/projects';
+import { RoadmapCard } from '@/components/roadmap-card';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
+import { compareDesc } from 'date-fns';
+import Link from 'next/link';
 
 import { SVGProps } from 'react';
 
@@ -70,7 +86,7 @@ const SketchBooksImg = (props: SVGProps<SVGSVGElement>) => {
 export default function LearningPathPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="sm:p-3.5 bg-white dark:bg-black ring-1 ring-input">
+      <div className="py-2 sm:p-3.5 bg-white dark:bg-black sm:ring-1 ring-input/25">
         <div className="flex flex-col gap-5 sm:grid sm:grid-cols-2 sm:auto-rows-auto sm:gap-y-8 sm:gap-x-3 lg:flex lg:flex-row lg:h-auto lg:gap-x-2">
           <div className="sm:col-span-full sm:col-start-1 md:row-span-1 lg:grow">
             <h1 className="text-black dark:text-white m-0 font-normal text-xl my-3 md:px-1.5 rounded-sm md:bg-accent max-w-max">
@@ -104,19 +120,83 @@ export default function LearningPathPage() {
             </div>
           </div>
 
-          <div className="sm:col-span-1 sm:h-auto lg:w-[420px]">
-            <MediaTabs />
+          <div className="flex sm:row-start-2 sm:col-start-2 sm:mx-auto">
+            <SketchBooksImg className="ring-1 ring-transparent w-2/4 mx-auto sm:w-11/12 sm:size-full xl:size-64 bg-white dark:bg-black" />
           </div>
 
-          <div className="hidden sm:flex sm:row-start-2 sm:col-start-2 sm:mx-auto">
-            <SketchBooksImg className="ring-1 ring-ring/50 w-11/12 sm:size-full xl:size-64 bg-white dark:bg-black" />
+          <div className="sm:col-span-1 sm:h-auto lg:w-[420px]">
+            <MediaTabs />
           </div>
         </div>
       </div>
 
-      <Separator className="my-4" />
+      <section>
+        <h2 className="mt-14 mb-5 font-medium">Roadmaps</h2>
 
-      <p className="italic">Projetos de estudo...</p>
+        <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-2 h-full w-full md:w-7/12 lg:w-3/5">
+            {allRoadmaps.map((roadmap: Roadmap) => (
+              <Link
+                key={roadmap._id}
+                href={roadmap.progressRoadmapURL}
+                className="w-full sm:w-[48%] md:w-full lg:w-[48%] xl:w-[32%] h-auto font-normal md:font-medium"
+                target="_blank"
+              >
+                <RoadmapCard {...roadmap} />
+              </Link>
+            ))}
+          </div>
+
+          <div className="w-full h-full md:w-[38%] lg:w-4/12">
+            <ChallengeTabs />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="mt-14 mb-5 font-medium">Courses</h2>
+      </section>
+
+      <section>
+        <h2 className="mt-14 mb-5 font-medium">Study Projects</h2>
+
+        <Carousel
+          opts={{ slidesToScroll: 'auto', loop: true }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-3">
+            <StudyProjects />
+          </CarouselContent>
+
+          <CarouselPrevious className="left-1 sm:-left-5 bg-secondary" />
+          <CarouselNext className="right-1 sm:-right-5 bg-secondary" />
+        </Carousel>
+      </section>
+
+      <section>
+        <h2 className="mt-14 mb-5 font-medium">Notes</h2>
+      </section>
     </div>
   );
 }
+
+const StudyProjects = () => {
+  const recentProjects = ((projects: Array<Project>) => {
+    return projects
+      .sort((a, b) => compareDesc(new Date(a.startDate), new Date(b.startDate)))
+      .filter((project) => project.projectClassification !== 'professional');
+  })(allProjects);
+
+  return (
+    <>
+      {recentProjects.map((propsProject: Project) => (
+        <CarouselItem
+          key={propsProject._id}
+          className="pl-3 basis-full sm:basis-3/6 md:basis-1/2 lg:basis-auto"
+        >
+          <Cards.StudyProjectCard {...propsProject} />
+        </CarouselItem>
+      ))}
+    </>
+  );
+};

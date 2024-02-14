@@ -79,7 +79,7 @@ export default function Page() {
       </div>
 
       <div className="flex flex-col w-full h-full order-last gap-8 mx-auto sm:p-2 sm:w-11/12 md:gap-2 md:order-none md:p-0 md:w-80 lg:w-96 lg:col-start-7 lg:col-end-12 2xl:mx-5 2xl:shrink-0">
-        <RecentWorkUnderDev className="order-last md:order-none min-h-[320px] h-auto border-border/50 bg-white/90 dark:bg-black/90 backdrop-blur-sm" />
+        <RecentWorkUnderDev className="order-last md:order-none h-auto border-border/50 bg-white/90 dark:bg-black/90 backdrop-blur-sm" />
         <EmailSubscribe className="min-h-40 border-border/50 bg-white/90 dark:bg-black/90 backdrop-blur-sm" />
       </div>
 

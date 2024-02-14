@@ -19,9 +19,9 @@ export default function ProjectPage() {
       </h1>
 
       <section>
-        <h3 className="text-black dark:text-white mb-3 mt-5 text-base font-medium">
+        <h2 className="text-black dark:text-white mb-3 mt-5 text-base font-medium">
           Recent
-        </h3>
+        </h2>
         <Carousel opts={{ slidesToScroll: 'auto' }} className="w-full">
           <CarouselContent className="-ml-3">
             <RecentProjects />
@@ -50,7 +50,7 @@ const RecentProjects = () => {
       {recentProjects.map((propsProject: Project) => (
         <CarouselItem
           key={propsProject._id}
-          className="pl-3 basis-10/12 sm:basis-3/6 md:basis-1/2 lg:basis-auto"
+          className="pl-3 basis-full sm:basis-3/6 md:basis-1/2 lg:basis-auto" // basis-10/12
         >
           <Cards.RecentProjectCard {...propsProject} />
         </CarouselItem>
@@ -66,15 +66,14 @@ const SectionBuilderByProjectType = () => {
       [key: string]: Array<Project>;
     } = {};
 
-    projects.forEach((project) => {
-      const projectType = project.projectType.toLowerCase();
+    projects
+      .filter((project) => project.status === 'done')
+      .forEach((project) => {
+        const projectType = project.projectType.toLowerCase();
 
-      if (!organizedProjects[projectType]) {
-        organizedProjects[projectType] = [];
-      }
-
-      organizedProjects[projectType].push(project);
-    });
+        organizedProjects[projectType] = organizedProjects[projectType] || [];
+        organizedProjects[projectType].push(project);
+      });
 
     return organizedProjects;
   })(allProjects);
@@ -83,9 +82,9 @@ const SectionBuilderByProjectType = () => {
     <div>
       {Object.keys(organizedProjectsByType).map((projectType) => (
         <section key={projectType}>
-          <h3 className="text-black dark:text-white mb-3 mt-10 text-base font-medium">
+          <h2 className="text-black dark:text-white mb-3 mt-10 text-base font-medium">
             {projectType}
-          </h3>
+          </h2>
 
           <Carousel opts={{ slidesToScroll: 'auto' }} className="w-full">
             <CarouselContent className="-ml-3">
