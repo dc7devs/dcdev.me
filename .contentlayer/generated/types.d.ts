@@ -8,6 +8,20 @@ export { isType } from 'contentlayer/client'
 export type { Markdown, MDX, ImageFieldData, IsoDateTimeString }
 
 /** Document types */
+export type Note = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Note'
+  createdAt: IsoDateTimeString
+  title: string
+  description: string
+  relatedImageURL?: string | undefined
+  /** MDX file body */
+  body: MDX
+  slug: string
+}
+
 export type Project = {
   /** File path relative to `contentDirPath` */
   _id: string
@@ -19,11 +33,11 @@ export type Project = {
   coreTech: string
   toolsUsed: string[]
   projectType: 'FRONTEND' | 'BACKEND' | 'FULL-STACK' | 'API' | 'E-COMMERCE' | 'CMS' | 'LANDING_PAGE' | 'PWA' | 'CORPORATE_PORTALS' | 'RESERVATION & SHEDULING' | 'AUTOMATIONS & INTEGRATIONS' | 'DASHBOARDS' | 'E-LEARNING' | 'BLOGS & PORTFOLIO'
-  projectClassification: 'personal study' | 'sketch study' | 'professional'
+  projectClassification: 'personal_study' | 'sketch_study' | 'professional'
   imageURL?: string | undefined
   articleURL?: string | undefined
   githubSourceCodeURL?: string | undefined
-  deploymentURL?: string | undefined
+  deploymentURL: string
   startDate: date
 }
 
@@ -48,8 +62,8 @@ export type Roadmap = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Project | Roadmap
-export type DocumentTypeNames = 'Project' | 'Roadmap'
+export type DocumentTypes = Note | Project | Roadmap
+export type DocumentTypeNames = 'Note' | 'Project' | 'Roadmap'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -58,6 +72,7 @@ export type DataExports = {
   allDocuments: DocumentTypes[]
   allProjects: Project[]
   allRoadmaps: Roadmap[]
+  allNotes: Note[]
 }
 
 
@@ -77,6 +92,7 @@ declare global {
 }
 
 export type DocumentTypeMap = {
+  Note: Note
   Project: Project
   Roadmap: Roadmap
 }

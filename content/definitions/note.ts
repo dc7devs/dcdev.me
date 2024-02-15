@@ -5,14 +5,15 @@ export const Note = defineDocumentType(() => ({
   contentType: 'mdx',
   filePathPattern: 'notes/*.mdx',
   fields: {
+    createdAt: { type: 'date', required: true },
     title: { type: 'string', required: true },
-    description: { type: 'string' },
-    relatedImageURL: { type: 'string', required: true }
+    description: { type: 'string', required: true },
+    relatedImageURL: { type: 'string' }
   },
   computedFields: {
-    createdAt: {
-      type: 'date',
-      resolve: () => new Date()
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.flattenedPath.replace(/notes\/?/, '')
     }
   }
 }));

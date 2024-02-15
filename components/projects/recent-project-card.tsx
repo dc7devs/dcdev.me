@@ -16,7 +16,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Project } from '@/.contentlayer/generated';
-import { cn } from '@/lib/utils';
 
 export const RecentProjectCard = ({
   coreTech,
@@ -91,10 +90,7 @@ export const RecentProjectCard = ({
           className={
             'object-cover object-left overflow-hidden basis-3/12 h-full w-full'
           }
-          src={cn(
-            imageURL ??
-              'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png'
-          )}
+          src={imageURL!}
           alt="Preview project"
           fill
           priority

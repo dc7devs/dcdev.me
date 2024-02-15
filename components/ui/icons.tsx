@@ -1092,6 +1092,42 @@ const Icons = {
     );
   },
 
+  // bookmark
+  PhBookmarkSimpleFill: (props: SVGProps<SVGSVGElement>) => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 256 256"
+        {...props}
+      >
+        <path
+          fill="currentColor"
+          d="M184 32H72a16 16 0 0 0-16 16v176a8 8 0 0 0 12.24 6.78L128 193.43l59.77 37.35A8 8 0 0 0 200 224V48a16 16 0 0 0-16-16"
+        ></path>
+      </svg>
+    );
+  },
+
+  // Add more
+  PhDotsThreeOutlineFill: (props: SVGProps<SVGSVGElement>) => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 256 256"
+        {...props}
+      >
+        <path
+          fill="currentColor"
+          d="M156 128a28 28 0 1 1-28-28a28 28 0 0 1 28 28M48 100a28 28 0 1 0 28 28a28 28 0 0 0-28-28m160 0a28 28 0 1 0 28 28a28 28 0 0 0-28-28"
+        ></path>
+      </svg>
+    );
+  },
+
   IonIosHammer: (props: SVGProps<SVGSVGElement>) => {
     return (
       <svg

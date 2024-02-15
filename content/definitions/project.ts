@@ -40,15 +40,21 @@ export const Project = defineDocumentType(() => ({
     },
     projectClassification: {
       type: 'enum',
-      options: ['personal study', 'sketch study', 'professional'],
+      options: ['personal_study', 'sketch_study', 'professional'],
       required: true
     },
     imageURL: { type: 'string', required: false },
     articleURL: { type: 'string', required: false },
     githubSourceCodeURL: { type: 'string', required: false },
-    deploymentURL: { type: 'string', required: false }
+    deploymentURL: {
+      type: 'string',
+      default:
+        'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png',
+      required: false
+    }
   },
   computedFields: {
+    // TODO: startDate regera a cada build da aplicação!. Adicionar o filed para ser atribuido (em fields)
     startDate: {
       type: 'date',
       resolve: () => new Date()

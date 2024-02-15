@@ -1,0 +1,15 @@
+---
+title: pnpm on External disk
+createdAt: 2023-02-15
+description: to install a project on an external disk, it may not work right away because pnpm is heavily relying on symlinks, which doesn't work cross mount points. To workaround this
+relatedImageURL: https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png
+---
+
+If you tried to use [pnpm](https://pnpm.io/) to install a project on an external disk, it may not work right away because pnpm is heavily relying on symlinks, which doesn't work cross mount points. To workaround this, you can add the following config to your `.npmrc`:
+
+```ini
+package-import-method=copy
+prefer-symlinked-executables=false
+```
+
+This will make pnpm copy the files instead of symlinking them. And expose the executables in `node_modules/.bin` correctly.

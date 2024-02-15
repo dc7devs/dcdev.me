@@ -43,6 +43,15 @@
     "content/definitions/*.js",
     ".contentlayer/generated"
   ],
+  "mdx": {
+    "plugins": [
+      [
+        "remark-frontmatter",
+        ["toml", "yaml"]
+      ],
+      "remark-gfm"
+    ]
+  },
   "exclude": [
     "node_modules"
   ]

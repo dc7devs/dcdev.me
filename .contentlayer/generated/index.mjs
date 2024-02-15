@@ -6,9 +6,10 @@ export { isType } from 'contentlayer/client'
 // During (production) builds Contentlayer it imports from `.json` files to improve build performance.
 import allProjects from './Project/_index.json' assert { type: 'json' }
 import allRoadmaps from './Roadmap/_index.json' assert { type: 'json' }
+import allNotes from './Note/_index.json' assert { type: 'json' }
 
-export { allProjects, allRoadmaps }
+export { allProjects, allRoadmaps, allNotes }
 
-export const allDocuments = [...allProjects, ...allRoadmaps]
+export const allDocuments = [...allProjects, ...allRoadmaps, ...allNotes]
 
 

@@ -118,8 +118,8 @@ export const SpotifyOverviewCard = () => {
             )}
           >
             {currentlyPlaying?.is_playing
-              ? 'Tocando agora'
-              : 'Tocada recentemente'}
+              ? 'Currently playing'
+              : 'Recently played'}
           </Badge>
 
           <Link href={userProfile?.external_urls.spotify} target="_blank">

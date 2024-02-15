@@ -26,7 +26,7 @@
       "flattenedPath": "projects/dcdevs"
     },
     "type": "Project",
-    "startDate": "2024-02-14T22:47:13.844Z"
+    "startDate": "2024-02-15T03:19:47.933Z"
   },
   {
     "title": "feedget",
@@ -46,7 +46,7 @@
       "Nodemailer"
     ],
     "projectType": "FULL-STACK",
-    "projectClassification": "personal study",
+    "projectClassification": "personal_study",
     "imageURL": "https://res.cloudinary.com/dyxtcsnna/image/upload/v1707601454/dcdev/images/projects/feedget_sztcq6.png",
     "githubSourceCodeURL": "https://github.com/dc7devs/feedget",
     "deploymentURL": "https://feedget-rho.vercel.app/",
@@ -59,7 +59,7 @@
       "flattenedPath": "projects/feedget"
     },
     "type": "Project",
-    "startDate": "2024-02-14T22:47:13.834Z"
+    "startDate": "2024-02-15T03:19:47.951Z"
   },
   {
     "title": "UI Notion",
@@ -72,7 +72,7 @@
       "JavaScript"
     ],
     "projectType": "FRONTEND",
-    "projectClassification": "sketch study",
+    "projectClassification": "sketch_study",
     "imageURL": "https://res.cloudinary.com/dyxtcsnna/image/upload/v1707602750/dcdev/images/projects/notion_niodpv.png",
     "githubSourceCodeURL": "https://github.com/dc7devs/ui-notion.so",
     "deploymentURL": "https://ui-notion.vercel.app/",
@@ -85,6 +85,6 @@
       "flattenedPath": "projects/ui-notion"
     },
     "type": "Project",
-    "startDate": "2024-02-14T22:47:13.863Z"
+    "startDate": "2024-02-15T03:19:47.960Z"
   }
 ]

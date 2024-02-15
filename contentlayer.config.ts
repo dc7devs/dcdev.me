@@ -2,10 +2,10 @@ import { makeSource } from 'contentlayer/source-files';
 
 import { Project } from './content/definitions/project';
 import { Roadmap } from './content/definitions/roadmap';
-// import { Course } from './content/definitions/course';
+import { Note } from './content/definitions/note';
 
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Project, Roadmap],
+  documentTypes: [Project, Roadmap, Note],
   disableImportAliasWarning: true
 });

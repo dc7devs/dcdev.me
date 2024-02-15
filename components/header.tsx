@@ -35,7 +35,7 @@ export default function Header() {
     <header
       className={cn(
         'h-auto w-full pt-5 flex md:px-0',
-        didScroll && 'sticky top-0 z-10'
+        didScroll && 'sticky top-0 z-50'
       )}
     >
       <div
