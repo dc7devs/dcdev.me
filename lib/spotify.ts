@@ -21,7 +21,7 @@ export const getAcessToken = async () => {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       next: {
-        revalidate: 60 * 1
+        revalidate: 10 // 3600 // 1 hr
       },
       body: new URLSearchParams({
         grant_type: 'refresh_token',
@@ -42,6 +42,7 @@ export const getAcessToken = async () => {
 };
 
 export const fetchWithAuthorization = async (url: string) => {
+  // TODO: remover, executa toda vez que um fetch e feito no enpoint da api
   const { access_token } = await getAcessToken();
 
   const response = await axios.get(url, {

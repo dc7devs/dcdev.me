@@ -10,14 +10,16 @@ export function Logotipo() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
-  return theme == 'dark' ? (
-    <LogotipoDark className="h-auto w-24 sm:w-28" />
-  ) : (
-    <LogotipoLight className="h-auto w-24 sm:w-28" />
+  return (
+    <>
+      {theme == 'dark' ? (
+        <LogotipoDark className="h-auto w-24 sm:w-28" />
+      ) : (
+        <LogotipoLight className="h-auto w-24 sm:w-28" />
+      )}
+    </>
   );
 }
 

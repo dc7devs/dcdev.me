@@ -36,9 +36,9 @@ export const ChallengeTabs = () => {
   return (
     <Tabs
       defaultValue="hackerrank"
-      className="relative flex flex-col h-full w-full pt-9 bg-transparent"
+      className="relative flex flex-col h-full w-full pt-9 px-1 pb-1 ring-1 ring-input bg-white/50 dark:bg-black/50 backdrop-blur-sm"
     >
-      <TabsList className="absolute top-0 z-20 h-auto w-auto rounded-bl-none gap-1 p-0.5">
+      <TabsList className="absolute top-0 z-20 h-auto w-auto rounded-tl-none gap-1 p-0.5">
         <TabsTrigger className="size-full p-1 m-0" value="hackerrank">
           <Icons.Fa6BrandsHackerrank className="size-4" />
         </TabsTrigger>

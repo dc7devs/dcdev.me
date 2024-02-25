@@ -54,12 +54,12 @@ export function NoteCard({ title, createdAt, description }: Note) {
       </CardContent>
 
       <CardFooter className="flex items-center justify-between pb-2 px-3 font-normal">
-        <small className="text-sm text-accent-foreground/60">
+        <time className="text-sm text-accent-foreground/60">
           {formatDistanceToNow(new Date(createdAt), {
             locale: ptBR,
             addSuffix: true
           })}
-        </small>
+        </time>
       </CardFooter>
     </Card>
   );

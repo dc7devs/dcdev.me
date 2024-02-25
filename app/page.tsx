@@ -64,7 +64,7 @@ export default function Page() {
           whenever possible.
         </p>
 
-        <small className="inline-flex items-center gap-1 my-3">
+        <small className="inline-flex items-center gap-1 my-4">
           <Icons.MdiWechat className="size-4" />
           <strong>Find me on</strong>
         </small>

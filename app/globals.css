@@ -5,7 +5,6 @@
 @layer base {
     * {
         /* scrollbar-color: #111 #050505; */
-        @apply antialiased
     }
 
     :root {
@@ -39,9 +38,11 @@
 
         --radius: 0.5rem;
 
-        --c-bg: rgb(173, 173, 173);
-        --c-scrollbar: rgb(157, 157, 157);
-        --c-scrollbar-hover: rgb(140, 140, 140);
+        /* --c-bg: rgb(173, 173, 173); */
+        --c-bg: transparent;
+        /* --c-scrollbar: rgb(157, 157, 157); */
+        --c-scrollbar: rgb(173, 173, 173);
+        /* --c-scrollbar-hover: rgb(140, 140, 140); */
     }
 
     .dark {
@@ -73,9 +74,11 @@
         --input: 240 3.7% 15.9%;
         --ring: 240 4.9% 83.9%;
 
-        --c-bg: rgb(23, 23, 23);
-        --c-scrollbar: rgb(8, 8, 8);
-        --c-scrollbar-hover: rgb(30, 30, 30);
+        /* --c-bg: rgb(23, 23, 23); */
+        --c-bg: transparent;
+        /* --c-scrollbar: rgb(8, 8, 8); */
+        --c-scrollbar: rgb(23, 23, 23);
+        /* --c-scrollbar-hover: rgb(30, 30, 30); */
 
     }
 
@@ -89,18 +92,16 @@
     
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-corner {
-        background: var(--c-bg);
-        border-radius: 10px;
+        background: transparent;
     }
 
     ::-webkit-scrollbar-thumb {
         background: var(--c-scrollbar);
-        border-radius: 10px;
     }
 
-    ::-webkit-scrollbar-thumb:hover {
+    /* ::-webkit-scrollbar-thumb:hover {
         background: var(--c-scrollbar-hover);
-    }
+    } */
     
     body {
         @apply text-foreground
@@ -113,6 +114,7 @@
         bg-paper-pattern-size
         bg-paper-pattern-position
         dark:bg-paper-pattern-dark
+        antialiased
     }
 
     a {

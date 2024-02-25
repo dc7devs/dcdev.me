@@ -1,3 +1,6 @@
+import { notFound } from 'next/navigation';
+
 export default function ArticlePage() {
-  return <h3>article page</h3>;
+  return notFound();
+  return <h3>n t c</h3>;
 }

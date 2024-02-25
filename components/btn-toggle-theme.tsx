@@ -13,7 +13,7 @@ export default function ToggleThemeBtn() {
 
   return (
     <Button
-      className="sm:m-0 align-middle backdrop-blur-sm rounded-full sm:rounded-md"
+      className="sm:m-0 align-middle bg-background/60 backdrop-blur-sm rounded-full sm:rounded-md"
       variant={'outline'}
       size={'icon'}
       onClick={() => {
@@ -21,9 +21,9 @@ export default function ToggleThemeBtn() {
       }}
     >
       {isDark() ? (
-        <Icons.MoonStars className="size-5 md:size-[23px]" />
+        <Icons.MoonStars className="size-5 md:size-[23px] text-foreground/80" />
       ) : (
-        <Icons.SunDim className="size-5 md:size-[23px]" />
+        <Icons.SunDim className="size-5 md:size-[23px] text-foreground/80" />
       )}
     </Button>
   );

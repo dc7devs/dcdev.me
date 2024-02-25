@@ -41,7 +41,8 @@ export const SpotifyOverviewCard = () => {
       };
     },
     {
-      staleTime: 1000 * 60 // 1 min
+      staleTime: 1000 * (60 * 1.5), // 1min 30s
+      refetchOnWindowFocus: false
     }
   );
 

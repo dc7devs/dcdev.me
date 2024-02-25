@@ -12,7 +12,7 @@ export const ProgressBarDefault = ({ data }: { data: CurrentlyPlaying }) => {
     const updateRate = 1000;
 
     const interval = setInterval(() => {
-      setBarProgression((prevProgress) => {
+      setBarProgression((prevProgress: number) => {
         if (prevProgress < data.item.duration_ms) {
           return prevProgress + updateRate;
         } else {
@@ -23,7 +23,7 @@ export const ProgressBarDefault = ({ data }: { data: CurrentlyPlaying }) => {
     }, updateRate);
 
     return () => clearInterval(interval);
-  }, [data.progress_ms, data.item.duration_ms]);
+  }, [data]);
 
   const formattedDuration = useMemo(
     () => formatDuration(Number(barProgression)),
@@ -31,7 +31,7 @@ export const ProgressBarDefault = ({ data }: { data: CurrentlyPlaying }) => {
   );
   const formattedTotalDuration = useMemo(
     () => formatDuration(Number(data.item.duration_ms)),
-    [data.item.duration_ms]
+    [data]
   );
 
   return (

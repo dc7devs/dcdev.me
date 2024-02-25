@@ -22,6 +22,7 @@ export default function ProjectPage() {
         <h2 className="text-black dark:text-white mb-3 mt-5 text-base font-medium">
           Recent
         </h2>
+
         <Carousel opts={{ slidesToScroll: 'auto' }} className="w-full">
           <CarouselContent className="-ml-3">
             <RecentProjects />

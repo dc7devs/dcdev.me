@@ -14,7 +14,9 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
+
 import { Sketchs } from '@/components/ui/sketchs';
+import Icons from '@/components/ui/icons';
 
 import {
   Project,
@@ -23,14 +25,12 @@ import {
   allRoadmaps,
   allNotes
 } from '@/.contentlayer/generated';
-import { Button } from '@/components/ui/button';
-import Icons from '@/components/ui/icons';
 
 export default function LearningPathPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="py-2 sm:p-3.5 bg-white dark:bg-black sm:ring-1 ring-input/25">
-        <div className="flex flex-col gap-5 sm:grid sm:grid-cols-2 sm:auto-rows-auto sm:gap-y-8 sm:gap-x-3 lg:flex lg:flex-row lg:h-auto lg:gap-x-2">
+      <section className="py-2 lg:p-3.5 bg-white dark:bg-black lg:ring-1 lg:ring-input/25">
+        <div className="flex flex-col sm:grid sm:grid-cols-2 sm:auto-rows-auto sm:gap-y-8 sm:gap-x-3 lg:flex lg:flex-row lg:h-auto ">
           <div className="sm:col-span-full sm:col-start-1 md:row-span-1 lg:grow">
             <h1 className="text-black dark:text-white m-0 font-normal text-xl my-3 md:px-1.5 rounded-sm md:bg-accent max-w-max">
               I&#39;m Learning...
@@ -66,15 +66,17 @@ export default function LearningPathPage() {
           <div className="flex sm:row-start-2 sm:col-start-2 sm:mx-auto">
             <Sketchs.SketchBooksImg className="ring-1 ring-transparent w-2/4 mx-auto sm:w-11/12 sm:size-full xl:size-64 bg-white dark:bg-black" />
           </div>
-
           <div className="sm:col-span-1 sm:h-auto lg:w-[420px]">
             <MediaTabs />
           </div>
         </div>
-      </div>
+      </section>
 
-      <section>
-        <h2 className="mt-14 mb-5 font-medium">Roadmaps</h2>
+      {/* Roadmaps */}
+      <section className={'relative'}>
+        <h2 className="w-max mt-14 mb-5 font-medium">Roadmaps</h2>
+
+        <Sketchs.SketchLearningPathImg className="-z-10 absolute -top-32 right-0" />
 
         <div className="flex flex-wrap gap-5">
           <div className="flex flex-wrap gap-2 h-full w-full md:w-7/12 lg:w-3/5">
@@ -100,31 +102,24 @@ export default function LearningPathPage() {
         <h2 className="mt-14 mb-5 font-medium">Courses</h2>
       </section> */}
 
-      <section className={'relative'}>
-        <h2 className="mt-24 mb-5 font-medium">Notes</h2>
+      {/* Certifications */}
+      {/* <section>
+        <h2 className="mt-14 mb-5 font-medium">Certifications</h2>
+      </section> */}
 
-        <Sketchs.SketchLampImg className="size-80 bg-transparent -z-10 absolute right-0 -top-[150px]" />
-
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-2.5  auto-rows-auto">
-          <>
-            {allNotes.slice(0, 4 + 3).map((note, index) => (
-              <Link
-                key={index}
-                href={`/studying/notes/${note.slug}`}
-                className=""
-              >
-                <NoteCard {...note} />
-              </Link>
-            ))}
-          </>
-          <Button variant="secondary" className="h-auto w-14 space-x-1.5">
-            <Icons.PhDotsThreeOutlineFill className="size-6 text-primary/50" />
-          </Button>
-        </div>
-      </section>
-
+      {/* Projects */}
       <section>
-        <h2 className="mt-14 mb-5 font-medium">Study Projects</h2>
+        <div className="flex items-center gap-3 mt-24 mb-5">
+          <h2 className="w-max font-medium">Study Projects</h2>
+
+          <Link href={'/projects'} className="group">
+            <small className="text-xs group-hover:underline underline-offset-2">
+              all projects
+            </small>
+
+            <Icons.IconParkSolidInternalReduction className="size-3 inline ml-1" />
+          </Link>
+        </div>
 
         <Carousel
           opts={{ slidesToScroll: 'auto', loop: true }}
@@ -139,6 +134,36 @@ export default function LearningPathPage() {
         </Carousel>
       </section>
 
+      {/* Notes */}
+      <section className={'relative'}>
+        <div className="flex items-center gap-3 mt-24 mb-5">
+          <h2 className="w-max font-medium">Notes</h2>
+
+          <Link href={'/studying/notes'} className="group">
+            <small className="text-xs group-hover:underline underline-offset-2">
+              all notes
+            </small>
+            <Icons.IconParkSolidInternalReduction className="size-3 inline ml-1" />
+          </Link>
+        </div>
+
+        <Sketchs.SketchLampImg className="size-52 -top-28 fill-transparent -z-10 absolute right-0 md:size-64 md:-top-[150px]" />
+
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5  auto-rows-auto">
+          <>
+            {allNotes.slice(0, 4 + 3).map((note, index) => (
+              <Link key={index} href={note.slug}>
+                <NoteCard {...note} />
+              </Link>
+            ))}
+          </>
+          {/* <Button variant="secondary" className="h-auto w-14 space-x-1.5">
+            <Icons.PhDotsThreeOutlineFill className="size-6 text-primary/50" />
+          </Button> */}
+        </div>
+      </section>
+
+      {/* Books */}
       {/* <section>
         <h2 className="mt-14 mb-5 font-medium">Books</h2>
       </section> */}

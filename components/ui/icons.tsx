@@ -856,6 +856,7 @@ const Icons = {
       </svg>
     );
   },
+
   // redirect link
   MajesticonsExternalLink: (props: SVGProps<SVGSVGElement>) => {
     return (
@@ -877,6 +878,35 @@ const Icons = {
       </svg>
     );
   },
+  IconParkSolidInternalReduction: (props: SVGProps<SVGSVGElement>) => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 48 48"
+        {...props}
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        >
+          <path d="M8 42h32a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v32a2 2 0 0 0 2 2"></path>
+          <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M42 8a2 2 0 0 0-2-2H28v14h14z"
+            clipRule="evenodd"
+          ></path>
+          <path d="M23 25L13 35m0 0v-7m0 7h7"></path>
+        </g>
+      </svg>
+    );
+  },
+
   FlowbiteUsersGroupSolid: (props: SVGProps<SVGSVGElement>) => {
     return (
       <svg
