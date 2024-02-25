@@ -42,7 +42,6 @@ export const getAcessToken = async () => {
 };
 
 export const fetchWithAuthorization = async (url: string) => {
-  // TODO: remover, executa toda vez que um fetch e feito no enpoint da api
   const { access_token } = await getAcessToken();
 
   const response = await axios.get(url, {

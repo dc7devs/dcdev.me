@@ -167,7 +167,7 @@ export const SpotifyOverviewCard = () => {
           </div>
           <Separator className="bg-secondary" />
 
-          {currentlyPlaying?.is_playing ? (
+          {currentlyPlaying && currentlyPlaying.is_playing ? (
             <ProgressBarDefault data={currentlyPlaying} />
           ) : (
             <ProgressBarStatic />
