@@ -9,16 +9,13 @@ import Footer from './footer';
 import { QueryClientProvider } from 'react-query';
 import { queryClient } from '@/lib/query-client';
 
-import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 
 export function CustomLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <Script
-        async
-        src="http://localhost:3000/script.js"
-        data-website-id="75c5f4b7-42ee-46b5-b592-8ee8d5711e9d"
-      />
+      <Analytics />
+
       <ThemeProvider attribute="class">
         <QueryClientProvider client={queryClient}>
           <NextProgress color="rgb(139 92 246)" delay={500} />
