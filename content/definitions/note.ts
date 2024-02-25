@@ -13,7 +13,8 @@ export const Note = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (doc) => doc._raw.flattenedPath.replace(/notes\/?/, '')
+      resolve: (doc) =>
+        `/studying/${doc._raw.flattenedPath.replaceAll(' ', '-')}`
     }
   }
 }));
