@@ -96,6 +96,8 @@ export const SpotifyOverviewCard = () => {
       currentlyPlaying?.item?.album?.images[0].url ??
       recentlyPlayed?.track?.album?.images[0].url;
 
+    const isPlaying = currentlyPlaying?.is_playing ?? false;
+
     return (
       <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 rounded-none">
         {/* <Unavailable className={'-z-10 ring-1 ring-input rounded-none'} /> */}
@@ -113,14 +115,12 @@ export const SpotifyOverviewCard = () => {
           <Badge
             className={cn(
               'absolute left-2 top-2',
-              currentlyPlaying?.is_playing
+              isPlaying
                 ? 'text-black bg-green-400 hover:bg-green-400'
                 : 'text-background bg-primary/80 hover:bg-primary/80'
             )}
           >
-            {currentlyPlaying?.is_playing
-              ? 'Currently playing'
-              : 'Recently played'}
+            {isPlaying ? 'Currently playing' : 'Recently played'}
           </Badge>
 
           <Link href={userProfile?.external_urls.spotify} target="_blank">
@@ -160,14 +160,12 @@ export const SpotifyOverviewCard = () => {
             </div>
 
             <Icons.BiSpotify
-              className={cn(
-                currentlyPlaying?.is_playing ? 'text-green-400' : 'text-primary'
-              )}
+              className={cn(isPlaying ? 'text-green-400' : 'text-primary')}
             />
           </div>
           <Separator className="bg-secondary" />
 
-          {currentlyPlaying && currentlyPlaying.is_playing ? (
+          {currentlyPlaying && isPlaying ? (
             <ProgressBarDefault data={currentlyPlaying} />
           ) : (
             <ProgressBarStatic />

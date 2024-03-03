@@ -1,6 +1,8 @@
 title: "dcdevs"
 description: "My personal website"
+startedAt: 02-12-2023
 status: "progressing"
+isPromotedToShowcase: true
 coreTech: "Nextjs"
 toolsUsed:
   - "Contentlayer"

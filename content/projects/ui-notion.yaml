@@ -1,6 +1,8 @@
 title: "UI Notion"
 description: "Notion's product interface, a project developed as a way of retaining knowledge acquired in the discipline of programming for the web"
+startedAt: 11-10-2022
 status: "done"
+isPromotedToShowcase: true
 coreTech: "HTML"
 toolsUsed:
   - "HTML"

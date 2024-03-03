@@ -16,30 +16,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Project } from '@/.contentlayer/generated';
+import { cn } from '@/lib/utils';
+
+type RecentProjectProps = Project & {
+  className?: string;
+};
 
 export const RecentProjectCard = ({
   coreTech,
   title,
   description,
-  startDate,
+  startedAt,
   status,
   githubSourceCodeURL,
   articleURL,
   deploymentURL,
-  imageURL
-}: Project) => {
+  imageURL,
+  className
+}: RecentProjectProps) => {
   return (
     <Card
-      className={
-        'flex relative w-full min-h-48 space-x-1 border-input hover:border-black/30 dark:hover:border-white/30 transition duration-100 ease-linear text-balance sm:min-h-full md:rounded-lg lg:w-80 lg:rounded-md bg-background' // min-h-48 sm:min-h-max
-      }
+      className={cn(
+        'flex relative w-full h-48 space-x-1 border-input text-balance sm:w-10/12 md:rounded-lg lg:w-96 lg:rounded-md bg-background',
+        className
+      )}
     >
       <div className="flex flex-col basis-9/12">
         <CardHeader className="flex-row pb-2 pl-4 pt-4 pr-0">
           <div>
             <CardTitle>{title}</CardTitle>
             <small className="text-accent-foreground/70">
-              {format(new Date(startDate), 'MMM yyyy')}
+              {format(new Date(startedAt), 'MMM yyyy')}
             </small>
           </div>
 
@@ -55,7 +62,11 @@ export const RecentProjectCard = ({
         <CardFooter className="flex items-center justify-between pb-2 pl-4 pr-0">
           <div className="flex items-center gap-x-2">
             {githubSourceCodeURL && (
-              <Link href={githubSourceCodeURL} target="_blank">
+              <Link
+                href={githubSourceCodeURL}
+                target="_blank"
+                aria-label="access the project's github code"
+              >
                 <ToolTip message="source code">
                   {/* <Icons.TabOpenSourceFill className="size-4" /> */}
                   {/* ou */}
@@ -65,7 +76,11 @@ export const RecentProjectCard = ({
             )}
 
             {articleURL && (
-              <Link href={articleURL} target="_blank">
+              <Link
+                href={articleURL}
+                target="_blank"
+                aria-label="access notes on the development of the project"
+              >
                 <ToolTip message="documentation">
                   <Icons.MdiBookOpenPageVariant className="size-4" />
                 </ToolTip>
@@ -73,7 +88,11 @@ export const RecentProjectCard = ({
             )}
 
             {deploymentURL && (
-              <Link href={deploymentURL} target="_blank">
+              <Link
+                href={deploymentURL}
+                target="_blank"
+                aria-label="access project deployment"
+              >
                 <Icons.MajesticonsExternalLink className="size-4" />
               </Link>
             )}

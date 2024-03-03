@@ -44,19 +44,19 @@ export default function LearningPathPage() {
             <div className="inline-flex space-x-1.5 my-3">
               <Badge
                 variant={'outline'}
-                className="pointer-events-none ring-1 ring-red-500 text-red-500 border-none px-1 py-0 brightness-75"
+                className="pointer-events-none ring-1 ring-red-500 text-red-500 border-none px-1 py-0"
               >
                 error
               </Badge>
               <Badge
                 variant={'outline'}
-                className="pointer-events-none ring-1 ring-red-500 text-red-500 border-none px-1 py-0 brightness-75"
+                className="pointer-events-none ring-1 ring-red-500 text-red-500 border-none px-1 py-0"
               >
                 error
               </Badge>
               <Badge
                 variant={'outline'}
-                className="pointer-events-none ring-1 ring-green-500 text-green-500 border-none px-1 py-0 brightness-75"
+                className="pointer-events-none ring-1 ring-green-500 text-green-500 border-none px-1 py-0"
               >
                 ok
               </Badge>
@@ -74,9 +74,15 @@ export default function LearningPathPage() {
 
       {/* Roadmaps */}
       <section className={'relative'}>
-        <h2 className="w-max mt-14 mb-5 font-medium">Roadmaps</h2>
+        <div className="w-full flex items-end gap-3 mt-14 mb-2">
+          <h2 className="w-max font-medium">Roadmaps</h2>
+        </div>
 
-        <Sketchs.SketchLearningPathImg className="-z-10 absolute -top-32 right-0" />
+        <p className="mb-5 w-max prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 bg-white/70 dark:bg-black/70 sm:bg-transparent">
+          Study paths I&#39;m currently following
+        </p>
+
+        <Sketchs.SketchLearningPathImg className="-z-10 absolute -top-28 right-0" />
 
         <div className="flex flex-wrap gap-5">
           <div className="flex flex-wrap gap-2 h-full w-full md:w-7/12 lg:w-3/5">
@@ -98,28 +104,29 @@ export default function LearningPathPage() {
         </div>
       </section>
 
-      {/* <section>
-        <h2 className="mt-14 mb-5 font-medium">Courses</h2>
-      </section> */}
-
       {/* Certifications */}
       {/* <section>
         <h2 className="mt-14 mb-5 font-medium">Certifications</h2>
       </section> */}
 
       {/* Projects */}
-      <section>
-        <div className="flex items-center gap-3 mt-24 mb-5">
+      <section className="w-full">
+        <div className="w-full flex items-end gap-3 mt-24 mb-2">
           <h2 className="w-max font-medium">Study Projects</h2>
 
-          <Link href={'/projects'} className="group">
+          <Link href={'/projects'} className="group flex items-center gap-1">
             <small className="text-xs group-hover:underline underline-offset-2">
               all projects
             </small>
 
-            <Icons.IconParkSolidInternalReduction className="size-3 inline ml-1" />
+            <Icons.PhArrowSquareOutDuotone className="size-3" />
           </Link>
         </div>
+
+        <p className="mb-5 prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 ">
+          Small projects, clones of existing systems for learning purposes,
+          personal projects and drafting elaborate ideas.
+        </p>
 
         <Carousel
           opts={{ slidesToScroll: 'auto', loop: true }}
@@ -135,24 +142,38 @@ export default function LearningPathPage() {
       </section>
 
       {/* Notes */}
-      <section className={'relative'}>
-        <div className="flex items-center gap-3 mt-24 mb-5">
+      <section className={'relative w-full'}>
+        <div className="w-full flex items-end gap-3 mt-24 mb-2">
           <h2 className="w-max font-medium">Notes</h2>
 
-          <Link href={'/studying/notes'} className="group">
+          <Link
+            href={'/studying/notes'}
+            className="group flex items-center gap-1"
+            aria-label="access all notes"
+          >
             <small className="text-xs group-hover:underline underline-offset-2">
               all notes
             </small>
-            <Icons.IconParkSolidInternalReduction className="size-3 inline ml-1" />
+            <Icons.PhArrowSquareOutDuotone className="size-3" />
           </Link>
         </div>
+
+        <p className="mb-5 prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 bg-white/70 dark:bg-black/70 sm:bg-transparent">
+          My little notes on study content, techniques I use in a particular
+          language or technology, on the programming environment, notes on
+          books, videos, tools and more.
+        </p>
 
         <Sketchs.SketchLampImg className="size-52 -top-28 fill-transparent -z-10 absolute right-0 md:size-64 md:-top-[150px]" />
 
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5  auto-rows-auto">
           <>
             {allNotes.slice(0, 4 + 3).map((note, index) => (
-              <Link key={index} href={note.slug}>
+              <Link
+                key={index}
+                href={note.slug}
+                aria-label={`Access note from: ${note.title}`}
+              >
                 <NoteCard {...note} />
               </Link>
             ))}
@@ -164,8 +185,14 @@ export default function LearningPathPage() {
       </section>
 
       {/* Books */}
-      {/* <section>
-        <h2 className="mt-14 mb-5 font-medium">Books</h2>
+      {/* <section className={'relative w-full'}>
+        <div className="w-full flex items-end gap-3 mt-24 mb-2">
+          <h2 className="w-max font-medium">Books i&#39;m reading</h2>
+        </div>
+
+        <p className="mb-5 prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 ">
+          livros aqui
+        </p>
       </section> */}
     </div>
   );
@@ -174,7 +201,7 @@ export default function LearningPathPage() {
 const StudyProjects = () => {
   const recentProjects = ((projects: Array<Project>) => {
     return projects
-      .sort((a, b) => compareDesc(new Date(a.startDate), new Date(b.startDate)))
+      .sort((a, b) => compareDesc(new Date(a.startedAt), new Date(b.startedAt)))
       .filter((project) => project.projectClassification !== 'professional');
   })(allProjects);
 

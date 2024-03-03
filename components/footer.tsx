@@ -27,7 +27,7 @@ export default function Footer() {
           CC BY-NC-SA 4.0
         </Link>{' '}
         {new Date().getFullYear()}-PRESENT ©{' '}
-        <Link href={'https://dcdevs.dev'}>dc.devs</Link>
+        <Link href={'https://dcdev.me'}>dc.devs</Link>
       </p>
 
       {/* <Button className="h-6 px-2 md:col-start-11">Call me</Button> CTO (contact modal)*/}

@@ -21,8 +21,9 @@ export default function NotesPage() {
         </p>
       </div>
 
-      <BackButton className="flex text-muted-foreground hover:text-foreground mb-7">
-        <Icons.PhArrowCircleLeftDuotone className="size-3/4" />
+      <BackButton className="flex text-muted-foreground hover:text-foreground p-0 mb-7 align-middle	gap-1">
+        <Icons.MaterialSymbolsArrowLeftAltRounded />
+        <small className="text-sm">back</small>
       </BackButton>
 
       <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 auto-rows-auto">

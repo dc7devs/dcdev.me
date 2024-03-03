@@ -15,12 +15,7 @@ export default function BackButton({
   const router = useRouter();
 
   return (
-    <Button
-      className={cn(className)}
-      variant={'link'}
-      size={'icon'}
-      onClick={router.back}
-    >
+    <Button className={cn(className)} variant={'link'} onClick={router.back}>
       {children}
     </Button>
   );

@@ -37,10 +37,13 @@ export const ProgressBarDefault = ({ data }: { data: CurrentlyPlaying }) => {
   return (
     <div className="w-full group flex items-center justify-center gap-x-3.5">
       <small className="flex-1 text-xs font-poppins">{formattedDuration}</small>
+
       <Progress
         value={(barProgression / data.item.duration_ms) * 100}
         className="h-1"
+        aria-label="progress barspotify player progress bar"
       />
+
       <small className="flex-1 text-xs font-poppins">
         {formattedTotalDuration}
       </small>
@@ -54,7 +57,11 @@ export const ProgressBarStatic = () => {
       <small className="flex-1 text-xs font-poppins">
         {formatDuration(Number(222400))}
       </small>
-      <Progress value={40} className="h-1" />
+      <Progress
+        value={40}
+        className="h-1"
+        aria-label="progress barspotify player progress bar"
+      />
       <small className="flex-1 text-xs font-poppins">
         {formatDuration(Number(556000))}
       </small>

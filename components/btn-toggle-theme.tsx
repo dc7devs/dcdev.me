@@ -1,7 +1,7 @@
 'use client';
 import { useTheme } from 'next-themes';
-import Icons from '@/components/ui/icons';
 
+import Icons from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
 
 export default function ToggleThemeBtn() {
@@ -16,6 +16,7 @@ export default function ToggleThemeBtn() {
       className="sm:m-0 align-middle bg-background/60 backdrop-blur-sm rounded-full sm:rounded-md"
       variant={'outline'}
       size={'icon'}
+      name="change theme button"
       onClick={() => {
         setTheme(isDark() ? 'light' : 'dark');
       }}

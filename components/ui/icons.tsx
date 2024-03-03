@@ -818,6 +818,40 @@ const Icons = {
       </svg>
     );
   },
+
+  MaterialSymbolsArrowRightAltRounded: (props: SVGProps<SVGSVGElement>) => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        {...props}
+      >
+        <path
+          fill="currentColor"
+          d="M16.15 13H5q-.425 0-.712-.288T4 12q0-.425.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375q0 .2-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z"
+        ></path>
+      </svg>
+    );
+  },
+  MaterialSymbolsArrowLeftAltRounded: (props: SVGProps<SVGSVGElement>) => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        {...props}
+      >
+        <path
+          fill="currentColor"
+          d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12q0 .425-.288.713T19 13z"
+        ></path>
+      </svg>
+    );
+  },
+
   // eye close
   QuillEyeClosed: (props: SVGProps<SVGSVGElement>) => {
     return (
@@ -874,34 +908,6 @@ const Icons = {
             d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zm10-1a1 1 0 1 0 0 2h2.586l-4.293 4.293a1 1 0 0 0 1.414 1.414L17 8.414V11a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1h-5z"
             fill="currentColor"
           ></path>
-        </g>
-      </svg>
-    );
-  },
-  IconParkSolidInternalReduction: (props: SVGProps<SVGSVGElement>) => {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        viewBox="0 0 48 48"
-        {...props}
-      >
-        <g
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        >
-          <path d="M8 42h32a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v32a2 2 0 0 0 2 2"></path>
-          <path
-            fill="currentColor"
-            fillRule="evenodd"
-            d="M42 8a2 2 0 0 0-2-2H28v14h14z"
-            clipRule="evenodd"
-          ></path>
-          <path d="M23 25L13 35m0 0v-7m0 7h7"></path>
         </g>
       </svg>
     );

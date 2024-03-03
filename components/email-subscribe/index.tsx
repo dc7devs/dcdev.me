@@ -33,7 +33,12 @@ export default function EmailSubscribe({ className }: { className?: string }) {
       <CardContent className="inline-flex w-full gap-2">
         <Input type="email" placeholder={'E-mail'} />
 
-        <Button type="submit" size={'icon'} className="px-2">
+        <Button
+          type="submit"
+          size={'icon'}
+          className="px-2"
+          name="send email button for newslatter subscription"
+        >
           <Icons.MingcuteSendPlaneFill className="size-4" />
         </Button>
       </CardContent>

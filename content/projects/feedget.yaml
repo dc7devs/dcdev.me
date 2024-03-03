@@ -1,6 +1,8 @@
 title: "feedget"
 description: "Functionality that can be integrated into any platform, consists of sending and reporting bugs and user feedback"
+startedAt: 03-05-2022
 status: "done"
+isPromotedToShowcase: false
 coreTech: "TypeScript"
 toolsUsed:
   - "React"

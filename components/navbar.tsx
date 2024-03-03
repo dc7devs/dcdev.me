@@ -26,6 +26,7 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
                 'flex flex-col items-center align-bottom text-foreground/60 hover:text-foreground/80'
               }
               href={path}
+              aria-label={name}
             >
               {icon}
               <div className="hidden sm:block text-xs">{name}</div>
@@ -36,7 +37,7 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
 
       <Separator
         orientation="vertical"
-        className={cn('hidden sm:block h-5 w-0.5', didScroll ? 'mx-2' : 'mx-3')}
+        className={cn('hidden sm:block h-5 w-0.5 mx-3')}
       />
 
       <ToggleThemeBtn />

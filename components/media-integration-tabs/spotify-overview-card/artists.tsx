@@ -1,4 +1,3 @@
-'use client';
 import { Artist } from '@/@types';
 import Link from 'next/link';
 
@@ -16,6 +15,7 @@ export const Artists = ({ data }: { data: Array<Artist> }) => {
           >
             {artist.name}
           </Link>
+
           {index < trackArtists.length - 1 ? ', ' : ''}
         </div>
       ))}

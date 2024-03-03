@@ -24,8 +24,9 @@ export default function NotePage({
   return (
     <div className="w-full pt-14 sm:pt-10 ">
       <article className="max-w-3xl mx-auto prose prose-zinc dark:prose-invert prose-p:leading-normal relative">
-        <BackButton className="absolute -top-11 -left-1 lg:top-8 lg:-left-24 xl:-left-32 text-muted-foreground hover:text-foreground">
-          <Icons.PhArrowCircleLeftDuotone className="size-5/6 lg:size-3/4" />
+        <BackButton className="absolute p-0 -top-11 -left-1 lg:top-8 lg:-left-24 xl:-left-32 text-muted-foreground hover:text-foreground flex align-middle gap-1">
+          <Icons.MaterialSymbolsArrowLeftAltRounded className="size-4" />
+          <small className="text-base">back</small>
         </BackButton>
 
         <div className="mb-8">

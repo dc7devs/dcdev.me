@@ -15,13 +15,13 @@ export default function Page() {
       }
     >
       <div className="flex flex-col h-full w-auto prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 lg:col-start-2 lg:col-end-7 2xl:flex-1">
-        <div className={''}>
+        <div>
           <h1 className="align-baseline font-righteous text-black dark:text-white m-0 font-normal text-base">
             Diego C. Silva
           </h1>
-          <small className="text-accent-foreground/60">
+          <h2 className="not-prose text-xs mt-1.5 leading-normal text-accent-foreground/60">
             Full-Stack Developer
-          </small>
+          </h2>
         </div>
 
         <p className="align-baseline">
@@ -71,7 +71,12 @@ export default function Page() {
 
         <div className="inline-flex gap-2.5 not-prose">
           {fncSocialMedia().map((media, index) => (
-            <Link key={index} href={media.href} target="_blank">
+            <Link
+              key={index}
+              href={media.href}
+              target="_blank"
+              aria-label={media.name}
+            >
               <ToolTip message={media.name}>{media.icon}</ToolTip>
             </Link>
           ))}

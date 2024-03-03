@@ -1,39 +1,43 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel';
-
 import { compareDesc } from 'date-fns';
 
 import { Project, allProjects } from '@/.contentlayer/generated';
 import { Cards } from '@/components/projects';
+import Link from 'next/link';
+import Icons from '@/components/ui/icons';
 
 export default function ProjectPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <h1 className="text-black dark:text-white m-0 font-normal text-xl my-3 md:px-1.5 rounded-sm md:bg-accent max-w-max">
+      <h1 className="text-black dark:text-white font-medium text-xl md:px-2 rounded-sm md:bg-accent max-w-max mx-auto">
         Projects I&#39;m working on
       </h1>
 
-      <section>
-        <h2 className="text-black dark:text-white mb-3 mt-5 text-base font-medium">
-          Recent
+      <section className="flex flex-col items-center">
+        <h2 className="text-black dark:text-white mb-8 mt-10 text-base font-semibold">
+          Current Focus
         </h2>
 
-        <Carousel opts={{ slidesToScroll: 'auto' }} className="w-full">
-          <CarouselContent className="-ml-3">
-            <RecentProjects />
-          </CarouselContent>
-
-          <CarouselPrevious className="left-1 sm:-left-5 bg-secondary" />
-          <CarouselNext className="right-1 sm:-right-5 bg-secondary" />
-        </Carousel>
+        <div className="flex justify-center gap-3 w-auto mx-auto flex-wrap">
+          <RecentProjects />
+        </div>
       </section>
 
-      <SectionBuilderByProjectType />
+      <section className="flex flex-col size-auto mt-24">
+        <div className="w-full flex items-end gap-3 mt-24 mb-2">
+          <h2 className="w-max font-medium">Showcase</h2>
+
+          <Link href={'/projects/all'} className="group ml-auto">
+            <small className="text-sm group-hover:underline underline-offset-2">
+              all projects
+              <Icons.MaterialSymbolsArrowRightAltRounded className="size-3.5 md:size-3.5 inline ml-0.5" />
+            </small>
+          </Link>
+        </div>
+
+        <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-2 pt-5 border-t-[.7px] border-t-input bg-white dark:bg-black">
+          <ShowcaseProjects />
+        </div>
+      </section>
     </div>
   );
 }
@@ -42,70 +46,38 @@ export default function ProjectPage() {
 const RecentProjects = () => {
   const recentProjects = ((projects: Array<Project>) => {
     return projects
-      .sort((a, b) => compareDesc(new Date(a.startDate), new Date(b.startDate)))
+      .sort((a, b) => compareDesc(new Date(a.startedAt), new Date(b.startedAt)))
       .slice(0, 3);
   })(allProjects);
 
   return (
     <>
       {recentProjects.map((propsProject: Project) => (
-        <CarouselItem
-          key={propsProject._id}
-          className="pl-3 basis-full sm:basis-3/6 md:basis-1/2 lg:basis-auto" // basis-10/12
-        >
-          <Cards.RecentProjectCard {...propsProject} />
-        </CarouselItem>
+        <Cards.RecentProjectCard key={propsProject._id} {...propsProject} />
       ))}
     </>
   );
 };
 
-// projetos por tipo
-const SectionBuilderByProjectType = () => {
-  const organizedProjectsByType = ((projects: Array<Project>) => {
-    const organizedProjects: {
-      [key: string]: Array<Project>;
-    } = {};
-
-    projects
-      .filter((project) => project.status === 'done')
-      .forEach((project) => {
-        const projectType = project.projectType.toLowerCase();
-
-        organizedProjects[projectType] = organizedProjects[projectType] || [];
-        organizedProjects[projectType].push(project);
-      });
-
-    return organizedProjects;
+// projetos em vitrine
+const ShowcaseProjects = () => {
+  const showcaseProjects = ((projects: Array<Project>) => {
+    return projects
+      .sort((a, b) => compareDesc(new Date(a.startedAt), new Date(b.startedAt)))
+      .filter((project) => project.isPromotedToShowcase);
   })(allProjects);
 
   return (
-    <div>
-      {Object.keys(organizedProjectsByType).map((projectType) => (
-        <section key={projectType}>
-          <h2 className="text-black dark:text-white mb-3 mt-10 text-base font-medium">
-            {projectType}
-          </h2>
-
-          <Carousel opts={{ slidesToScroll: 'auto' }} className="w-full">
-            <CarouselContent className="-ml-3">
-              {organizedProjectsByType[projectType].map(
-                (propsProject: Project) => (
-                  <CarouselItem
-                    key={propsProject._id}
-                    className="pl-3 basis-10/12 sm:basis-3/6 md:basis-1/2 lg:basis-auto"
-                  >
-                    <Cards.ProjectCardByType {...propsProject} />
-                  </CarouselItem>
-                )
-              )}
-            </CarouselContent>
-
-            <CarouselPrevious className="left-1 sm:-left-5 bg-secondary" />
-            <CarouselNext className="right-1 sm:-right-5 bg-secondary" />
-          </Carousel>
-        </section>
-      ))}
-    </div>
+    <>
+      {showcaseProjects.map((propsProject: Project) => {
+        return (
+          <Cards.projectShowcaseCard
+            key={propsProject._id}
+            className="w-full"
+            {...propsProject}
+          />
+        );
+      })}
+    </>
   );
 };

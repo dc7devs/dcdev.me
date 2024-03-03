@@ -17,32 +17,37 @@ export default async function RecentWorkUnderDev({
 }) {
   return (
     <Card className={cn(className)}>
-      <CardHeader>
-        <CardTitle className="flex align-middle text-primary">
+      <CardHeader className="flex flex-row justify-between items-center">
+        <CardTitle className="inline-flex align-middle text-primary w-max">
           <Icons.GameIconsCoffeeCup className="size-4 mr-2" />
-          <span>Currently working...</span>
-
-          <Link href={'/projects'} className="ml-auto">
-            <small className="">
-              view all projects
-              <Icons.PhArrowSquareOutDuotone className="size-2.5 inline ml-1" />
-            </small>
-          </Link>
+          <div>Currently working...</div>
         </CardTitle>
+
+        <Link
+          href={'/projects'}
+          style={{ width: 'max-content', marginTop: '0' }}
+        >
+          <small>
+            see projects
+            <Icons.PhArrowSquareOutDuotone className="size-2.5 inline ml-1" />
+          </small>
+        </Link>
       </CardHeader>
 
       <CardContent className="inline-flex w-full gap-3">
         <ul className="w-full flex flex-col justify-stretch gap-2">
           <RecentProjects />
 
-          <Button
-            type="button"
-            variant="secondary"
-            className="inline-flex align-middle"
-          >
-            Download CV
-            <Icons.IcRoundDownloadForOffline className="size-4 ml-2" />
-          </Button>
+          <li className="w-full">
+            <Button
+              type="button"
+              variant="secondary"
+              className="inline-flex align-middle w-full"
+            >
+              Download CV
+              <Icons.IcRoundDownloadForOffline className="size-4 ml-2" />
+            </Button>
+          </li>
         </ul>
       </CardContent>
     </Card>
@@ -52,7 +57,7 @@ export default async function RecentWorkUnderDev({
 const RecentProjects = () => {
   const recentProjects = ((projects: Array<Project>) => {
     return projects
-      .sort((a, b) => compareDesc(new Date(a.startDate), new Date(b.startDate)))
+      .sort((a, b) => compareDesc(new Date(a.startedAt), new Date(b.startedAt)))
       .filter((_) => _.status !== 'done')
       .slice(0, 3);
   })(allProjects);

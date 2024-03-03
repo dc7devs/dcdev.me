@@ -43,7 +43,9 @@ export default function Header() {
           'w-full sm:gap-5 flex justify-between items-center px-4 py-2 sm:py-0 sm:px-10 2xl:max-w-screen-2xl 2xl:mx-auto'
         }
       >
-        <Link href="/">{!didScroll && <Logotipo />}</Link>
+        <Link href="/" aria-label="Logotipo: dcdevs">
+          {!didScroll && <Logotipo />}
+        </Link>
 
         <NavBar didScroll={didScroll} />
       </div>

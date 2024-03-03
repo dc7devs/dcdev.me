@@ -7,9 +7,15 @@ export const Project = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
+    startedAt: { type: 'date', required: true },
     status: {
       type: 'enum',
       options: ['to_begin', 'doing', 'progressing', 'finishing', 'done'],
+      required: true
+    },
+    isPromotedToShowcase: {
+      type: 'boolean',
+      default: false,
       required: true
     },
     coreTech: { type: 'string', required: true },
@@ -51,13 +57,6 @@ export const Project = defineDocumentType(() => ({
       default:
         'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png',
       required: false
-    }
-  },
-  computedFields: {
-    // TODO: startDate regera a cada build da aplicação!. Adicionar o filed para ser atribuido (em fields)
-    startDate: {
-      type: 'date',
-      resolve: () => new Date()
     }
   }
 }));

@@ -21,7 +21,7 @@ export const ProjectCardByType = ({
   coreTech,
   title,
   description,
-  startDate,
+  startedAt,
   githubSourceCodeURL,
   articleURL,
   deploymentURL,
@@ -49,7 +49,7 @@ export const ProjectCardByType = ({
         <div className="px-3 pt-3">
           <CardTitle>{title}</CardTitle>
           <small className="text-accent-foreground/70">
-            {format(new Date(startDate), 'MMM yyyy')}
+            {format(new Date(startedAt), 'MMM yyyy')}
           </small>
         </div>
       </CardHeader>
@@ -63,7 +63,11 @@ export const ProjectCardByType = ({
       <CardFooter className="flex items-center justify-between pb-2 px-3">
         <div className="flex items-center gap-x-2">
           {githubSourceCodeURL && (
-            <Link href={githubSourceCodeURL} target="_blank">
+            <Link
+              href={githubSourceCodeURL}
+              target="_blank"
+              aria-label="access the project's github code"
+            >
               <ToolTip message="source code">
                 <Icons.GithubIconFill className="size-4" />
               </ToolTip>
@@ -71,7 +75,11 @@ export const ProjectCardByType = ({
           )}
 
           {articleURL && (
-            <Link href={articleURL} target="_blank">
+            <Link
+              href={articleURL}
+              target="_blank"
+              aria-label="access notes on the development of the project"
+            >
               <ToolTip message="documentation">
                 <Icons.MdiBookOpenPageVariant className="size-4" />
               </ToolTip>
@@ -79,7 +87,11 @@ export const ProjectCardByType = ({
           )}
 
           {deploymentURL && (
-            <Link href={deploymentURL} target="_blank">
+            <Link
+              href={deploymentURL}
+              target="_blank"
+              aria-label="access project deployment"
+            >
               <Icons.MajesticonsExternalLink className="size-4" />
             </Link>
           )}
