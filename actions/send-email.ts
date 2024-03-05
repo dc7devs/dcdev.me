@@ -26,12 +26,14 @@ export const sendEmail = async (formData: FormData) => {
       })
     });
 
-    if (error) console.log(error);
+    if (error) {
+      console.error(error.name, ' | ', error.message);
+      throw new Error(error.message);
+    }
   } catch (error) {
-    console.error('Error validating form data:', error);
-
     return {
-      errors: 'Invalid form data'
+      errors:
+        'Sorry there was an internal problem, try again or email me directly at diegocaetano444@gmail.com'
     };
   }
 };
