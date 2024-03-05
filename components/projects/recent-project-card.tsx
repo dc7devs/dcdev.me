@@ -111,7 +111,8 @@ export const RecentProjectCard = ({
           }
           src={imageURL!}
           alt="Preview project"
-          fill
+          width={300}
+          height={192}
           priority
         />
       </div>

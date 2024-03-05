@@ -9,11 +9,11 @@ const authBasic = Buffer.from(`${client_id}:${client_secret}`).toString(
 );
 
 export const getAcessToken = async () => {
-  if (!refresh_token || !client_id || !client_secret) {
-    throw new Error('Spotify credentials are missing');
-  }
-
   try {
+    if (!refresh_token || !client_id || !client_secret) {
+      throw new Error('Spotify credentials are missing');
+    }
+
     const response = await fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
@@ -30,8 +30,7 @@ export const getAcessToken = async () => {
     });
 
     if (!response.ok) {
-      // throw new Error(`Failed to refresh token: ${response.statusText}`);
-      console.error(`Failed to refresh token: ${response.statusText}`);
+      throw new Error(`Failed to refresh token: ${response.statusText}`);
     }
 
     return response.json();

@@ -114,7 +114,10 @@ export default function LearningPathPage() {
         <div className="w-full flex items-end gap-3 mt-24 mb-2">
           <h2 className="w-max font-medium">Study Projects</h2>
 
-          <Link href={'/projects'} className="group flex items-center gap-1">
+          <Link
+            href={'/projects/all'}
+            className="group flex items-center gap-1"
+          >
             <small className="text-xs group-hover:underline underline-offset-2">
               all projects
             </small>
@@ -124,8 +127,8 @@ export default function LearningPathPage() {
         </div>
 
         <p className="mb-5 prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 ">
-          Small projects, clones of existing systems for learning purposes,
-          personal projects and drafting elaborate ideas.
+          Small projects, clones of existing systems, personal projects and
+          ideas.
         </p>
 
         <Carousel
@@ -158,7 +161,7 @@ export default function LearningPathPage() {
           </Link>
         </div>
 
-        <p className="mb-5 prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 bg-white/70 dark:bg-black/70 sm:bg-transparent">
+        <p className="mb-5 prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 bg-white/70 dark:bg-black/70 sm:bg-transparent sm:dark:bg-transparent">
           My little notes on study content, techniques I use in a particular
           language or technology, on the programming environment, notes on
           books, videos, tools and more.

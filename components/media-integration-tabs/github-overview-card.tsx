@@ -1,9 +1,9 @@
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Badge } from '../ui/badge';
+import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Separator } from '../ui/separator';
-import Icons from '../ui/icons';
+import { Separator } from '@/components/ui/separator';
+import Icons from '@/components/ui/icons';
 
 export const GithubOverviewCard = async () => {
   const res = await fetch('https://api.github.com/users/dc7devs');
@@ -15,9 +15,9 @@ export const GithubOverviewCard = async () => {
         <Image
           alt="Muggs Shop"
           className="absolute left-0 top-0 w-full rounded object-cover object-center brightness-75"
-          height={500}
           src="https://res.cloudinary.com/dyxtcsnna/image/upload/v1706989464/dcdev/code_tavjxu.png"
-          width={500}
+          width={200}
+          height={80}
         />
       </CardContent>
 
@@ -25,9 +25,9 @@ export const GithubOverviewCard = async () => {
         <Image
           alt="avatar dcdevs"
           className="absolute -top-14 left-1/2 aspect-video size-28 sm:size-20 -translate-x-1/2 rounded-full object-cover"
-          height={500}
           src={data.avatar_url}
-          width={500}
+          height={100}
+          width={100}
         />
 
         <div className="flex w-full justify-between">

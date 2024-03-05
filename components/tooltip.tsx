@@ -22,6 +22,7 @@ export default function ToolTip({
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>{children}</TooltipTrigger>
+
         <TooltipContent
           className={cn('px-2 py-1 backdrop-brightness-50', className)}
         >

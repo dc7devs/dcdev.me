@@ -10,7 +10,7 @@ export default function NotesPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
       <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 mx-auto text-center">
-        <h1 className="text-black dark:text-white font-medium text-xl md:px-2 rounded-sm md:bg-accent max-w-max mx-auto">
+        <h1 className="text-black dark:text-white font-medium text-xl px-2 rounded-sm bg-accent max-w-max mx-auto">
           All Notes
         </h1>
 

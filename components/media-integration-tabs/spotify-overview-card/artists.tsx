@@ -1,4 +1,4 @@
-import { Artist } from '@/@types';
+import { Artist } from '@/@types/spotify';
 import Link from 'next/link';
 
 export const Artists = ({ data }: { data: Array<Artist> }) => {

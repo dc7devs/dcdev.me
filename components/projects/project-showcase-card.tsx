@@ -42,7 +42,7 @@ export const projectShowcaseCard = ({
       )}
     >
       <CardHeader className="pb-2 pt-0 px-0">
-        <div className="relative w-full h-56 overflow-hidden rounded-t-lg md:rounded-t-sm">
+        <div className="relative w-full h-52 overflow-hidden rounded-t-lg md:rounded-t-sm">
           <Image
             className={'object-cover overflow-hidden h-full w-full'}
             src={cn(
@@ -50,11 +50,12 @@ export const projectShowcaseCard = ({
                 'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png'
             )}
             alt="Preview project"
-            fill
+            width={300}
+            height={200}
           />
         </div>
 
-        <div className="px-3 pt-3">
+        <div className="px-3 pt-3" style={{ margin: '0' }}>
           <CardTitle>{title}</CardTitle>
 
           <small className="text-accent-foreground/70">
@@ -63,7 +64,7 @@ export const projectShowcaseCard = ({
         </div>
       </CardHeader>
 
-      <CardContent className="grow px-3">
+      <CardContent className="grow px-3 pb-3">
         <Badge
           variant="secondary"
           className="mb-2 pointer-events-none ring-1 ring-primary rounded-sm px-1.5 py-0"

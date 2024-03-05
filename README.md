@@ -4,7 +4,7 @@
 
 ---
 
-<a href="https://dcdevs.me" target="__blank"><img src=".github/home-page.png" alt="layout"></a>
+<a href="https://dcdev.me" target="__blank"><img src=".github/home-page.png" alt="layout"></a>
 
 ---
 

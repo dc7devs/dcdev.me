@@ -7,13 +7,9 @@ import { Note } from './content/definitions/note';
 import rehypeAutolinkHeadings, {
   type Options as AutolinkOptions
 } from 'rehype-autolink-headings';
-// import rehypePrettyCode, {
-//   type Options as PrettyCodeOptions
-// } from 'rehype-pretty-code';
 
 import rehypeSlug from 'rehype-slug';
 import { s } from 'hastscript';
-// import remarkGfm from 'remark-gfm';
 
 export default makeSource({
   contentDirPath: 'content',

@@ -14,7 +14,7 @@ import Icons from '@/components/ui/icons';
 import { fetchWithAuthorization } from '@/lib/spotify';
 import { cn } from '@/lib/utils';
 import { ProgressBarDefault, ProgressBarStatic } from './progres-bar';
-import { SpotifyData } from '@/@types';
+import { SpotifyData } from '@/@types/spotify';
 import { useQuery } from 'react-query';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -100,16 +100,14 @@ export const SpotifyOverviewCard = () => {
 
     return (
       <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 rounded-none">
-        {/* <Unavailable className={'-z-10 ring-1 ring-input rounded-none'} /> */}
-
         <CardContent className="relative h-28 overflow-hidden p-0">
           {trackImage && (
             <Image
               alt="Muggs Shop"
               className="absolute left-0 top-0 w-full rounded object-cover object-center brightness-75"
-              height={500}
               src={trackImage}
-              width={500}
+              width={100}
+              height={80}
             />
           )}
           <Badge

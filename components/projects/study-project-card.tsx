@@ -43,7 +43,8 @@ export const StudyProjectCard = ({
                 'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png'
             )}
             alt="Preview project"
-            fill
+            height={100}
+            width={384}
           />
         </div>
 

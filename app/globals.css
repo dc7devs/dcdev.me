@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-    * {
-        /* scrollbar-color: #111 #050505; */
-    }
-
     :root {
         --background: 0 0% 100%;
         --foreground: 240 10% 3.9%;
@@ -38,11 +34,8 @@
 
         --radius: 0.5rem;
 
-        /* --c-bg: rgb(173, 173, 173); */
         --c-bg: transparent;
-        /* --c-scrollbar: rgb(157, 157, 157); */
         --c-scrollbar: rgb(173, 173, 173);
-        /* --c-scrollbar-hover: rgb(140, 140, 140); */
     }
 
     .dark {
@@ -74,12 +67,8 @@
         --input: 240 3.7% 15.9%;
         --ring: 240 4.9% 83.9%;
 
-        /* --c-bg: rgb(23, 23, 23); */
         --c-bg: transparent;
-        /* --c-scrollbar: rgb(8, 8, 8); */
         --c-scrollbar: rgb(23, 23, 23);
-        /* --c-scrollbar-hover: rgb(30, 30, 30); */
-
     }
 
     ::selection {
@@ -99,10 +88,6 @@
         background: var(--c-scrollbar);
     }
 
-    /* ::-webkit-scrollbar-thumb:hover {
-        background: var(--c-scrollbar-hover);
-    } */
-    
     body {
         @apply text-foreground
         overflow-auto

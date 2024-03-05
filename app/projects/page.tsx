@@ -8,22 +8,22 @@ import Icons from '@/components/ui/icons';
 export default function ProjectPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <h1 className="text-black dark:text-white font-medium text-xl md:px-2 rounded-sm md:bg-accent max-w-max mx-auto">
+      <h1 className="text-black dark:text-white font-medium text-xl px-2 rounded-sm bg-accent max-w-max mx-auto">
         Projects I&#39;m working on
       </h1>
 
-      <section className="flex flex-col items-center">
-        <h2 className="text-black dark:text-white mb-8 mt-10 text-base font-semibold">
+      <section className="flex flex-col">
+        <h2 className="text-black dark:text-white mb-3 md:mb-5 mt-10 text-base font-semibold md:self-center">
           Current Focus
         </h2>
 
-        <div className="flex justify-center gap-3 w-auto mx-auto flex-wrap">
+        <div className="flex justify-center gap-3 w-auto mx-auto flex-wrap self-center">
           <RecentProjects />
         </div>
       </section>
 
       <section className="flex flex-col size-auto mt-24">
-        <div className="w-full flex items-end gap-3 mt-24 mb-2">
+        <div className="w-full flex items-end gap-3 mb-2">
           <h2 className="w-max font-medium">Showcase</h2>
 
           <Link href={'/projects/all'} className="group ml-auto">

@@ -1,5 +1,5 @@
 'use client';
-import { CurrentlyPlaying } from '@/@types';
+import { CurrentlyPlaying } from '@/@types/spotify';
 import { Progress } from '@/components/ui/progress';
 import { useEffect, useMemo, useState } from 'react';
 

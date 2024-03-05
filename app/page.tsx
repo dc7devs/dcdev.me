@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import fncSocialMedia from '@/content/social-media';
-import EmailSubscribe from '@/components/email-subscribe';
+import EmailSubscribe from '@/components/email/email-subscribe';
 import RecentWorkUnderDev from '@/components/recent-work-under-dev';
 import ToolTip from '@/components/tooltip';
 import masteryTools from '@/content/mastery-tools';
@@ -89,7 +89,7 @@ export default function Page() {
       </div>
 
       <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 md:col-span-full lg:col-start-2 lg:col-end-12 md:mt-3 2xl:mt-0 2xl:flex-1">
-        <small className="inline-flex items-center gap-1 my-3">
+        <small className="inline-flex items-center gap-1 my-4">
           <Icons.FluentEmojiHighContrastMagnifyingGlassTiltedLeft />
           <strong>I&#39;m in the loop</strong>
         </small>

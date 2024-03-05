@@ -49,14 +49,14 @@ export const Project = defineDocumentType(() => ({
       options: ['personal_study', 'sketch_study', 'professional'],
       required: true
     },
-    imageURL: { type: 'string', required: false },
+    imageURL: {
+      type: 'string',
+      required: false,
+      default:
+        'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png'
+    },
     articleURL: { type: 'string', required: false },
     githubSourceCodeURL: { type: 'string', required: false },
-    deploymentURL: {
-      type: 'string',
-      default:
-        'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png',
-      required: false
-    }
+    deploymentURL: { type: 'string', required: false }
   }
 }));

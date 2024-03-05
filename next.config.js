@@ -3,6 +3,9 @@
 const { withContentlayer } = require('next-contentlayer');
 
 const nextConfig = {
+  experimental: {
+    serverActions: true
+  },
   images: {
     remotePatterns: [
       {
@@ -25,4 +28,4 @@ const nextConfig = {
   swcMinify: true
 };
 
-module.exports = withContentlayer({ ...nextConfig }); // nextConfig
+module.exports = nextConfig; // withContentlayer({ ...nextConfig });

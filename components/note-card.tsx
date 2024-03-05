@@ -38,7 +38,8 @@ export function NoteCard({ title, createdAt, description }: Note) {
                 : 'https://res.cloudinary.com/dyxtcsnna/image/upload/v1707977013/dcdev/pattern-studying-note-light_cofsty.png'
             )}
             alt="Preview project"
-            fill
+            height={250}
+            width={300}
           />
         </div>
       </CardHeader>
