@@ -10,6 +10,7 @@ import { QueryClientProvider } from 'react-query';
 import { queryClient } from '@/lib/query-client';
 
 import { Analytics } from '@vercel/analytics/react';
+import { Toaster } from './ui/toaster';
 
 export function CustomLayout({ children }: { children: ReactNode }) {
   return (
@@ -33,6 +34,8 @@ export function CustomLayout({ children }: { children: ReactNode }) {
           <Footer />
         </QueryClientProvider>
       </ThemeProvider>
+
+      <Toaster />
     </>
   );
 }
