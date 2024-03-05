@@ -28,4 +28,4 @@ const nextConfig = {
   swcMinify: true
 };
 
-module.exports = nextConfig; // withContentlayer({ ...nextConfig });
+module.exports = withContentlayer({ ...nextConfig });
