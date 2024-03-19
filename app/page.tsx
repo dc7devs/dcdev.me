@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import fncSocialMedia from '@/content/social-media';
+import TechBadge from '@/components/tech-badge';
 import EmailSubscribe from '@/components/email/email-subscribe';
 import RecentWorkUnderDev from '@/components/recent-work-under-dev';
 import ToolTip from '@/components/tooltip';
@@ -47,9 +48,37 @@ export default function Page() {
           I&#39;m a developer of code solutions, I love programming and I try to
           use the most <strong>software architecture</strong>,{' '}
           <strong>clean</strong> and <strong>maintainable code</strong>. I work
-          with technologies from the <strong>Javascript</strong>,{' '}
-          <strong>Typescript</strong>, <strong>Node</strong>,{' '}
-          <strong>React</strong> and <strong>Vue</strong> ecosystem.
+          with technologies from the{' '}
+          <TechBadge href="https://www.javascript.com/">
+            <Icons.DeviconJavascript className="size-3" />
+            <span>Javascript</span>
+          </TechBadge>
+          ,{' '}
+          <TechBadge href="https://www.typescriptlang.org/">
+            <Icons.DeviconTypescript className="size-3" />
+            <span>Typescript</span>
+          </TechBadge>
+          ,{' '}
+          <TechBadge href="https://nodejs.org">
+            <Icons.DeviconNodejs className="size-3" />
+            <span>Node</span>
+          </TechBadge>
+          ,{' '}
+          <TechBadge href="https://react.dev/">
+            <Icons.DeviconReact className="size-3" />
+            <span>React</span>
+          </TechBadge>
+          ,{' '}
+          <TechBadge href="https://nextjs.org/">
+            <Icons.DeviconNextjs className="size-3" />
+            <span>Next</span>
+          </TechBadge>{' '}
+          and{' '}
+          <TechBadge href="https://vuejs.org/">
+            <Icons.DeviconVuejs className="size-3" />
+            <span>Vue</span>
+          </TechBadge>{' '}
+          ecosystem.
         </p>
 
         <p className="align-baseline">
