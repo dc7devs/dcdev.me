@@ -106,8 +106,7 @@ export const SpotifyOverviewCard = () => {
               alt="Muggs Shop"
               className="absolute left-0 top-0 w-full rounded object-cover object-center brightness-75"
               src={trackImage}
-              width={100}
-              height={80}
+              fill
             />
           )}
           <Badge
@@ -137,8 +136,8 @@ export const SpotifyOverviewCard = () => {
             <Image
               alt={trackName}
               className="absolute -top-12 left-16 aspect-video size-16 -translate-x-1/2 rounded-lg object-cover"
-              height={500}
               src={trackImage}
+              height={500}
               width={500}
             />
           )}

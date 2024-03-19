@@ -10,6 +10,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: '**'
+      },
+      {
+        protocol: 'https',
         hostname: 'res.cloudinary.com',
         pathname: '/dyxtcsnna/image/**'
       },
@@ -28,4 +32,4 @@ const nextConfig = {
   swcMinify: true
 };
 
-module.exports = withContentlayer({ ...nextConfig });
+module.exports = nextConfig; // withContentlayer({ ...nextConfig });

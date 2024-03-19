@@ -50,8 +50,9 @@ export const projectShowcaseCard = ({
                 'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png'
             )}
             alt="Preview project"
-            width={300}
-            height={200}
+            fill
+            // width={300}
+            // height={200}
           />
         </div>
 

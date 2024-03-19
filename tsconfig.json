@@ -39,7 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "contentlayer.config.ts",
+    "contentlayer.config.js",
     "content/definitions/*.js",
     ".contentlayer/generated"
   ],

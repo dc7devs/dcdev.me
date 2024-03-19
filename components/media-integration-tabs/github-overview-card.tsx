@@ -16,8 +16,7 @@ export const GithubOverviewCard = async () => {
           alt="Muggs Shop"
           className="absolute left-0 top-0 w-full rounded object-cover object-center brightness-75"
           src="https://res.cloudinary.com/dyxtcsnna/image/upload/v1706989464/dcdev/code_tavjxu.png"
-          width={200}
-          height={80}
+          fill
         />
       </CardContent>
 
