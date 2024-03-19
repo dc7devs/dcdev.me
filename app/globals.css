@@ -103,12 +103,34 @@
     }
 
     a {
-        @apply font-medium
+        @apply font-normal
         transition-colors
         ease-linear
         hover:text-foreground
         text-muted-foreground;
     }
+}
+
+.prose .anchor {
+    @apply absolute invisible no-underline;
+  
+    margin-left: -1em;
+    font-weight: 'bold';
+    padding-right: 0.5em;
+    width: 'max-content';
+    max-width: 700px;
+}
+
+.anchor:hover {
+    @apply visible;
+}
+
+.prose .anchor:after {
+    content: '#';
+}
+  
+.prose *:hover > .anchor {
+    @apply visible;
 }
 
 @layer utilities {
