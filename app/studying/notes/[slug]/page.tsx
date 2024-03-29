@@ -30,7 +30,7 @@ export default function NotePage({
     <div className="w-full pt-14 sm:pt-10">
       <article
         className={cn(
-          'max-w-3xl mx-auto prose prose-quoteless prose-neutral dark:prose-invert relative',
+          'max-w-3xl mx-auto prose prose-neutral dark:prose-invert relative',
           'prose-a:underline-offset-2 prose-a:font-normal prose-a:transition-colors prose-a:ease-linear prose-a:text-neutral-300' // a
         )}
       >

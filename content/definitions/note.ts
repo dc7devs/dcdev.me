@@ -8,6 +8,11 @@ export const Note = defineDocumentType(() => ({
     createdAt: { type: 'date', required: true },
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+      required: true
+    },
     relatedImageURL: { type: 'string' }
   },
   computedFields: {

@@ -65,7 +65,7 @@ export const StudyProjectCard = ({
           {toolsUsed.map((tool: string, index: number) => (
             <Badge
               key={index}
-              variant={'outline'}
+              variant={'secondary'}
               className="pointer-events-none ring-1 ring-accent-foreground text-accent-foreground border-none px-1 py-0 brightness-75"
             >
               {tool}

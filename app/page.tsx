@@ -45,8 +45,8 @@ export default function Page() {
         </p>
 
         <p>
-          I&#39;m a developer of code solutions, I love programming and I try to
-          use the most <strong>software architecture</strong>,{' '}
+          I&#39;m a self-taught code solutions programmer, I love programming
+          and I try to use the most <strong>software architecture</strong>,{' '}
           <strong>clean</strong> and <strong>maintainable code</strong>. I work
           with technologies from the{' '}
           <TechBadge href="https://www.javascript.com/">
@@ -59,11 +59,6 @@ export default function Page() {
             <span>Typescript</span>
           </TechBadge>
           ,{' '}
-          <TechBadge href="https://nodejs.org">
-            <Icons.DeviconNodejs className="size-3" />
-            <span>Node</span>
-          </TechBadge>
-          ,{' '}
           <TechBadge href="https://react.dev/">
             <Icons.DeviconReact className="size-3" />
             <span>React</span>
@@ -72,11 +67,16 @@ export default function Page() {
           <TechBadge href="https://nextjs.org/">
             <Icons.DeviconNextjs className="size-3" />
             <span>Next</span>
+          </TechBadge>
+          ,{' '}
+          <TechBadge href="https://www.java.com/">
+            <Icons.DeviconJava className="size-3" />
+            <span>Java</span>
           </TechBadge>{' '}
           and{' '}
-          <TechBadge href="https://vuejs.org/">
-            <Icons.DeviconVuejs className="size-3" />
-            <span>Vue</span>
+          <TechBadge href="https://spring.io/">
+            <Icons.DeviconSpring className="size-3" />
+            <span>Spring Boot</span>
           </TechBadge>{' '}
           ecosystem.
         </p>

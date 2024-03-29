@@ -16,8 +16,9 @@ import { cn } from '@/lib/utils';
 
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import { Badge } from './ui/badge';
 
-export function NoteCard({ title, createdAt, description }: Note) {
+export function NoteCard({ title, createdAt, description, tags }: Note) {
   const { theme } = useTheme();
 
   return (
@@ -52,6 +53,18 @@ export function NoteCard({ title, createdAt, description }: Note) {
         <CardDescription className="line-clamp-2 text-ellipsis font-normal text-accent-foreground/80">
           {description}
         </CardDescription>
+
+        <div className="inline-flex gap-1.5 my-3 flex-wrap">
+          {tags.map((tool: string, index: number) => (
+            <Badge
+              key={index}
+              variant={'secondary'}
+              className="pointer-events-none ring-1 ring-accent-foreground text-accent-foreground border-none px-1 py-0 brightness-75"
+            >
+              {tool}
+            </Badge>
+          ))}
+        </div>
       </CardContent>
 
       <CardFooter className="flex items-center justify-between pb-2 px-3 font-normal">
