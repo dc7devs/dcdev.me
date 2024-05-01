@@ -14,7 +14,7 @@ export default function Header() {
   const onScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY < lastScrollY.current && currentScrollY > 25) {
+    if (currentScrollY < lastScrollY.current && currentScrollY > 0) {
       setDidiScroll(true);
     } else {
       setDidiScroll(false);

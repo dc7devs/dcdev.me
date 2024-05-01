@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
-import { allNotes } from '@/.contentlayer/generated';
 import { NoteCard } from '@/components/note-card';
-
 import BackButton from '@/components/go-back-button';
 import Icons from '@/components/ui/icons';
+
+import { Note, notes } from '@/.velite';
+import { Separator } from '@/components/ui/separator';
 
 export default function NotesPage() {
   return (
@@ -21,14 +22,16 @@ export default function NotesPage() {
         </p>
       </div>
 
+      <Separator orientation="horizontal" className="mt-14 mx-auto" />
+
       <BackButton className="flex text-muted-foreground hover:text-foreground p-0 mb-7 align-middle	gap-1">
         <Icons.MaterialSymbolsArrowLeftAltRounded />
         <small className="text-sm">back</small>
       </BackButton>
 
       <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 auto-rows-auto">
-        {allNotes.map((note, index) => (
-          <Link key={index} href={note.slug}>
+        {notes.map((note: Note, index: number) => (
+          <Link key={index} href={`/studying/notes/${note.slug}`}>
             <NoteCard {...note} />
           </Link>
         ))}

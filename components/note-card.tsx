@@ -10,21 +10,21 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-import { Note } from '@/.contentlayer/generated';
 import Icons from './ui/icons';
 import { cn } from '@/lib/utils';
 
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Badge } from './ui/badge';
+import { Note } from '@/.velite';
 
-export function NoteCard({ title, createdAt, description, tags }: Note) {
+export function NoteCard({ title, created_at, description, tags }: Note) {
   const { theme } = useTheme();
 
   return (
     <Card
       className={
-        'flex flex-col relative w-full min-h-full rounded-sm border-input md:hover:scale-105 md:transition md:duration-100 md:ease-linear cursor-pointer text-balance bg-background'
+        'flex flex-col relative w-full min-h-full rounded-sm border-input md:hover:-translate-y-3 md:transition md:duration-100 md:ease-linear cursor-pointer text-balance bg-background'
       }
     >
       <CardHeader className="pb-2 pt-0 px-0">
@@ -69,7 +69,7 @@ export function NoteCard({ title, createdAt, description, tags }: Note) {
 
       <CardFooter className="flex items-center justify-between pb-2 px-3 font-normal">
         <time className="text-sm text-accent-foreground/60">
-          {formatDistanceToNow(new Date(createdAt), {
+          {formatDistanceToNow(new Date(created_at), {
             locale: ptBR,
             addSuffix: true
           })}

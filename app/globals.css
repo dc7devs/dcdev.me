@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
     :root {
         --background: 0 0% 100%;
         --foreground: 240 10% 3.9%;
@@ -71,6 +72,8 @@
         --c-scrollbar: rgb(23, 23, 23);
     }
 
+    
+
     ::selection {
         background-color: rgba(136,136,136, .35);
     }
@@ -100,6 +103,7 @@
         bg-paper-pattern-position
         dark:bg-paper-pattern-dark
         antialiased
+        hover:subpixel-antialiased
     }
 
     a {
@@ -108,6 +112,18 @@
         ease-linear
         hover:text-foreground
         text-muted-foreground;
+    }
+
+    @media(min-width: 856px) {
+        .grid-column-showcase-container {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media(min-width: 1100px) {
+        .grid-column-showcase-container {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
     }
 }
 
@@ -137,4 +153,40 @@
     .screen-content-w {
         @apply max-w-6xl sm:w-5/6 md:w-3/4
     }
+}
+
+[data-rehype-pretty-code-figure] pre {
+    @apply px-0;
+}
+
+[data-rehype-pretty-code-figure] code {
+    @apply text-sm !leading-loose md:text-base;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] {
+    counter-reset: line;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
+    counter-increment: line;
+    content: counter(line);
+    @apply mr-4 inline-block w-4 text-right text-gray-500;
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+    @apply border-l-2 border-l-transparent px-3;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+    background: rgba(200, 200, 255, 0.1);
+    @apply border-l-blue-400;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-chars] {
+    @apply rounded bg-zinc-600/50;
+    box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+}
+
+[data-rehype-pretty-code-figure] [data-chars-id] {
+    @apply border-b-2 p-1 shadow-none;
 }

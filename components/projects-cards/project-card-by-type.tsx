@@ -14,42 +14,45 @@ import ToolTip from '../tooltip';
 import { Badge } from '../ui/badge';
 import Icons from '../ui/icons';
 
-import { cn } from '@/lib/utils';
-import { Project } from '@/.contentlayer/generated';
+import { Project } from '@/.velite';
 
 export const ProjectCardByType = ({
-  coreTech,
+  core_tech,
   title,
   description,
-  startedAt,
-  githubSourceCodeURL,
-  articleURL,
-  deploymentURL,
-  imageURL
+  started_at,
+  repository,
+  deployment,
+  image,
+  video
 }: Project) => {
   return (
     <Card
       className={
-        'flex flex-col relative w-full min-h-full border-input hover:border-black/30 dark:hover:border-white/30 transition duration-100 ease-linear text-balance lg:w-96 bg-background'
+        'flex flex-col relative w-full min-h-full border-input text-balance lg:w-96 bg-background'
       }
     >
       <CardHeader className="pb-2 pt-0 px-0">
         <div className="relative w-full h-32 overflow-hidden rounded-t-xl">
-          <Image
-            className={'object-cover overflow-hidden h-full w-full'}
-            src={cn(
-              imageURL ??
-                'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png'
-            )}
-            alt="Preview project"
-            fill
-          />
+          {video ? (
+            <video className="object-cover w-full h-full" autoPlay loop muted>
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <Image
+              className={'object-cover overflow-hidden h-full w-full'}
+              src={image}
+              alt="Preview project"
+              fill
+            />
+          )}
         </div>
 
         <div className="px-3 pt-3">
           <CardTitle>{title}</CardTitle>
           <small className="text-accent-foreground/70">
-            {format(new Date(startedAt), 'MMM yyyy')}
+            {format(new Date(started_at), 'MMM yyyy')}
           </small>
         </div>
       </CardHeader>
@@ -62,9 +65,9 @@ export const ProjectCardByType = ({
 
       <CardFooter className="flex items-center justify-between pb-2 px-3">
         <div className="flex items-center gap-x-2">
-          {githubSourceCodeURL && (
+          {repository && (
             <Link
-              href={githubSourceCodeURL}
+              href={repository}
               target="_blank"
               aria-label="access the project's github code"
             >
@@ -74,9 +77,9 @@ export const ProjectCardByType = ({
             </Link>
           )}
 
-          {articleURL && (
+          {/* {article && (
             <Link
-              href={articleURL}
+              href={article}
               target="_blank"
               aria-label="access notes on the development of the project"
             >
@@ -84,11 +87,11 @@ export const ProjectCardByType = ({
                 <Icons.MdiBookOpenPageVariant className="size-4" />
               </ToolTip>
             </Link>
-          )}
+          )} */}
 
-          {deploymentURL && (
+          {deployment && (
             <Link
-              href={deploymentURL}
+              href={deployment}
               target="_blank"
               aria-label="access project deployment"
             >
@@ -97,9 +100,11 @@ export const ProjectCardByType = ({
           )}
         </div>
 
-        <Badge variant="secondary" className="px-1.5">
-          {coreTech}
-        </Badge>
+        <a href={core_tech.url} target="_blank" rel="noreferrer">
+          <Badge variant="secondary" className="px-1.5">
+            {core_tech.name}
+          </Badge>
+        </a>
       </CardFooter>
     </Card>
   );

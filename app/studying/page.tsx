@@ -4,7 +4,7 @@ import { compareDesc } from 'date-fns';
 
 import { ChallengeTabs, MediaTabs } from '@/components/media-integration-tabs';
 import { NoteCard } from '@/components/note-card';
-import { Cards } from '@/components/projects';
+import { Cards } from '@/components/projects-cards';
 import { RoadmapCard } from '@/components/roadmap-card';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -18,13 +18,8 @@ import {
 import { Sketchs } from '@/components/ui/sketchs';
 import Icons from '@/components/ui/icons';
 
-import {
-  Project,
-  Roadmap,
-  allProjects,
-  allRoadmaps,
-  allNotes
-} from '@/.contentlayer/generated';
+import { Project, Roadmap, notes, projects, roadmaps } from '@/.velite';
+import { Button } from '@/components/ui/button';
 
 export default function LearningPathPage() {
   return (
@@ -86,10 +81,10 @@ export default function LearningPathPage() {
 
         <div className="flex flex-wrap gap-5">
           <div className="flex flex-wrap gap-2 h-full w-full md:w-7/12 lg:w-3/5">
-            {allRoadmaps.map((roadmap: Roadmap) => (
+            {roadmaps.map((roadmap: Roadmap, index: number) => (
               <Link
-                key={roadmap._id}
-                href={roadmap.progressRoadmapURL}
+                key={index}
+                href={roadmap.progress}
                 className="w-full sm:w-[48%] md:w-full lg:w-[48%] xl:w-[32%] h-auto font-normal md:font-medium"
                 target="_blank"
               >
@@ -169,21 +164,25 @@ export default function LearningPathPage() {
 
         <Sketchs.SketchLampImg className="size-52 -top-28 fill-transparent -z-10 absolute right-0 md:size-64 md:-top-[150px]" />
 
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5  auto-rows-auto">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 auto-rows-auto">
           <>
-            {allNotes.slice(0, 4 + 3).map((note, index) => (
+            {notes.slice(0, 4 + 3).map((note, index) => (
               <Link
                 key={index}
-                href={note.slug}
+                href={`/studying/notes/${note.slug}`}
                 aria-label={`Access note from: ${note.title}`}
               >
                 <NoteCard {...note} />
               </Link>
             ))}
           </>
-          {/* <Button variant="secondary" className="h-auto w-14 space-x-1.5">
+
+          <Button
+            variant="secondary"
+            className="h-auto w-14 space-x-1.5 hover:bg-text-secondary-foreground"
+          >
             <Icons.PhDotsThreeOutlineFill className="size-6 text-primary/50" />
-          </Button> */}
+          </Button>
         </div>
       </section>
 
@@ -204,15 +203,17 @@ export default function LearningPathPage() {
 const StudyProjects = () => {
   const recentProjects = ((projects: Array<Project>) => {
     return projects
-      .sort((a, b) => compareDesc(new Date(a.startedAt), new Date(b.startedAt)))
-      .filter((project) => project.projectClassification !== 'professional');
-  })(allProjects);
+      .sort((a, b) =>
+        compareDesc(new Date(a.started_at), new Date(b.started_at))
+      )
+      .filter((project) => project.classification !== 'professional');
+  })(projects);
 
   return (
     <>
-      {recentProjects.map((propsProject: Project) => (
+      {recentProjects.map((propsProject: Project, index: number) => (
         <CarouselItem
-          key={propsProject._id}
+          key={index}
           className="pl-3 basis-full sm:basis-3/6 md:basis-1/2 lg:basis-auto"
         >
           <Cards.StudyProjectCard {...propsProject} />

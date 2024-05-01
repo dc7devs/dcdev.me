@@ -15,70 +15,78 @@ import { Badge } from '../ui/badge';
 import Icons from '../ui/icons';
 
 import { cn } from '@/lib/utils';
-import { Project } from '@/.contentlayer/generated';
+import { Project } from '@/.velite';
 
 type ShowcaseProjectProps = Project & {
   className?: string;
 };
 
-export const projectShowcaseCard = ({
-  coreTech,
+export const ProjectShowcaseCard = ({
+  core_tech,
   title,
   description,
-  startedAt,
-  githubSourceCodeURL,
-  articleURL,
-  deploymentURL,
-  imageURL,
-  toolsUsed,
-  projectType,
-  className
+  started_at,
+  repository,
+  deployment,
+  image,
+  video,
+  tools,
+  type,
+  className,
+  slug
 }: ShowcaseProjectProps) => {
   return (
     <Card
       className={cn(
-        'flex flex-col relative w-full min-h-full rounded-lg md:rounded-sm border-input md:hover:border-black/30 md:dark:hover:border-white/30 transition duration-100 ease-linear text-balance bg-background',
+        'flex flex-col relative w-full min-h-full rounded-lg border-input md:scale-[.99] md:hover:scale-[1.01] transition duration-100 ease-linear text-balance bg-background',
         className
       )}
     >
       <CardHeader className="pb-2 pt-0 px-0">
-        <div className="relative w-full h-52 overflow-hidden rounded-t-lg md:rounded-t-sm">
-          <Image
-            className={'object-cover overflow-hidden h-full w-full'}
-            src={cn(
-              imageURL ??
-                'https://res.cloudinary.com/dyxtcsnna/image/upload/v1706910149/dcdev/patter-code_mkvdxv.png'
+        <Link
+          href={`/project/${slug}`}
+          aria-label="access the project's documentation"
+        >
+          <div className="relative w-full h-52 overflow-hidden rounded-t-lg">
+            {video ? (
+              <video className="object-cover w-full h-full" autoPlay loop muted>
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <Image
+                className={'object-cover overflow-hidden h-full w-full'}
+                src={image}
+                alt="Preview project"
+                fill
+              />
             )}
-            alt="Preview project"
-            fill
-            // width={300}
-            // height={200}
-          />
-        </div>
+          </div>
+        </Link>
 
         <div className="px-3 pt-3" style={{ margin: '0' }}>
           <CardTitle>{title}</CardTitle>
 
           <small className="text-accent-foreground/70">
-            {format(new Date(startedAt), 'MMM yyyy')}
+            {format(new Date(started_at), 'MMM yyyy')}
           </small>
         </div>
       </CardHeader>
 
       <CardContent className="grow px-3 pb-3">
-        <Badge
-          variant="secondary"
-          className="mb-2 pointer-events-none ring-1 ring-primary rounded-sm px-1.5 py-0"
-        >
-          {projectType}
-        </Badge>
-
         <CardDescription className="line-clamp-3 text-ellipsis">
           {description}
         </CardDescription>
 
         <div className="inline-flex gap-1.5 my-3 flex-wrap">
-          {toolsUsed.map((tool: string, index: number) => (
+          <Badge
+            variant="secondary"
+            className="pointer-events-none ring-1 ring-primary border-none px-1 py-0 brightness-75"
+          >
+            {type}
+          </Badge>
+
+          {tools.map((tool: string, index: number) => (
             <Badge
               key={index}
               variant={'outline'}
@@ -92,9 +100,9 @@ export const projectShowcaseCard = ({
 
       <CardFooter className="flex items-center justify-between pb-2 px-3">
         <div className="flex items-center gap-x-2">
-          {githubSourceCodeURL && (
+          {repository && (
             <Link
-              href={githubSourceCodeURL}
+              href={repository}
               target="_blank"
               aria-label="access the project's github code"
             >
@@ -103,22 +111,18 @@ export const projectShowcaseCard = ({
               </ToolTip>
             </Link>
           )}
+          <Link
+            href={`/project/${slug}`}
+            aria-label="access the project's documentation"
+          >
+            <ToolTip message="documentation">
+              <Icons.MdiBookOpenPageVariant className="size-4" />
+            </ToolTip>
+          </Link>
 
-          {articleURL && (
+          {deployment && (
             <Link
-              href={articleURL}
-              target="_blank"
-              aria-label="access notes on the development of the project"
-            >
-              <ToolTip message="documentation">
-                <Icons.MdiBookOpenPageVariant className="size-4" />
-              </ToolTip>
-            </Link>
-          )}
-
-          {deploymentURL && (
-            <Link
-              href={deploymentURL}
+              href={deployment}
               target="_blank"
               aria-label="access project deployment"
             >
@@ -127,9 +131,11 @@ export const projectShowcaseCard = ({
           )}
         </div>
 
-        <Badge variant="secondary" className="px-1.5">
-          {coreTech}
-        </Badge>
+        <a href={core_tech.url} target="_blank" rel="noreferrer">
+          <Badge variant="secondary" className="px-1.5">
+            {core_tech.name}
+          </Badge>
+        </a>
       </CardFooter>
     </Card>
   );

@@ -15,23 +15,22 @@ import format from 'date-fns/format';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Project } from '@/.contentlayer/generated';
 import { cn } from '@/lib/utils';
+import { Project } from '@/.velite';
 
 type RecentProjectProps = Project & {
   className?: string;
 };
 
 export const RecentProjectCard = ({
-  coreTech,
+  core_tech,
   title,
   description,
-  startedAt,
+  started_at,
   status,
-  githubSourceCodeURL,
-  articleURL,
-  deploymentURL,
-  imageURL,
+  repository,
+  deployment,
+  image,
   className
 }: RecentProjectProps) => {
   return (
@@ -46,7 +45,7 @@ export const RecentProjectCard = ({
           <div>
             <CardTitle>{title}</CardTitle>
             <small className="text-accent-foreground/70">
-              {format(new Date(startedAt), 'MMM yyyy')}
+              {format(new Date(started_at), 'MMM yyyy')}
             </small>
           </div>
 
@@ -61,9 +60,9 @@ export const RecentProjectCard = ({
 
         <CardFooter className="flex items-center justify-between pb-2 pl-4 pr-0">
           <div className="flex items-center gap-x-2">
-            {githubSourceCodeURL && (
+            {repository && (
               <Link
-                href={githubSourceCodeURL}
+                href={repository}
                 target="_blank"
                 aria-label="access the project's github code"
               >
@@ -75,9 +74,9 @@ export const RecentProjectCard = ({
               </Link>
             )}
 
-            {articleURL && (
+            {/* {article && (
               <Link
-                href={articleURL}
+                href={article}
                 target="_blank"
                 aria-label="access notes on the development of the project"
               >
@@ -85,11 +84,11 @@ export const RecentProjectCard = ({
                   <Icons.MdiBookOpenPageVariant className="size-4" />
                 </ToolTip>
               </Link>
-            )}
+            )} */}
 
-            {deploymentURL && (
+            {deployment && (
               <Link
-                href={deploymentURL}
+                href={deployment}
                 target="_blank"
                 aria-label="access project deployment"
               >
@@ -98,9 +97,11 @@ export const RecentProjectCard = ({
             )}
           </div>
 
-          <Badge variant="secondary" className="px-1.5 mr-2">
-            {coreTech}
-          </Badge>
+          <a href={core_tech.url} target="_blank" rel="noreferrer">
+            <Badge variant="secondary" className="px-1.5 mr-2">
+              {core_tech.name}
+            </Badge>
+          </a>
         </CardFooter>
       </div>
 
@@ -109,7 +110,7 @@ export const RecentProjectCard = ({
           className={
             'object-cover object-left overflow-hidden basis-3/12 h-full w-full'
           }
-          src={imageURL!}
+          src={image!}
           alt="Preview project"
           width={300}
           height={192}

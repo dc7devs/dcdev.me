@@ -1,7 +1,8 @@
-import { Roadmap } from '@/.contentlayer/generated';
 import LiveStatus from './live-status';
 import Image from 'next/image';
 import Icons from './ui/icons';
+
+import { Roadmap } from '@/.velite';
 
 export const RoadmapCard = (roadmap: Roadmap) => {
   return (
@@ -22,13 +23,13 @@ export const RoadmapCard = (roadmap: Roadmap) => {
         </p>
       </small>
 
-      {roadmap.roadmapImagePreviewURL && (
+      {roadmap.image && (
         <div className="hidden md:group-hover:block md:transition-transform md:duration-150 absolute z-20 top-0 left-2/4 h-full w-2/4 overflow-hidden rounded-r-lg">
           <Image
             className={
               'object-cover overflow-hidden h-full w-full brightness-90 dark:brightness-50'
             }
-            src={roadmap.roadmapImagePreviewURL}
+            src={roadmap.image}
             alt="Preview roadmap"
             fill
           />

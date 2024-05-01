@@ -40,7 +40,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "contentlayer.config.js",
-    "content/definitions/*.js",
+    "content-b/definitions/*.js",
     ".contentlayer/generated"
   ],
   "mdx": {
