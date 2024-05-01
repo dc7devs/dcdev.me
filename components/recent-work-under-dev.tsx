@@ -6,9 +6,10 @@ import Link from 'next/link';
 import { compareDesc } from 'date-fns';
 import { cn } from '@/lib/utils';
 
-import { Cards } from './projects';
-import { Project, allProjects } from '@/.contentlayer/generated';
+import { Cards } from './projects-cards';
 import Unavailable from './unavailable';
+import { Project, projects } from '@/.velite';
+import DownloadCV from './cv-download-button';
 
 export default async function RecentWorkUnderDev({
   className
@@ -27,10 +28,7 @@ export default async function RecentWorkUnderDev({
           href={'/projects'}
           style={{ width: 'max-content', marginTop: '0' }}
         >
-          <small>
-            see projects
-            <Icons.PhArrowSquareOutDuotone className="size-2.5 inline ml-1" />
-          </small>
+          <small>see projects</small>
         </Link>
       </CardHeader>
 
@@ -38,15 +36,24 @@ export default async function RecentWorkUnderDev({
         <ul className="w-full flex flex-col justify-stretch gap-2">
           <RecentProjects />
 
-          <li className="w-full">
-            <Button
-              type="button"
-              variant="secondary"
-              className="inline-flex align-middle w-full"
+          <li className="w-full flex flex-col gap-1 md:gap-0 md:flex-row">
+            <DownloadCV />
+
+            <a
+              href="https://read.cv/dcdev"
+              target="_blank"
+              rel="noreferrer"
+              className="self-center"
             >
-              Download CV
-              <Icons.IcRoundDownloadForOffline className="size-4 ml-2" />
-            </Button>
+              <Button
+                type="button"
+                variant="link"
+                className="inline-flex items-end max-w-max opacity-90 hover:opacity-100 underline underline-offset-2"
+              >
+                read.cv
+                <Icons.PhArrowUpRightBold className="size-3.5 ml-0.5" />
+              </Button>
+            </a>
           </li>
         </ul>
       </CardContent>
@@ -57,16 +64,18 @@ export default async function RecentWorkUnderDev({
 const RecentProjects = () => {
   const recentProjects = ((projects: Array<Project>) => {
     return projects
-      .sort((a, b) => compareDesc(new Date(a.startedAt), new Date(b.startedAt)))
+      .sort((a, b) =>
+        compareDesc(new Date(a.started_at), new Date(b.started_at))
+      )
       .filter((_) => _.status !== 'done')
       .slice(0, 3);
-  })(allProjects);
+  })(projects);
 
   return (
     <>
       {recentProjects ? (
-        recentProjects.map((propsProject: Project) => (
-          <li key={propsProject._id}>
+        recentProjects.map((propsProject: Project, index: number) => (
+          <li key={index}>
             <Cards.RecentProjectSimpleCard {...propsProject} />
           </li>
         ))
