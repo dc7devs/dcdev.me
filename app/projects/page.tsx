@@ -1,9 +1,10 @@
 import { compareDesc } from 'date-fns';
 
-import { Project, allProjects } from '@/.contentlayer/generated';
-import { Cards } from '@/components/projects';
+import { Cards } from '@/components/projects-cards';
 import Link from 'next/link';
 import Icons from '@/components/ui/icons';
+
+import { Project, projects } from '@/.velite';
 
 export default function ProjectPage() {
   return (
@@ -13,11 +14,7 @@ export default function ProjectPage() {
       </h1>
 
       <section className="flex flex-col">
-        <h2 className="text-black dark:text-white mb-3 md:mb-5 mt-10 text-base font-semibold md:self-center">
-          Current Focus
-        </h2>
-
-        <div className="flex justify-center gap-3 w-auto mx-auto flex-wrap self-center">
+        <div className="flex justify-center gap-3 w-auto mx-auto flex-wrap self-center mt-10 md:mt-14 ">
           <RecentProjects />
         </div>
       </section>
@@ -27,14 +24,14 @@ export default function ProjectPage() {
           <h2 className="w-max font-medium">Showcase</h2>
 
           <Link href={'/projects/all'} className="group ml-auto">
-            <small className="text-sm group-hover:underline underline-offset-2">
+            <small className="text-sm group-hover:underline underline-offset-2 font-medium">
               all projects
               <Icons.MaterialSymbolsArrowRightAltRounded className="size-3.5 md:size-3.5 inline ml-0.5" />
             </small>
           </Link>
         </div>
 
-        <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-2 pt-5 border-t-[.7px] border-t-input bg-white dark:bg-black">
+        <div className="w-full grid grid-column-showcase-container gap-5 md:gap-2 pt-5 border-t-[.7px] border-t-input bg-white dark:bg-black">
           <ShowcaseProjects />
         </div>
       </section>
@@ -46,15 +43,17 @@ export default function ProjectPage() {
 const RecentProjects = () => {
   const recentProjects = ((projects: Array<Project>) => {
     return projects
-      .sort((a, b) => compareDesc(new Date(a.startedAt), new Date(b.startedAt)))
+      .sort((a, b) =>
+        compareDesc(new Date(a.started_at), new Date(b.started_at))
+      )
       .filter((_) => _.status !== 'done')
       .slice(0, 3);
-  })(allProjects);
+  })(projects);
 
   return (
     <>
-      {recentProjects.map((propsProject: Project) => (
-        <Cards.RecentProjectCard key={propsProject._id} {...propsProject} />
+      {recentProjects.map((propsProject: Project, index: number) => (
+        <Cards.RecentProjectCard key={index} {...propsProject} />
       ))}
     </>
   );
@@ -64,16 +63,18 @@ const RecentProjects = () => {
 const ShowcaseProjects = () => {
   const showcaseProjects = ((projects: Array<Project>) => {
     return projects
-      .sort((a, b) => compareDesc(new Date(a.startedAt), new Date(b.startedAt)))
-      .filter((project) => project.isPromotedToShowcase);
-  })(allProjects);
+      .sort((a, b) =>
+        compareDesc(new Date(a.started_at), new Date(b.started_at))
+      )
+      .filter((project) => project.is_promoted_to_showcase);
+  })(projects);
 
   return (
     <>
-      {showcaseProjects.map((propsProject: Project) => {
+      {showcaseProjects.map((propsProject: Project, index: number) => {
         return (
-          <Cards.projectShowcaseCard
-            key={propsProject._id}
+          <Cards.ProjectShowcaseCard
+            key={index}
             className="w-full"
             {...propsProject}
           />

@@ -1,6 +1,6 @@
-import { Project, allProjects } from '@/.contentlayer/generated';
+import { Project, projects } from '@/.velite';
 import BackButton from '@/components/go-back-button';
-import { Cards } from '@/components/projects';
+import { Cards } from '@/components/projects-cards';
 import {
   Carousel,
   CarouselContent,
@@ -9,6 +9,7 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 import Icons from '@/components/ui/icons';
+import { Separator } from '@/components/ui/separator';
 
 export default function AllProjectsPage() {
   return (
@@ -20,6 +21,8 @@ export default function AllProjectsPage() {
 
         <p>Here are all my projects, listed and categorized by type!</p>
       </div>
+
+      <Separator orientation="horizontal" className="mt-14 mx-auto" />
 
       <BackButton className="flex text-muted-foreground hover:text-foreground p-0 align-middle gap-1">
         <Icons.MaterialSymbolsArrowLeftAltRounded />
@@ -39,14 +42,14 @@ const SectionBuilderByProjectType = () => {
     } = {};
 
     projects.forEach((project) => {
-      const projectType = project.projectType.toLowerCase();
+      const projectType = project.type.toLowerCase();
 
       organizedProjects[projectType] = organizedProjects[projectType] || [];
       organizedProjects[projectType].push(project);
     });
 
     return organizedProjects;
-  })(allProjects);
+  })(projects);
 
   return (
     <div>
@@ -59,9 +62,9 @@ const SectionBuilderByProjectType = () => {
           <Carousel opts={{ slidesToScroll: 'auto' }} className="w-full">
             <CarouselContent className="-ml-3">
               {organizedProjectsByType[projectType].map(
-                (propsProject: Project) => (
+                (propsProject: Project, index: number) => (
                   <CarouselItem
-                    key={propsProject._id}
+                    key={index}
                     className="pl-3 basis-10/12 sm:basis-3/6 md:basis-1/2 lg:basis-auto"
                   >
                     <Cards.ProjectCardByType {...propsProject} />
