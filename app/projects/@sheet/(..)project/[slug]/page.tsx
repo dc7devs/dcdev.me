@@ -78,14 +78,14 @@ export default function SheetProjectPage({
 
   return (
     <>
-      <div className="flex flex-row">
-        <div className="w-full">
+      <div className="flex flex-col lg:flex-row">
+        <div className="w-full order-2 lg:order-1">
           <SheetHeader
             className={cn(
-              'bg-background/60 backdrop-blur-sm pr-5',
+              'bg-background/60 backdrop-blur-md lg:backdrop-blur-sm lg:pr-5',
               'transition-transform duration-200 ease-linear',
               didScroll &&
-                'sticky z-50 -top-6 py-2 border-b border-input transition-transform duration-75 ease-out'
+                'sticky z-50 -top-6 py-2 border-b border-input transition-transform duration-150 ease-out'
             )}
           >
             <SheetTitle>
@@ -110,7 +110,7 @@ export default function SheetProjectPage({
             </SheetDescription>
           </SheetHeader>
 
-          <div className="relative w-full h-80 overflow-hidden">
+          <div className="relative w-full h-72 md:h-80 lg:h-96 aspect-video	overflow-hidden">
             {video ? (
               <video className="object-cover w-full h-full" autoPlay loop muted>
                 <source src={video} type="video/mp4" />
@@ -118,17 +118,18 @@ export default function SheetProjectPage({
               </video>
             ) : (
               <Image
-                className={'object-cover overflow-hidden h-full w-full'}
+                className={'object-contain overflow-hidden h-full w-full'}
                 src={image}
                 alt="Preview project"
                 fill
+                sizes="(max-width: 1024px) 288px, 512px, (min-width: 1024px) 384px, 682.66px"
               />
             )}
           </div>
 
-          <Separator orientation="horizontal" className="mt-5 mb-5 mx-auto" />
+          <Separator orientation="horizontal" className="my-5 mx-auto" />
 
-          <div className="flex justify-stretch items-start gap-10 w-full px-5 py-7 mb-5 font-inter">
+          <div className="flex justify-stretch items-start gap-3 lg:gap-10 w-full pb-5 lg:py-7 mb-5 font-inter">
             <div className="flex-1 flex flex-col justify-center gap-2">
               <small className="text-sm font-semibold">My Role</small>
               <small className="text-xs">{my_role?.join(' | ')}</small>
@@ -151,7 +152,7 @@ export default function SheetProjectPage({
 
           <article
             className={cn(
-              'mx-auto max-w-full prose prose-neutral dark:prose-invert relative pr-5',
+              'mx-auto max-w-full prose prose-neutral dark:prose-invert relative lg:pr-5',
               'prose-a:underline-offset-2 prose-a:font-normal prose-a:transition-colors prose-a:ease-linear prose-a:text-neutral-300' // a
             )}
           >
@@ -161,18 +162,19 @@ export default function SheetProjectPage({
           <SheetFooter></SheetFooter>
         </div>
 
-        <div className="flex w-96 relative">
+        <div className="flex w-full order-1 lg:order-2 my-6 lg:p-0 lg:w-96 relative">
           <div
-            className={
-              'divide-y divide-input w-full h-full border-l border-input'
-            }
+            className={cn(
+              'flex items-center flex-wrap gap-3 lg:gap-0 lg:block',
+              'lg:divide-y divide-input w-full h-full border-l border-transparent lg:border-input'
+            )}
           >
-            <div className="h-auto pl-3 py-3">
-              <small className="text-sm font-inter font-normal">
+            <div className="h-auto lg:pl-3 lg:py-3">
+              <small className="hidden lg:inline-block text-sm font-inter font-normal">
                 Contributors
               </small>
 
-              <div className="flex flex-wrap items-center mt-3 mx-3">
+              <div className="flex flex-wrap items-center ml-2 lg:mx-3 lg:mt-3">
                 {contributors.map(
                   ({ name, avatar_url, github_url }, index: number) => (
                     <a
@@ -191,12 +193,12 @@ export default function SheetProjectPage({
               </div>
             </div>
 
-            <div className="h-auto pl-3 py-3">
-              <small className="text-sm font-inter font-normal">
+            <div className="h-auto p-0 lg:pl-3 lg:py-3">
+              <small className="hidden lg:block text-sm font-inter font-normal">
                 Core Tech
               </small>
 
-              <div className="w-full mt-1">
+              <div className="w-full lg:mt-1">
                 <a href={core_tech.url} target="_blank" rel="noreferrer">
                   <Badge variant="secondary" className="inline px-1.5">
                     {core_tech.name}
@@ -205,8 +207,8 @@ export default function SheetProjectPage({
               </div>
             </div>
 
-            <div className="h-auto pl-3 py-3">
-              <small className="text-sm font-inter font-normal">
+            <div className="h-auto lg:pl-3 lg:py-3">
+              <small className="hidden lg:block text-sm font-inter font-normal">
                 Tool List
               </small>
 
@@ -223,15 +225,14 @@ export default function SheetProjectPage({
               </div>
             </div>
 
-            <div className="h-[73px] pl-3 py-3 sticky -top-[25px] z-50">
+            <div className="lg:h-[73px] lg:pl-3 lg:py-3 lg:sticky lg:-top-[25px] lg:z-50">
               <div className="grid grid-cols-2 h-full w-full gap-1.5">
-                <CardGithub title={title} repo={repository} />
-                {/* <CardGithub title={title} repo={repository} /> */}
-                {/* <CardDemo /> */}
+                <CardGithub title={title} repo_url={repository} />
+                {/* <CardDemo title={title} demo_url={deployment} /> */}
               </div>
             </div>
 
-            <div className="sticky top-[48px] z-50 h-24"></div>
+            <div className="hidden lg:block sticky top-[48px] z-50 h-24"></div>
           </div>
         </div>
       </div>
@@ -239,9 +240,15 @@ export default function SheetProjectPage({
   );
 }
 
-const CardGithub = ({ title, repo }: { title: string; repo: string }) => {
+const CardGithub = ({
+  title,
+  repo_url
+}: {
+  title: string;
+  repo_url: string;
+}) => {
   return (
-    <a href={repo} target="_blank" rel="noreferrer">
+    <a href={repo_url} target="_blank" rel="noreferrer">
       <Card
         className={cn(
           'h-full w-auto',
@@ -264,7 +271,7 @@ const CardGithub = ({ title, repo }: { title: string; repo: string }) => {
           />
         </div>
 
-        <div className="max-w-[60px]">
+        <div className="max-w-32 lg:max-w-[60px]">
           <CardTitle className="text-sm line-clamp-1">{title}</CardTitle>
         </div>
       </Card>

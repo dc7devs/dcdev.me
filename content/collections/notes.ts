@@ -12,7 +12,7 @@ export const notes = defineCollection({
       description: s.string(),
       tags: s
         .array(s.string())
-        .transform((data) => data.map((tag) => tag.trim())),
+        .transform((data) => data.map((tag: string) => tag.trim())),
       image: s.string().url().optional(),
       content: s.mdx(),
       metadata: s.metadata()
