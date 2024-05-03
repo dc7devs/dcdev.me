@@ -73,13 +73,13 @@ export function CustomForm() {
     <Form {...form}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col md:grid grid-cols-2 gap-5"
+        className="flex grid-cols-2 flex-col gap-5 md:grid"
       >
         <FormField
           control={control}
           name="name"
           render={({ field }) => (
-            <FormItem className="col-start-1 col-span-1">
+            <FormItem className="col-span-1 col-start-1">
               <FormLabel>Name</FormLabel>
 
               <FormControl>
@@ -95,7 +95,7 @@ export function CustomForm() {
           control={control}
           name="email"
           render={({ field }) => (
-            <FormItem className="col-start-2 col-span-1">
+            <FormItem className="col-span-1 col-start-2">
               <FormLabel>E-mail</FormLabel>
 
               <FormControl>
@@ -117,7 +117,7 @@ export function CustomForm() {
               <FormControl>
                 <Textarea
                   placeholder="So, what's your idea?"
-                  className="resize-y min-h-28"
+                  className="min-h-28 resize-y"
                   {...field}
                 />
               </FormControl>
@@ -128,7 +128,7 @@ export function CustomForm() {
         />
 
         <Button
-          className={'md:w-max flex items-center justify-center gap-1.5'}
+          className={'flex items-center justify-center gap-1.5 md:w-max'}
           type="submit"
           disabled={isSending}
         >

@@ -18,10 +18,10 @@ export default function DownloadCV() {
       <Button
         type="button"
         variant={'secondary'}
-        className="align-middle w-full"
+        className="w-full align-middle"
       >
         Download CV
-        <Icons.IcRoundDownloadForOffline className="size-4 ml-2" />
+        <Icons.IcRoundDownloadForOffline className="ml-2 size-4" />
       </Button>
     </Link>
   );

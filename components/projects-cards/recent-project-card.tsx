@@ -36,12 +36,12 @@ export const RecentProjectCard = ({
   return (
     <Card
       className={cn(
-        'flex relative w-full h-48 space-x-1 border-input text-balance sm:w-10/12 md:rounded-lg lg:w-96 lg:rounded-md bg-background',
+        'relative flex h-48 w-full space-x-1 text-balance border-input bg-background sm:w-10/12 md:rounded-lg lg:w-96 lg:rounded-md',
         className
       )}
     >
-      <div className="flex flex-col basis-9/12">
-        <CardHeader className="flex-row pb-2 pl-4 pt-4 pr-0">
+      <div className="flex basis-9/12 flex-col">
+        <CardHeader className="flex-row pb-2 pl-4 pr-0 pt-4">
           <div>
             <CardTitle>{title}</CardTitle>
             <small className="text-accent-foreground/70">
@@ -98,7 +98,7 @@ export const RecentProjectCard = ({
           </div>
 
           <a href={core_tech.url} target="_blank" rel="noreferrer">
-            <Badge variant="secondary" className="px-1.5 mr-2">
+            <Badge variant="secondary" className="mr-2 px-1.5">
               {core_tech.name}
             </Badge>
           </a>
@@ -108,7 +108,7 @@ export const RecentProjectCard = ({
       <div className="relative basis-3/12 overflow-hidden rounded-r-xl md:rounded-r-lg lg:rounded-r-md">
         <Image
           className={
-            'object-cover object-left overflow-hidden basis-3/12 h-full w-full'
+            'h-full w-full basis-3/12 overflow-hidden object-cover object-left'
           }
           src={image!}
           alt="Preview project"

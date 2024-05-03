@@ -29,19 +29,19 @@ export const ProjectCardByType = ({
   return (
     <Card
       className={
-        'flex flex-col relative w-full min-h-full border-input text-balance lg:w-96 bg-background'
+        'relative flex min-h-full w-full flex-col text-balance border-input bg-background lg:w-96'
       }
     >
-      <CardHeader className="pb-2 pt-0 px-0">
-        <div className="relative w-full h-32 overflow-hidden rounded-t-xl">
+      <CardHeader className="px-0 pb-2 pt-0">
+        <div className="relative h-32 w-full overflow-hidden rounded-t-xl">
           {video ? (
-            <video className="object-cover w-full h-full" autoPlay loop muted>
+            <video className="h-full w-full object-cover" autoPlay loop muted>
               <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           ) : (
             <Image
-              className={'object-cover overflow-hidden h-full w-full'}
+              className={'h-full w-full overflow-hidden object-cover'}
               src={image}
               alt="Preview project"
               fill
@@ -63,7 +63,7 @@ export const ProjectCardByType = ({
         </CardDescription>
       </CardContent>
 
-      <CardFooter className="flex items-center justify-between pb-2 px-3">
+      <CardFooter className="flex items-center justify-between px-3 pb-2">
         <div className="flex items-center gap-x-2">
           {repository && (
             <Link

@@ -48,9 +48,9 @@ export const SpotifyOverviewCard = () => {
 
   if (error) {
     return (
-      <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 rounded-none">
-        <CardContent className="h-full flex items-center justify-center p-6">
-          <p className="text-xs text-red-400 font-medium">
+      <Card className="mt-0 flex h-full flex-col rounded-none border-none lg:ml-9">
+        <CardContent className="flex h-full items-center justify-center p-6">
+          <p className="text-xs font-medium text-red-400">
             Oops! Something&#39;s wrong with that component!
           </p>
         </CardContent>
@@ -60,7 +60,7 @@ export const SpotifyOverviewCard = () => {
 
   if (isFetching) {
     return (
-      <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 rounded-none">
+      <Card className="mt-0 flex h-full flex-col rounded-none border-none lg:ml-9">
         <CardContent className="relative h-28 overflow-hidden p-0">
           <Skeleton className="h-28 w-full rounded-none" />
         </CardContent>
@@ -73,7 +73,7 @@ export const SpotifyOverviewCard = () => {
 
           <Skeleton className="h-[1px] w-11/12" />
 
-          <div className="w-full inline-flex items-center gap-1">
+          <div className="inline-flex w-full items-center gap-1">
             <Skeleton className="h-2 w-10" />
             <Skeleton className="h-2 grow" />
             <Skeleton className="h-2 w-10" />
@@ -99,7 +99,7 @@ export const SpotifyOverviewCard = () => {
     const isPlaying = currentlyPlaying?.is_playing ?? false;
 
     return (
-      <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 rounded-none">
+      <Card className="mt-0 flex h-full flex-col rounded-none border-none lg:ml-9">
         <CardContent className="relative h-28 overflow-hidden p-0">
           {trackImage && (
             <Image
@@ -113,15 +113,15 @@ export const SpotifyOverviewCard = () => {
             className={cn(
               'absolute left-2 top-2',
               isPlaying
-                ? 'text-black bg-green-400 hover:bg-green-400'
-                : 'text-background bg-primary/80 hover:bg-primary/80'
+                ? 'bg-green-400 text-black hover:bg-green-400'
+                : 'bg-primary/80 text-background hover:bg-primary/80'
             )}
           >
             {isPlaying ? 'Currently playing' : 'Recently played'}
           </Badge>
 
           <Link href={userProfile?.external_urls.spotify} target="_blank">
-            <Avatar className="size-9 absolute right-2 top-2">
+            <Avatar className="absolute right-2 top-2 size-9">
               <AvatarImage
                 src={userProfile.images[1].url}
                 className="object-cover"

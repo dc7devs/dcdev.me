@@ -10,8 +10,8 @@ import { Separator } from '@/components/ui/separator';
 export default function NotesPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 mx-auto text-center">
-        <h1 className="text-black dark:text-white font-medium text-xl px-2 rounded-sm bg-accent max-w-max mx-auto">
+      <div className="prose prose-zinc mx-auto text-center dark:prose-invert prose-p:my-3 prose-p:leading-normal">
+        <h1 className="mx-auto max-w-max rounded-sm bg-accent px-2 text-xl font-medium text-black dark:text-white">
           All Notes
         </h1>
 
@@ -22,14 +22,14 @@ export default function NotesPage() {
         </p>
       </div>
 
-      <Separator orientation="horizontal" className="mt-14 mx-auto" />
+      <Separator orientation="horizontal" className="mx-auto mt-14" />
 
-      <BackButton className="flex text-muted-foreground hover:text-foreground p-0 mb-7 align-middle	gap-1">
+      <BackButton className="mb-7 flex gap-1 p-0 align-middle text-muted-foreground	hover:text-foreground">
         <Icons.MaterialSymbolsArrowLeftAltRounded />
         <small className="text-sm">back</small>
       </BackButton>
 
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 auto-rows-auto">
+      <div className="grid w-full auto-rows-auto grid-cols-2 gap-2.5 md:grid-cols-3 lg:grid-cols-5">
         {notes.map((note: Note, index: number) => (
           <Link key={index} href={`/studying/notes/${note.slug}`}>
             <NoteCard {...note} />

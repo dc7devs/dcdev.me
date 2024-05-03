@@ -5,11 +5,11 @@ export const Artists = ({ data }: { data: Array<Artist> }) => {
   const trackArtists = data;
 
   return (
-    <div className="text-sm text-muted-foreground mt-1 inline-flex gap-1 truncate w-full">
+    <div className="mt-1 inline-flex w-full gap-1 truncate text-sm text-muted-foreground">
       {trackArtists?.map((artist: Artist, index: number) => (
         <div className="max-w-max" key={index}>
           <Link
-            className="hover:underline font-inter font-normal"
+            className="font-inter font-normal hover:underline"
             href={artist.external_urls.spotify}
             target="_blank"
           >

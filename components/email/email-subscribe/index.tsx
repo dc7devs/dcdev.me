@@ -20,7 +20,7 @@ export default function EmailSubscribe({ className }: { className?: string }) {
 
       <CardHeader>
         <CardTitle className="flex align-middle text-primary">
-          <Icons.EmailSubscribe className="size-4 mr-2" />
+          <Icons.EmailSubscribe className="mr-2 size-4" />
           Stay up to date
         </CardTitle>
 

@@ -13,7 +13,7 @@ export default function ToggleThemeBtn() {
 
   return (
     <Button
-      className="sm:m-0 align-middle bg-background/60 backdrop-blur-sm rounded-full sm:rounded-md"
+      className="rounded-full bg-background/60 align-middle backdrop-blur-sm sm:m-0 sm:rounded-md"
       variant={'outline'}
       size={'icon'}
       name="change theme button"
@@ -22,9 +22,9 @@ export default function ToggleThemeBtn() {
       }}
     >
       {isDark() ? (
-        <Icons.MoonStars className="size-5 md:size-[23px] text-foreground/80" />
+        <Icons.MoonStars className="size-5 text-foreground/80 md:size-[23px]" />
       ) : (
-        <Icons.SunDim className="size-5 md:size-[23px] text-foreground/80" />
+        <Icons.SunDim className="size-5 text-foreground/80 md:size-[23px]" />
       )}
     </Button>
   );

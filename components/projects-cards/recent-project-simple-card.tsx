@@ -6,8 +6,8 @@ import masteryTools from '@/content/_mastery-tools';
 import { Project } from '@/.velite';
 
 export const RecentProjectSimpleCard = (project: Project) => (
-  <div className="flex flex-col justify-center w-full px-3.5 py-2 bg-background ring-1 ring-ring/10">
-    <div className="inline-flex items-center gap-x-1.5 w-full">
+  <div className="flex w-full flex-col justify-center bg-background px-3.5 py-2 ring-1 ring-ring/10">
+    <div className="inline-flex w-full items-center gap-x-1.5">
       {masteryTools('size-4 basis-4').find(
         (icon) =>
           icon.toolName.toLocaleLowerCase().trim() ===
@@ -16,7 +16,7 @@ export const RecentProjectSimpleCard = (project: Project) => (
         <Icons.MaterialSymbolsLightBoxRounded className="size-4 basis-4" />
       )}
 
-      <p className="text-base basis-60 grow sm:text-sm truncate">
+      <p className="grow basis-60 truncate text-base sm:text-sm">
         {project.title}
       </p>
 

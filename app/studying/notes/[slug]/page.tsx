@@ -23,11 +23,11 @@ export default function NotePage({
     <div className="w-full pt-14 sm:pt-10">
       <article
         className={cn(
-          'max-w-3xl mx-auto prose prose-neutral dark:prose-invert relative',
-          'prose-a:underline-offset-2 prose-a:font-normal prose-a:transition-colors prose-a:ease-linear prose-a:text-neutral-300' // a
+          'prose prose-neutral relative mx-auto max-w-3xl dark:prose-invert',
+          'prose-a:font-normal prose-a:text-neutral-300 prose-a:underline-offset-2 prose-a:transition-colors prose-a:ease-linear' // a
         )}
       >
-        <BackButton className="absolute p-0 -top-11 -left-1 lg:top-8 lg:-left-24 xl:-left-32 text-muted-foreground hover:text-foreground flex align-middle gap-1">
+        <BackButton className="absolute -left-1 -top-11 flex gap-1 p-0 align-middle text-muted-foreground hover:text-foreground lg:-left-24 lg:top-8 xl:-left-32">
           <Icons.MaterialSymbolsArrowLeftAltRounded className="size-4" />
           <small className="text-base">back</small>
         </BackButton>

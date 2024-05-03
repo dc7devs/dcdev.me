@@ -25,16 +25,16 @@ export default function LiveStatus({
   };
 
   return (
-    <span className={cn('relative flex size-2 ml-auto', className)}>
+    <span className={cn('relative ml-auto flex size-2', className)}>
       <span
         className={cn(
-          'animate-ping absolute inline-flex h-full w-full rounded-full opacity-75',
+          'absolute inline-flex h-full w-full animate-ping rounded-full opacity-75',
           statusColorMap[status][0]
         )}
       ></span>
       <span
         className={cn(
-          'inline-flex rounded-full size-2',
+          'inline-flex size-2 rounded-full',
           statusColorMap[status][1]
         )}
       ></span>

@@ -7,19 +7,19 @@ import { Separator } from '@/components/ui/separator';
 
 export default function NavBar({ didScroll }: { didScroll: boolean }) {
   return (
-    <div className={'flex justify-center items-center'}>
+    <div className={'flex items-center justify-center'}>
       <ul
         className={cn(
-          'flex justify-stretch sm:items-center space-x-4 sm:space-x-5 mr-2 sm:m-0',
-          'rounded-2xl sm:rounded-sm md:rounded-md px-2.5 py-2 sm:py-1 border border-transparent',
+          'mr-2 flex justify-stretch space-x-4 sm:m-0 sm:items-center sm:space-x-5',
+          'rounded-2xl border border-transparent px-2.5 py-2 sm:rounded-sm sm:py-1 md:rounded-md',
           didScroll &&
-            'bg-background/60 backdrop-blur-sm border-border shadow-sm'
+            'border-border bg-background/60 shadow-sm backdrop-blur-sm'
         )}
       >
         {nav_items.map(({ name, icon, path }, index: number) => (
           <li
             key={index}
-            className={cn('font-medium min-w-max flex justify-center ')}
+            className={cn('flex min-w-max justify-center font-medium ')}
           >
             <Link
               className={
@@ -29,7 +29,7 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
               aria-label={name}
             >
               {icon}
-              <div className="hidden sm:block text-xs">{name}</div>
+              <div className="hidden text-xs sm:block">{name}</div>
             </Link>
           </li>
         ))}
@@ -37,7 +37,7 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
 
       <Separator
         orientation="vertical"
-        className={cn('hidden sm:block h-5 w-0.5 mx-3')}
+        className={cn('mx-3 hidden h-5 w-0.5 sm:block')}
       />
 
       <ToggleThemeBtn />

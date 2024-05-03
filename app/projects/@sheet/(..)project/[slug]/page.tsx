@@ -79,19 +79,19 @@ export default function SheetProjectPage({
   return (
     <>
       <div className="flex flex-col lg:flex-row">
-        <div className="w-full order-2 lg:order-1">
+        <div className="order-2 w-full lg:order-1">
           <SheetHeader
             className={cn(
-              'bg-background/60 backdrop-blur-md lg:backdrop-blur-sm lg:pr-5',
+              'bg-background/60 backdrop-blur-md lg:pr-5 lg:backdrop-blur-sm',
               'transition-transform duration-200 ease-linear',
               didScroll &&
-                'sticky z-50 -top-6 py-2 border-b border-input transition-transform duration-150 ease-out'
+                'sticky -top-6 z-50 border-b border-input py-2 transition-transform duration-150 ease-out'
             )}
           >
             <SheetTitle>
               <h1
                 className={cn(
-                  'font-light font-poppins',
+                  'font-poppins font-light',
                   !didScroll && 'text-4xl'
                 )}
               >
@@ -110,15 +110,15 @@ export default function SheetProjectPage({
             </SheetDescription>
           </SheetHeader>
 
-          <div className="relative w-full h-72 md:h-80 lg:h-96 aspect-video	overflow-hidden">
+          <div className="relative aspect-video h-72 w-full overflow-hidden md:h-80	lg:h-96">
             {video ? (
-              <video className="object-cover w-full h-full" autoPlay loop muted>
+              <video className="h-full w-full object-cover" autoPlay loop muted>
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             ) : (
               <Image
-                className={'object-contain overflow-hidden h-full w-full'}
+                className={'h-full w-full overflow-hidden object-contain'}
                 src={image}
                 alt="Preview project"
                 fill
@@ -127,24 +127,24 @@ export default function SheetProjectPage({
             )}
           </div>
 
-          <Separator orientation="horizontal" className="my-5 mx-auto" />
+          <Separator orientation="horizontal" className="mx-auto my-5" />
 
-          <div className="flex justify-stretch items-start gap-3 lg:gap-10 w-full pb-5 lg:py-7 mb-5 font-inter">
-            <div className="flex-1 flex flex-col justify-center gap-2">
+          <div className="mb-5 flex w-full items-start justify-stretch gap-3 pb-5 font-inter lg:gap-10 lg:py-7">
+            <div className="flex flex-1 flex-col justify-center gap-2">
               <small className="text-sm font-semibold">My Role</small>
               <small className="text-xs">{my_role?.join(' | ')}</small>
             </div>
-            <div className="flex-1 flex flex-col justify-center gap-2">
+            <div className="flex flex-1 flex-col justify-center gap-2">
               <small className="text-sm font-semibold">
                 Classification Project
               </small>
               <small className="text-xs">{classification.toUpperCase()}</small>
             </div>
-            <div className="flex-1 flex flex-col justify-center gap-2">
+            <div className="flex flex-1 flex-col justify-center gap-2">
               <small className="text-sm font-semibold">Timeline</small>
               <small className="text-xs">{timeline}</small>
             </div>
-            <div className="flex-1 flex flex-col justify-center gap-2">
+            <div className="flex flex-1 flex-col justify-center gap-2">
               <small className="text-sm font-semibold">Project Type</small>
               <small className="text-xs">{type}</small>
             </div>
@@ -152,8 +152,8 @@ export default function SheetProjectPage({
 
           <article
             className={cn(
-              'mx-auto max-w-full prose prose-neutral dark:prose-invert relative lg:pr-5',
-              'prose-a:underline-offset-2 prose-a:font-normal prose-a:transition-colors prose-a:ease-linear prose-a:text-neutral-300' // a
+              'prose prose-neutral relative mx-auto max-w-full dark:prose-invert lg:pr-5',
+              'prose-a:font-normal prose-a:text-neutral-300 prose-a:underline-offset-2 prose-a:transition-colors prose-a:ease-linear' // a
             )}
           >
             <MDXContent code={content} />
@@ -162,26 +162,26 @@ export default function SheetProjectPage({
           <SheetFooter></SheetFooter>
         </div>
 
-        <div className="flex w-full order-1 lg:order-2 my-6 lg:p-0 lg:w-96 relative">
+        <div className="relative order-1 my-6 flex w-full lg:order-2 lg:w-96 lg:p-0">
           <div
             className={cn(
-              'flex items-center flex-wrap gap-3 lg:gap-0 lg:block',
-              'lg:divide-y divide-input w-full h-full border-l border-transparent lg:border-input'
+              'flex flex-wrap items-center gap-3 lg:block lg:gap-0',
+              'h-full w-full divide-input border-l border-transparent lg:divide-y lg:border-input'
             )}
           >
-            <div className="h-auto lg:pl-3 lg:py-3">
-              <small className="hidden lg:inline-block text-sm font-inter font-normal">
+            <div className="h-auto lg:py-3 lg:pl-3">
+              <small className="hidden font-inter text-sm font-normal lg:inline-block">
                 Contributors
               </small>
 
-              <div className="flex flex-wrap items-center ml-2 lg:mx-3 lg:mt-3">
+              <div className="ml-2 flex flex-wrap items-center lg:mx-3 lg:mt-3">
                 {contributors.map(
                   ({ name, avatar_url, github_url }, index: number) => (
                     <a
                       key={index}
                       href={github_url}
                       target="_blank"
-                      className="-ml-2 group"
+                      className="group -ml-2"
                       rel="noreferrer"
                     >
                       <Avatar className="size-8 ring-1 ring-transparent group-hover:ring-ring">
@@ -193,8 +193,8 @@ export default function SheetProjectPage({
               </div>
             </div>
 
-            <div className="h-auto p-0 lg:pl-3 lg:py-3">
-              <small className="hidden lg:block text-sm font-inter font-normal">
+            <div className="h-auto p-0 lg:py-3 lg:pl-3">
+              <small className="hidden font-inter text-sm font-normal lg:block">
                 Core Tech
               </small>
 
@@ -207,17 +207,17 @@ export default function SheetProjectPage({
               </div>
             </div>
 
-            <div className="h-auto lg:pl-3 lg:py-3">
-              <small className="hidden lg:block text-sm font-inter font-normal">
+            <div className="h-auto lg:py-3 lg:pl-3">
+              <small className="hidden font-inter text-sm font-normal lg:block">
                 Tool List
               </small>
 
-              <div className="w-full mt-2 inline-flex gap-1.5 flex-wrap">
+              <div className="mt-2 inline-flex w-full flex-wrap gap-1.5">
                 {tools.map((tool: string, index: number) => (
                   <Badge
                     key={index}
                     variant={'outline'}
-                    className="pointer-events-none ring-1 ring-accent-foreground text-accent-foreground border-none px-1 py-0 brightness-75"
+                    className="pointer-events-none border-none px-1 py-0 text-accent-foreground ring-1 ring-accent-foreground brightness-75"
                   >
                     {tool}
                   </Badge>
@@ -225,14 +225,14 @@ export default function SheetProjectPage({
               </div>
             </div>
 
-            <div className="lg:h-[73px] lg:pl-3 lg:py-3 lg:sticky lg:-top-[25px] lg:z-50">
-              <div className="grid grid-cols-2 h-full w-full gap-1.5">
+            <div className="lg:sticky lg:-top-[25px] lg:z-50 lg:h-[73px] lg:py-3 lg:pl-3">
+              <div className="grid h-full w-full grid-cols-2 gap-1.5">
                 <CardGithub title={title} repo_url={repository} />
                 {/* <CardDemo title={title} demo_url={deployment} /> */}
               </div>
             </div>
 
-            <div className="hidden lg:block sticky top-[48px] z-50 h-24"></div>
+            <div className="sticky top-[48px] z-50 hidden h-24 lg:block"></div>
           </div>
         </div>
       </div>
@@ -252,12 +252,12 @@ const CardGithub = ({
       <Card
         className={cn(
           'h-full w-auto',
-          'py-1.5 px-2 flex space-x-2 items-center max-h-max shadow-none rounded-sm border-input',
+          'flex max-h-max items-center space-x-2 rounded-sm border-input px-2 py-1.5 shadow-none',
           'cursor-pointer hover:bg-secondary'
         )}
       >
-        <div className="size-auto relative">
-          <div className="absolute bottom-0 right-0 z-50 ring-1 ring-white bg-white dark:bg-black rounded-full">
+        <div className="relative size-auto">
+          <div className="absolute bottom-0 right-0 z-50 rounded-full bg-white ring-1 ring-white dark:bg-black">
             <Icons.GithubIconFill className="size-3" />
           </div>
           <Image
@@ -272,7 +272,7 @@ const CardGithub = ({
         </div>
 
         <div className="max-w-32 lg:max-w-[60px]">
-          <CardTitle className="text-sm line-clamp-1">{title}</CardTitle>
+          <CardTitle className="line-clamp-1 text-sm">{title}</CardTitle>
         </div>
       </Card>
     </a>

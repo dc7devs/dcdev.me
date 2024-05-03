@@ -9,29 +9,29 @@ import { Project, projects } from '@/.velite';
 export default function ProjectPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <h1 className="text-black dark:text-white font-medium text-xl px-2 rounded-sm bg-accent max-w-max mx-auto">
+      <h1 className="mx-auto max-w-max rounded-sm bg-accent px-2 text-xl font-medium text-black dark:text-white">
         Projects I&#39;m working on
       </h1>
 
       <section className="flex flex-col">
-        <div className="flex justify-center gap-3 w-auto mx-auto flex-wrap self-center mt-10 md:mt-14 ">
+        <div className="mx-auto mt-10 flex w-auto flex-wrap justify-center gap-3 self-center md:mt-14 ">
           <RecentProjects />
         </div>
       </section>
 
-      <section className="flex flex-col size-auto mt-24">
-        <div className="w-full flex items-end gap-3 mb-2">
+      <section className="mt-24 flex size-auto flex-col">
+        <div className="mb-2 flex w-full items-end gap-3">
           <h2 className="w-max font-medium">Showcase</h2>
 
           <Link href={'/projects/all'} className="group ml-auto">
-            <small className="text-sm group-hover:underline underline-offset-2 font-medium">
+            <small className="text-sm font-medium underline-offset-2 group-hover:underline">
               all projects
-              <Icons.MaterialSymbolsArrowRightAltRounded className="size-3.5 md:size-3.5 inline ml-0.5" />
+              <Icons.MaterialSymbolsArrowRightAltRounded className="ml-0.5 inline size-3.5 md:size-3.5" />
             </small>
           </Link>
         </div>
 
-        <div className="w-full grid grid-column-showcase-container gap-5 md:gap-2 pt-5 border-t-[.7px] border-t-input bg-white dark:bg-black">
+        <div className="grid-column-showcase-container grid w-full gap-5 border-t-[.7px] border-t-input bg-white pt-5 dark:bg-black md:gap-2">
           <ShowcaseProjects />
         </div>
       </section>

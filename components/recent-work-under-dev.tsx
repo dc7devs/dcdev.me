@@ -18,9 +18,9 @@ export default async function RecentWorkUnderDev({
 }) {
   return (
     <Card className={cn(className)}>
-      <CardHeader className="flex flex-row justify-between items-center">
-        <CardTitle className="inline-flex align-middle text-primary w-max">
-          <Icons.GameIconsCoffeeCup className="size-4 mr-2" />
+      <CardHeader className="flex flex-row items-center justify-between">
+        <CardTitle className="inline-flex w-max align-middle text-primary">
+          <Icons.GameIconsCoffeeCup className="mr-2 size-4" />
           <div>Currently working...</div>
         </CardTitle>
 
@@ -33,10 +33,10 @@ export default async function RecentWorkUnderDev({
       </CardHeader>
 
       <CardContent className="inline-flex w-full gap-3">
-        <ul className="w-full flex flex-col justify-stretch gap-2">
+        <ul className="flex w-full flex-col justify-stretch gap-2">
           <RecentProjects />
 
-          <li className="w-full flex flex-col gap-1 md:gap-0 md:flex-row">
+          <li className="flex w-full flex-col gap-1 md:flex-row md:gap-0">
             <DownloadCV />
 
             <a
@@ -48,10 +48,10 @@ export default async function RecentWorkUnderDev({
               <Button
                 type="button"
                 variant="link"
-                className="inline-flex items-end max-w-max opacity-90 hover:opacity-100 underline underline-offset-2"
+                className="inline-flex max-w-max items-end underline underline-offset-2 opacity-90 hover:opacity-100"
               >
                 read.cv
-                <Icons.PhArrowUpRightBold className="size-3.5 ml-0.5" />
+                <Icons.PhArrowUpRightBold className="ml-0.5 size-3.5" />
               </Button>
             </a>
           </li>
@@ -81,7 +81,7 @@ const RecentProjects = () => {
         ))
       ) : (
         <li>
-          <div className="h-14 w-full bg-background outline-dashed outline-1 outline-secondary relative">
+          <div className="relative h-14 w-full bg-background outline-dashed outline-1 outline-secondary">
             <Unavailable />
           </div>
         </li>

@@ -14,17 +14,17 @@ import { Separator } from '@/components/ui/separator';
 export default function AllProjectsPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 mx-auto text-center">
-        <h1 className="text-black dark:text-white font-medium text-xl px-2 rounded-sm bg-accent max-w-max mx-auto">
+      <div className="prose prose-zinc mx-auto text-center dark:prose-invert prose-p:my-3 prose-p:leading-normal">
+        <h1 className="mx-auto max-w-max rounded-sm bg-accent px-2 text-xl font-medium text-black dark:text-white">
           Projects I&#39;m working on
         </h1>
 
         <p>Here are all my projects, listed and categorized by type!</p>
       </div>
 
-      <Separator orientation="horizontal" className="mt-14 mx-auto" />
+      <Separator orientation="horizontal" className="mx-auto mt-14" />
 
-      <BackButton className="flex text-muted-foreground hover:text-foreground p-0 align-middle gap-1">
+      <BackButton className="flex gap-1 p-0 align-middle text-muted-foreground hover:text-foreground">
         <Icons.MaterialSymbolsArrowLeftAltRounded />
         <small className="text-sm">back</small>
       </BackButton>
@@ -55,7 +55,7 @@ const SectionBuilderByProjectType = () => {
     <div>
       {Object.keys(organizedProjectsByType).map((projectType) => (
         <section key={projectType}>
-          <h2 className="text-black dark:text-white mb-3 mt-10 text-base font-medium">
+          <h2 className="mb-3 mt-10 text-base font-medium text-black dark:text-white">
             {projectType}
           </h2>
 
@@ -65,7 +65,7 @@ const SectionBuilderByProjectType = () => {
                 (propsProject: Project, index: number) => (
                   <CarouselItem
                     key={index}
-                    className="pl-3 basis-10/12 sm:basis-3/6 md:basis-1/2 lg:basis-auto"
+                    className="basis-10/12 pl-3 sm:basis-3/6 md:basis-1/2 lg:basis-auto"
                   >
                     <Cards.ProjectCardByType {...propsProject} />
                   </CarouselItem>
@@ -73,8 +73,8 @@ const SectionBuilderByProjectType = () => {
               )}
             </CarouselContent>
 
-            <CarouselPrevious className="left-1 sm:-left-5 bg-secondary" />
-            <CarouselNext className="right-1 sm:-right-5 bg-secondary" />
+            <CarouselPrevious className="left-1 bg-secondary sm:-left-5" />
+            <CarouselNext className="right-1 bg-secondary sm:-right-5" />
           </Carousel>
         </section>
       ))}

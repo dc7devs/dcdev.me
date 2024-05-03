@@ -38,24 +38,24 @@ export const ProjectShowcaseCard = ({
   return (
     <Card
       className={cn(
-        'flex flex-col relative w-full min-h-full rounded-lg border-input md:scale-[.99] md:hover:scale-[1.01] transition duration-100 ease-linear text-balance bg-background',
+        'relative flex min-h-full w-full flex-col text-balance rounded-lg border-input bg-background transition duration-100 ease-linear md:scale-[.99] md:hover:scale-[1.01]',
         className
       )}
     >
-      <CardHeader className="pb-2 pt-0 px-0">
+      <CardHeader className="px-0 pb-2 pt-0">
         <Link
           href={`/project/${slug}`}
           aria-label="access the project's documentation"
         >
-          <div className="relative w-full h-52 overflow-hidden rounded-t-lg">
+          <div className="relative h-52 w-full overflow-hidden rounded-t-lg">
             {video ? (
-              <video className="object-cover w-full h-full" autoPlay loop muted>
+              <video className="h-full w-full object-cover" autoPlay loop muted>
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             ) : (
               <Image
-                className={'object-cover overflow-hidden h-full w-full'}
+                className={'h-full w-full overflow-hidden object-cover'}
                 src={image}
                 alt="Preview project"
                 fill
@@ -78,10 +78,10 @@ export const ProjectShowcaseCard = ({
           {description}
         </CardDescription>
 
-        <div className="inline-flex gap-1.5 my-3 flex-wrap">
+        <div className="my-3 inline-flex flex-wrap gap-1.5">
           <Badge
             variant="secondary"
-            className="pointer-events-none ring-1 ring-primary border-none px-1 py-0 brightness-75"
+            className="pointer-events-none border-none px-1 py-0 ring-1 ring-primary brightness-75"
           >
             {type}
           </Badge>
@@ -90,7 +90,7 @@ export const ProjectShowcaseCard = ({
             <Badge
               key={index}
               variant={'outline'}
-              className="pointer-events-none ring-1 ring-accent-foreground text-accent-foreground border-none px-1 py-0 brightness-75"
+              className="pointer-events-none border-none px-1 py-0 text-accent-foreground ring-1 ring-accent-foreground brightness-75"
             >
               {tool}
             </Badge>
@@ -98,7 +98,7 @@ export const ProjectShowcaseCard = ({
         </div>
       </CardContent>
 
-      <CardFooter className="flex items-center justify-between pb-2 px-3">
+      <CardFooter className="flex items-center justify-between px-3 pb-2">
         <div className="flex items-center gap-x-2">
           {repository && (
             <Link
