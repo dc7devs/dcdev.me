@@ -1,4 +1,6 @@
-import { CustomForm } from '../../components/email/form';
+'use client';
+import { memo } from 'react';
+import { CustomForm } from '@/components/email/form';
 
 export default function ContactPage() {
   return (
@@ -8,15 +10,7 @@ export default function ContactPage() {
           Contact-me
         </h1>
 
-        <p>
-          Contact me for collaborations, consultations or just to say hello!
-          I&#39;m open to new ideas and contact opportunities. Fill in the form
-          below or send an e-mail to{' '}
-          <span className="underline underline-offset-2">
-            diegocaetano444@outlook.com
-          </span>
-          . I can&#39;t wait to hear your ideas!
-        </p>
+        <Description />
       </div>
 
       <div className="prose prose-zinc relative mx-auto mb-20 max-w-3xl bg-white p-5 shadow-md dark:prose-invert prose-p:leading-normal dark:bg-black">
@@ -25,3 +19,17 @@ export default function ContactPage() {
     </div>
   );
 }
+
+const Description = memo(function m() {
+  return (
+    <p>
+      Contact me for collaborations, consultations or just to say hello! I&#39;m
+      open to new ideas and contact opportunities. Fill in the form below or
+      send an e-mail to{' '}
+      <span className="underline underline-offset-2">
+        diegocaetano444@outlook.com
+      </span>
+      . I can&#39;t wait to hear your ideas!
+    </p>
+  );
+});

@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 
 import fncSocialMedia from '@/content/_social-media';
@@ -7,6 +8,7 @@ import RecentWorkUnderDev from '@/components/recent-work-under-dev';
 import ToolTip from '@/components/tooltip';
 import masteryTools from '@/content/_mastery-tools';
 import Icons from '@/components/ui/icons';
+import { memo } from 'react';
 
 export default function Page() {
   return (
@@ -44,54 +46,7 @@ export default function Page() {
           Hello, welcome to my little corner on the web!
         </p>
 
-        <p>
-          I&#39;m a self-taught code solutions programmer, I love programming
-          and I try to use the most <strong>software architecture</strong>,{' '}
-          <strong>clean</strong> and <strong>maintainable code</strong>. I work
-          with technologies from the{' '}
-          <TechBadge href="https://www.javascript.com/">
-            <Icons.DeviconJavascript className="size-3" />
-            <span>Javascript</span>
-          </TechBadge>
-          ,{' '}
-          <TechBadge href="https://www.typescriptlang.org/">
-            <Icons.DeviconTypescript className="size-3" />
-            <span>Typescript</span>
-          </TechBadge>
-          ,{' '}
-          <TechBadge href="https://react.dev/">
-            <Icons.DeviconReact className="size-3" />
-            <span>React</span>
-          </TechBadge>
-          ,{' '}
-          <TechBadge href="https://nextjs.org/">
-            <Icons.DeviconNextjs className="size-3" />
-            <span>Next</span>
-          </TechBadge>
-          ,{' '}
-          <TechBadge href="https://www.java.com/">
-            <Icons.DeviconJava className="size-3" />
-            <span>Java</span>
-          </TechBadge>{' '}
-          and{' '}
-          <TechBadge href="https://spring.io/">
-            <Icons.DeviconSpring className="size-3" />
-            <span>Spring Boot</span>
-          </TechBadge>{' '}
-          ecosystem.
-        </p>
-
-        <p className="align-baseline">
-          I&#39;m always learning and here you can find out about the projects
-          I&#39;ve completed and am working on, as well as details about my
-          career and skills. I&#39;m always looking to improve, and you can
-          follow my progress and what I&#39;m currently studying.
-        </p>
-
-        <p>
-          I hope I can help you. I&#39;d love to hear your ideas and contribute
-          whenever possible.
-        </p>
+        <Presentation />
 
         <small className="my-4 inline-flex items-center gap-1">
           <Icons.MdiWechat className="size-4" />
@@ -134,3 +89,58 @@ export default function Page() {
     </div>
   );
 }
+
+const Presentation = memo(function p() {
+  return (
+    <>
+      <p>
+        I&#39;m a self-taught code solutions programmer, I love programming and
+        I try to use the most <strong>software architecture</strong>,{' '}
+        <strong>clean</strong> and <strong>maintainable code</strong>. I work
+        with technologies from the{' '}
+        <TechBadge href="https://www.javascript.com/">
+          <Icons.DeviconJavascript className="size-3" />
+          <span>Javascript</span>
+        </TechBadge>
+        ,{' '}
+        <TechBadge href="https://www.typescriptlang.org/">
+          <Icons.DeviconTypescript className="size-3" />
+          <span>Typescript</span>
+        </TechBadge>
+        ,{' '}
+        <TechBadge href="https://react.dev/">
+          <Icons.DeviconReact className="size-3" />
+          <span>React</span>
+        </TechBadge>
+        ,{' '}
+        <TechBadge href="https://nextjs.org/">
+          <Icons.DeviconNextjs className="size-3" />
+          <span>Next</span>
+        </TechBadge>
+        ,{' '}
+        <TechBadge href="https://www.java.com/">
+          <Icons.DeviconJava className="size-3" />
+          <span>Java</span>
+        </TechBadge>{' '}
+        and{' '}
+        <TechBadge href="https://spring.io/">
+          <Icons.DeviconSpring className="size-3" />
+          <span>Spring Boot</span>
+        </TechBadge>{' '}
+        ecosystem.
+      </p>
+
+      <p className="align-baseline">
+        I&#39;m always learning and here you can find out about the projects
+        I&#39;ve completed and am working on, as well as details about my career
+        and skills. I&#39;m always looking to improve, and you can follow my
+        progress and what I&#39;m currently studying.
+      </p>
+
+      <p>
+        I hope I can help you. I&#39;d love to hear your ideas and contribute
+        whenever possible.
+      </p>
+    </>
+  );
+});

@@ -39,14 +39,13 @@ export default function ProjectPage() {
   );
 }
 
-// projetos recente
 const RecentProjects = () => {
   const recentProjects = ((projects: Array<Project>) => {
     return projects
       .sort((a, b) =>
         compareDesc(new Date(a.started_at), new Date(b.started_at))
       )
-      .filter((_) => _.status !== 'done')
+      .filter(_ => _.status !== 'done')
       .slice(0, 3);
   })(projects);
 
@@ -59,14 +58,13 @@ const RecentProjects = () => {
   );
 };
 
-// projetos em vitrine
 const ShowcaseProjects = () => {
   const showcaseProjects = ((projects: Array<Project>) => {
     return projects
       .sort((a, b) =>
         compareDesc(new Date(a.started_at), new Date(b.started_at))
       )
-      .filter((project) => project.is_promoted_to_showcase);
+      .filter(project => project.is_promoted_to_showcase);
   })(projects);
 
   return (
