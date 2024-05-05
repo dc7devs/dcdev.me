@@ -10,7 +10,7 @@ export const GithubOverviewCard = async () => {
   const data = await res.json();
 
   return (
-    <Card className="flex flex-col h-full border-none mt-0 lg:ml-9 sm:rounded-none">
+    <Card className="mt-0 flex h-full flex-col border-none sm:rounded-none lg:ml-9">
       <CardContent className="relative h-28 overflow-hidden p-0">
         <Image
           alt="Muggs Shop"
@@ -23,7 +23,7 @@ export const GithubOverviewCard = async () => {
       <CardFooter className="relative block space-y-4">
         <Image
           alt="avatar dcdevs"
-          className="absolute -top-14 left-1/2 aspect-video size-28 sm:size-20 -translate-x-1/2 rounded-full object-cover"
+          className="absolute -top-14 left-1/2 aspect-video size-28 -translate-x-1/2 rounded-full object-cover sm:size-20"
           src={data.avatar_url}
           height={100}
           width={100}

@@ -567,9 +567,9 @@ export function Logo() {
   }
 
   return theme == 'dark' ? (
-    <LogoDark className="size-9 sm:size-10 rounded-full ring-1 ring-input shadow-md" />
+    <LogoDark className="size-9 rounded-full shadow-md ring-1 ring-input sm:size-10" />
   ) : (
-    <LogoLight className="size-9 sm:size-10 rounded-full ring-1 ring-input shadow-md" />
+    <LogoLight className="size-9 rounded-full shadow-md ring-1 ring-input sm:size-10" />
   );
 }
 const LogoDark = (props: SVGProps<SVGSVGElement>) => {

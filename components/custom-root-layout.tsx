@@ -1,7 +1,5 @@
 'use client';
 import { ReactNode } from 'react';
-
-import NextProgress from 'next-progress';
 import { ThemeProvider } from 'next-themes';
 
 import Header from './header';
@@ -14,21 +12,19 @@ import { Toaster } from './ui/toaster';
 
 export function CustomLayout({ children }: { children: ReactNode }) {
   return (
-    <>
+    <div>
       <Analytics />
 
       <ThemeProvider attribute="class">
         <QueryClientProvider client={queryClient}>
-          <NextProgress color="rgb(139 92 246)" delay={500} />
-
           <Header />
 
           <main
             className={
-              'size-auto px-4 pb-7 sm:px-10 mt-5 mx-auto 2xl:max-w-screen-2xl 2xl:mx-auto'
+              'mx-auto mt-5 size-auto px-4 pb-7 sm:px-10 2xl:mx-auto 2xl:max-w-screen-2xl'
             }
           >
-            {children}
+            <>{children}</>
           </main>
 
           <Footer />
@@ -36,6 +32,6 @@ export function CustomLayout({ children }: { children: ReactNode }) {
       </ThemeProvider>
 
       <Toaster />
-    </>
+    </div>
   );
 }

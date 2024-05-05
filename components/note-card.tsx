@@ -10,28 +10,28 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-import { Note } from '@/.contentlayer/generated';
 import Icons from './ui/icons';
 import { cn } from '@/lib/utils';
 
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Badge } from './ui/badge';
+import { Note } from '@/.velite';
 
-export function NoteCard({ title, createdAt, description, tags }: Note) {
+export function NoteCard({ title, created_at, description, tags }: Note) {
   const { theme } = useTheme();
 
   return (
     <Card
       className={
-        'flex flex-col relative w-full min-h-full rounded-sm border-input md:hover:scale-105 md:transition md:duration-100 md:ease-linear cursor-pointer text-balance bg-background'
+        'relative flex min-h-full w-full cursor-pointer flex-col text-balance rounded-sm border-input bg-background md:transition md:duration-100 md:ease-linear md:hover:-translate-y-3'
       }
     >
-      <CardHeader className="pb-2 pt-0 px-0">
-        <div className="relative w-full h-24 overflow-hidden rounded-t-sm">
+      <CardHeader className="px-0 pb-2 pt-0">
+        <div className="relative h-24 w-full overflow-hidden rounded-t-sm">
           <Image
             className={
-              'object-none overflow-hidden object-left-bottom h-full w-full brightness-50'
+              'h-full w-full overflow-hidden object-none object-left-bottom brightness-50'
             }
             src={cn(
               theme === 'dark'
@@ -47,19 +47,19 @@ export function NoteCard({ title, createdAt, description, tags }: Note) {
 
       <Icons.PhBookmarkSimpleFill className="absolute -top-1.5 right-2 size-6" />
 
-      <CardContent className="grow px-3 pb-1.5 space-y-1">
+      <CardContent className="grow space-y-1 px-3 pb-1.5">
         <CardTitle>{title}</CardTitle>
 
         <CardDescription className="line-clamp-2 text-ellipsis font-normal text-accent-foreground/80">
           {description}
         </CardDescription>
 
-        <div className="inline-flex gap-1.5 my-3 flex-wrap">
+        <div className="my-3 inline-flex flex-wrap gap-1.5">
           {tags.map((tool: string, index: number) => (
             <Badge
               key={index}
               variant={'secondary'}
-              className="pointer-events-none ring-1 ring-accent-foreground text-accent-foreground border-none px-1 py-0 brightness-75"
+              className="pointer-events-none border-none px-1 py-0 text-accent-foreground ring-1 ring-accent-foreground brightness-75"
             >
               {tool}
             </Badge>
@@ -67,9 +67,9 @@ export function NoteCard({ title, createdAt, description, tags }: Note) {
         </div>
       </CardContent>
 
-      <CardFooter className="flex items-center justify-between pb-2 px-3 font-normal">
+      <CardFooter className="flex items-center justify-between px-3 pb-2 font-normal">
         <time className="text-sm text-accent-foreground/60">
-          {formatDistanceToNow(new Date(createdAt), {
+          {formatDistanceToNow(new Date(created_at), {
             locale: ptBR,
             addSuffix: true
           })}

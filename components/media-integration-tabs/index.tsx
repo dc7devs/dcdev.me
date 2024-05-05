@@ -9,11 +9,11 @@ export const MediaTabs = () => {
   return (
     <Tabs
       defaultValue="spotify"
-      className="relative flex flex-col h-full w-full pt-9 lg:p-0 bg-transparent"
+      className="relative flex h-full w-full flex-col bg-transparent pt-9 lg:p-0"
     >
-      <TabsList className="absolute top-0 z-20 lg:flex-col h-auto w-auto rounded-tl-none gap-1 p-0.5">
+      <TabsList className="absolute top-0 z-20 h-auto w-auto gap-1 rounded-tl-none p-0.5 lg:flex-col">
         <TabsTrigger
-          className="size-full p-1 m-0"
+          className="m-0 size-full p-1"
           value="spotify"
           name="spotify option"
         >
@@ -21,7 +21,7 @@ export const MediaTabs = () => {
         </TabsTrigger>
 
         <TabsTrigger
-          className="size-full p-1 m-0"
+          className="m-0 size-full p-1"
           value="github"
           name="github option"
         >
@@ -44,11 +44,11 @@ export const ChallengeTabs = () => {
   return (
     <Tabs
       defaultValue="hackerrank"
-      className="relative flex flex-col h-full w-full pt-9 px-1 pb-1 ring-1 ring-input bg-white/50 dark:bg-black/50 backdrop-blur-sm"
+      className="relative flex h-full w-full flex-col bg-white/50 px-1 pb-1 pt-9 ring-1 ring-input backdrop-blur-sm dark:bg-black/50"
     >
-      <TabsList className="absolute top-0 z-20 h-auto w-auto rounded-tl-none gap-1 p-0.5">
+      <TabsList className="absolute top-0 z-20 h-auto w-auto gap-1 rounded-tl-none p-0.5">
         <TabsTrigger
-          className="size-full p-1 m-0"
+          className="m-0 size-full p-1"
           value="hackerrank"
           name="hackerrank option"
         >
@@ -56,7 +56,7 @@ export const ChallengeTabs = () => {
         </TabsTrigger>
 
         <TabsTrigger
-          className="size-full p-1 m-0"
+          className="m-0 size-full p-1"
           value="leetcode"
           name="leetcode option"
         >

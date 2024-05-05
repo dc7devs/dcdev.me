@@ -3,7 +3,7 @@ import { Sketchs } from '@/components/ui/sketchs';
 
 export default function Custom404() {
   return (
-    <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-h3:mt-0 my-20 mx-auto text-center h-5/6 dark:brightness-75">
+    <div className="prose prose-zinc mx-auto my-20 h-5/6 text-center dark:prose-invert prose-h3:mt-0 prose-p:leading-normal dark:brightness-75">
       <Sketchs.Sketch404Img className="mx-auto fill-zinc-700 dark:fill-primary" />
 
       <h2 className="-mt-3 text-zinc-700 dark:text-primary">Page Not Found</h2>

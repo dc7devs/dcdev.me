@@ -38,3 +38,7 @@ next-env.d.ts
 
 # contentlayer
 .contentlayer
+
+# velite
+.velite
+public/static

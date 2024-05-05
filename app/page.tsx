@@ -1,26 +1,28 @@
+'use client';
 import Link from 'next/link';
 
-import fncSocialMedia from '@/content/social-media';
+import fncSocialMedia from '@/content/_social-media';
 import TechBadge from '@/components/tech-badge';
 import EmailSubscribe from '@/components/email/email-subscribe';
 import RecentWorkUnderDev from '@/components/recent-work-under-dev';
 import ToolTip from '@/components/tooltip';
-import masteryTools from '@/content/mastery-tools';
+import masteryTools from '@/content/_mastery-tools';
 import Icons from '@/components/ui/icons';
+import { memo } from 'react';
 
 export default function Page() {
   return (
     <div
       className={
-        'w-full flex flex-col gap-12 pt-20 sm:pt-10 md:grid md:grid-cols-2 md:gap-2 lg:gap-0 lg:grid-cols-12 2xl:flex 2xl:flex-row 2xl:flex-wrap 2xl:items-start 2xl:justify-start'
+        'flex w-full flex-col gap-12 pt-20 sm:pt-10 md:grid md:grid-cols-2 md:gap-2 lg:grid-cols-12 lg:gap-0 2xl:flex 2xl:flex-row 2xl:flex-wrap 2xl:items-start 2xl:justify-start'
       }
     >
-      <div className="flex flex-col h-full w-auto prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 lg:col-start-2 lg:col-end-7 2xl:flex-1">
+      <div className="prose prose-zinc flex h-full w-auto flex-col dark:prose-invert prose-p:my-3 prose-p:leading-normal lg:col-start-2 lg:col-end-7 2xl:flex-1">
         <div>
-          <h1 className="align-baseline font-righteous text-black dark:text-white m-0 font-normal text-base">
+          <h1 className="m-0 align-baseline font-righteous text-base font-normal text-black dark:text-white">
             Diego C. Silva
           </h1>
-          <h2 className="not-prose text-xs mt-1.5 leading-normal text-accent-foreground/60">
+          <h2 className="not-prose mt-1.5 text-xs leading-normal text-accent-foreground/60">
             Full-Stack Developer
           </h2>
         </div>
@@ -28,7 +30,7 @@ export default function Page() {
         <p className="align-baseline">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="inline mr-1 fill-current"
+            className="mr-1 inline fill-current"
             width="21"
             height="21"
             viewBox="0 0 256 256"
@@ -44,61 +46,14 @@ export default function Page() {
           Hello, welcome to my little corner on the web!
         </p>
 
-        <p>
-          I&#39;m a self-taught code solutions programmer, I love programming
-          and I try to use the most <strong>software architecture</strong>,{' '}
-          <strong>clean</strong> and <strong>maintainable code</strong>. I work
-          with technologies from the{' '}
-          <TechBadge href="https://www.javascript.com/">
-            <Icons.DeviconJavascript className="size-3" />
-            <span>Javascript</span>
-          </TechBadge>
-          ,{' '}
-          <TechBadge href="https://www.typescriptlang.org/">
-            <Icons.DeviconTypescript className="size-3" />
-            <span>Typescript</span>
-          </TechBadge>
-          ,{' '}
-          <TechBadge href="https://react.dev/">
-            <Icons.DeviconReact className="size-3" />
-            <span>React</span>
-          </TechBadge>
-          ,{' '}
-          <TechBadge href="https://nextjs.org/">
-            <Icons.DeviconNextjs className="size-3" />
-            <span>Next</span>
-          </TechBadge>
-          ,{' '}
-          <TechBadge href="https://www.java.com/">
-            <Icons.DeviconJava className="size-3" />
-            <span>Java</span>
-          </TechBadge>{' '}
-          and{' '}
-          <TechBadge href="https://spring.io/">
-            <Icons.DeviconSpring className="size-3" />
-            <span>Spring Boot</span>
-          </TechBadge>{' '}
-          ecosystem.
-        </p>
+        <Presentation />
 
-        <p className="align-baseline">
-          I&#39;m always learning and here you can find out about the projects
-          I&#39;ve completed and am working on, as well as details about my
-          career and skills. I&#39;m always looking to improve, and you can
-          follow my progress and what I&#39;m currently studying.
-        </p>
-
-        <p>
-          I hope I can help you. I&#39;d love to hear your ideas and contribute
-          whenever possible.
-        </p>
-
-        <small className="inline-flex items-center gap-1 my-4">
+        <small className="my-4 inline-flex items-center gap-1">
           <Icons.MdiWechat className="size-4" />
           <strong>Find me on</strong>
         </small>
 
-        <div className="inline-flex gap-2.5 not-prose">
+        <div className="not-prose inline-flex gap-2.5">
           {fncSocialMedia().map((media, index) => (
             <Link
               key={index}
@@ -112,18 +67,18 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="flex flex-col w-full h-full order-last gap-8 mx-auto sm:p-2 sm:w-11/12 md:gap-2 md:order-none md:p-0 md:w-80 lg:w-96 lg:col-start-7 lg:col-end-12 2xl:mx-5 2xl:shrink-0">
-        <RecentWorkUnderDev className="order-last md:order-none h-auto border-border/50 bg-white/90 dark:bg-black/90 backdrop-blur-sm" />
-        <EmailSubscribe className="min-h-40 border-border/50 bg-white/90 dark:bg-black/90 backdrop-blur-sm" />
+      <div className="order-last mx-auto flex h-full w-full flex-col gap-8 sm:w-11/12 sm:p-2 md:order-none md:w-80 md:gap-2 md:p-0 lg:col-start-7 lg:col-end-12 lg:w-96 2xl:mx-5 2xl:shrink-0">
+        <RecentWorkUnderDev className="h-auto border-border/50 bg-white/90 backdrop-blur-sm dark:bg-black/90" />
+        <EmailSubscribe className="min-h-40 border-border/50 bg-white/90 backdrop-blur-sm dark:bg-black/90" />
       </div>
 
-      <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal prose-p:my-3 md:col-span-full lg:col-start-2 lg:col-end-12 md:mt-3 2xl:mt-0 2xl:flex-1">
-        <small className="inline-flex items-center gap-1 my-4">
+      <div className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal md:col-span-full md:mt-3 lg:col-start-2 lg:col-end-12 2xl:mt-0 2xl:flex-1">
+        <small className="my-4 inline-flex items-center gap-1">
           <Icons.FluentEmojiHighContrastMagnifyingGlassTiltedLeft />
           <strong>I&#39;m in the loop</strong>
         </small>
 
-        <div className="inline-flex flex-wrap gap-4 mt-3 not-prose">
+        <div className="not-prose mt-3 inline-flex flex-wrap gap-4">
           {masteryTools('size-[20px]').map((tool, index) => (
             <ToolTip key={index} message={tool.toolName}>
               {tool.toolIcon}
@@ -134,3 +89,58 @@ export default function Page() {
     </div>
   );
 }
+
+const Presentation = memo(function p() {
+  return (
+    <>
+      <p>
+        I&#39;m a self-taught code solutions programmer, I love programming and
+        I try to use the most <strong>software architecture</strong>,{' '}
+        <strong>clean</strong> and <strong>maintainable code</strong>. I work
+        with technologies from the{' '}
+        <TechBadge href="https://www.javascript.com/">
+          <Icons.DeviconJavascript className="size-3" />
+          <span>Javascript</span>
+        </TechBadge>
+        ,{' '}
+        <TechBadge href="https://www.typescriptlang.org/">
+          <Icons.DeviconTypescript className="size-3" />
+          <span>Typescript</span>
+        </TechBadge>
+        ,{' '}
+        <TechBadge href="https://react.dev/">
+          <Icons.DeviconReact className="size-3" />
+          <span>React</span>
+        </TechBadge>
+        ,{' '}
+        <TechBadge href="https://nextjs.org/">
+          <Icons.DeviconNextjs className="size-3" />
+          <span>Next</span>
+        </TechBadge>
+        ,{' '}
+        <TechBadge href="https://www.java.com/">
+          <Icons.DeviconJava className="size-3" />
+          <span>Java</span>
+        </TechBadge>{' '}
+        and{' '}
+        <TechBadge href="https://spring.io/">
+          <Icons.DeviconSpring className="size-3" />
+          <span>Spring Boot</span>
+        </TechBadge>{' '}
+        ecosystem.
+      </p>
+
+      <p className="align-baseline">
+        I&#39;m always learning and here you can find out about the projects
+        I&#39;ve completed and am working on, as well as details about my career
+        and skills. I&#39;m always looking to improve, and you can follow my
+        progress and what I&#39;m currently studying.
+      </p>
+
+      <p>
+        I hope I can help you. I&#39;d love to hear your ideas and contribute
+        whenever possible.
+      </p>
+    </>
+  );
+});
