@@ -6,9 +6,10 @@
     "dev:content": "velite --watch",
     "build:content": "velite --clean",
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm build:content && next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "test": "jest",
     "test:watch": "test --watch",
     "email:dev": "email dev"
