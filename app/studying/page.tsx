@@ -206,7 +206,7 @@ const StudyProjects = () => {
       .sort((a, b) =>
         compareDesc(new Date(a.started_at), new Date(b.started_at))
       )
-      .filter((project) => project.classification !== 'professional');
+      .filter(project => project.classification !== 'professional');
   })(projects);
 
   return (

@@ -41,7 +41,7 @@ const SectionBuilderByProjectType = () => {
       [key: string]: Array<Project>;
     } = {};
 
-    projects.forEach((project) => {
+    projects.forEach(project => {
       const projectType = project.type.toLowerCase();
 
       organizedProjects[projectType] = organizedProjects[projectType] || [];
@@ -53,7 +53,7 @@ const SectionBuilderByProjectType = () => {
 
   return (
     <div>
-      {Object.keys(organizedProjectsByType).map((projectType) => (
+      {Object.keys(organizedProjectsByType).map(projectType => (
         <section key={projectType}>
           <h2 className="mb-3 mt-10 text-base font-medium text-black dark:text-white">
             {projectType}

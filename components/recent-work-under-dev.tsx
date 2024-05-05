@@ -67,7 +67,7 @@ const RecentProjects = () => {
       .sort((a, b) =>
         compareDesc(new Date(a.started_at), new Date(b.started_at))
       )
-      .filter((_) => _.status !== 'done')
+      .filter(_ => _.status !== 'done')
       .slice(0, 3);
   })(projects);
 
