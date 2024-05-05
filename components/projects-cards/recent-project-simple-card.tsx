@@ -9,7 +9,7 @@ export const RecentProjectSimpleCard = (project: Project) => (
   <div className="flex w-full flex-col justify-center bg-background px-3.5 py-2 ring-1 ring-ring/10">
     <div className="inline-flex w-full items-center gap-x-1.5">
       {masteryTools('size-4 basis-4').find(
-        (icon) =>
+        icon =>
           icon.toolName.toLocaleLowerCase().trim() ===
           project.core_tech.name.toLocaleLowerCase().trim()
       )?.toolIcon ?? (
