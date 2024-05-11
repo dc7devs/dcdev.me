@@ -43,7 +43,7 @@ export default function Header() {
           'flex w-full items-center justify-between px-4 py-2 sm:gap-5 sm:px-10 sm:py-0 2xl:mx-auto 2xl:max-w-screen-2xl'
         }
       >
-        <Link href="/" aria-label="Logotipo: dcdevs">
+        <Link href="/" aria-label="Logotipo dcdevs">
           {!didScroll && <Logotipo />}
         </Link>
 
