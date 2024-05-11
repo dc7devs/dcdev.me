@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
 
 import {
   Card,
@@ -11,7 +10,6 @@ import {
   CardTitle
 } from '@/components/ui/card';
 import Icons from './ui/icons';
-import { cn } from '@/lib/utils';
 
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
@@ -19,8 +17,6 @@ import { Badge } from './ui/badge';
 import { Note } from '@/.velite';
 
 export function NoteCard({ title, created_at, description, tags }: Note) {
-  const { theme } = useTheme();
-
   return (
     <Card
       className={
@@ -31,13 +27,22 @@ export function NoteCard({ title, created_at, description, tags }: Note) {
         <div className="relative h-24 w-full overflow-hidden rounded-t-sm">
           <Image
             className={
-              'h-full w-full overflow-hidden object-none object-left-bottom brightness-50'
+              'hidden h-full w-full overflow-hidden object-none object-left-bottom brightness-50 dark:block'
             }
-            src={cn(
-              theme === 'dark'
-                ? 'https://res.cloudinary.com/dyxtcsnna/image/upload/v1707977012/dcdev/pattern-studying-note-dark_cv33kj.png'
-                : 'https://res.cloudinary.com/dyxtcsnna/image/upload/v1707977013/dcdev/pattern-studying-note-light_cofsty.png'
-            )}
+            src={
+              'https://res.cloudinary.com/dyxtcsnna/image/upload/v1707977012/dcdev/pattern-studying-note-dark_cv33kj.png'
+            }
+            alt="Preview project"
+            height={250}
+            width={300}
+          />
+          <Image
+            className={
+              'h-full w-full overflow-hidden object-none object-left-bottom brightness-50 dark:hidden'
+            }
+            src={
+              'https://res.cloudinary.com/dyxtcsnna/image/upload/v1707977013/dcdev/pattern-studying-note-light_cofsty.png'
+            }
             alt="Preview project"
             height={250}
             width={300}
