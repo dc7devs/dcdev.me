@@ -19,7 +19,6 @@ import { Separator } from '@/components/ui/separator';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 
-import { Card, CardTitle } from '@/components/ui/card';
 import Icons from '@/components/ui/icons';
 
 export default function SheetProjectPage({
@@ -43,6 +42,7 @@ export default function SheetProjectPage({
     my_role,
     timeline,
     repository,
+    deployment,
     contributors
   } = project;
 
@@ -85,7 +85,7 @@ export default function SheetProjectPage({
               'bg-background/60 backdrop-blur-md lg:pr-5 lg:backdrop-blur-sm',
               'transition-transform duration-200 ease-linear',
               didScroll &&
-                'sticky -top-6 z-50 border-b border-input py-2 transition-transform duration-150 ease-out'
+                'sticky -top-5 z-50 border-b border-input py-2 transition-transform duration-150 ease-out lg:-top-6'
             )}
           >
             <SheetTitle>
@@ -226,9 +226,37 @@ export default function SheetProjectPage({
             </div>
 
             <div className="lg:sticky lg:-top-[25px] lg:z-50 lg:h-[73px] lg:py-3 lg:pl-3">
-              <div className="grid h-full w-full grid-cols-2 gap-1.5">
-                <CardGithub title={title} repo_url={repository} />
-                {/* <CardDemo title={title} demo_url={deployment} /> */}
+              <div className="flex h-full w-full gap-3 lg:grid lg:grid-cols-2 lg:gap-1.5">
+                <a
+                  href={repository}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-full items-center"
+                >
+                  <div className="flex items-center lowercase">
+                    <Icons.GithubIconFill className="mr-1 size-4" />
+                    <span className="line-clamp-1 max-w-32 text-sm lg:max-w-[63px]">
+                      {title}
+                    </span>
+                    <Icons.PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
+                  </div>
+                </a>
+
+                <a
+                  href={deployment}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={cn(
+                    'flex h-full items-center',
+                    !deployment && 'hidden'
+                  )}
+                >
+                  <div className="line-clamp-1 flex items-center text-sm lowercase">
+                    <Icons.PhPlayCircleFill className="mr-1 size-4" />
+                    <span>demo</span>
+                    <Icons.PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
+                  </div>
+                </a>
               </div>
             </div>
 
@@ -239,42 +267,3 @@ export default function SheetProjectPage({
     </>
   );
 }
-
-const CardGithub = ({
-  title,
-  repo_url
-}: {
-  title: string;
-  repo_url: string;
-}) => {
-  return (
-    <a href={repo_url} target="_blank" rel="noreferrer">
-      <Card
-        className={cn(
-          'h-full w-auto',
-          'flex max-h-max items-center space-x-2 rounded-sm border-input px-2 py-1.5 shadow-none',
-          'cursor-pointer hover:bg-secondary'
-        )}
-      >
-        <div className="relative size-auto">
-          <div className="absolute bottom-0 right-0 z-50 rounded-full bg-white ring-1 ring-white dark:bg-black">
-            <Icons.GithubIconFill className="size-3" />
-          </div>
-          <Image
-            className="rounded-full bg-black ring-1 ring-input"
-            src={
-              'https://res.cloudinary.com/dyxtcsnna/image/upload/v1709661316/dcdev/Logo_dark_mkfxrs.png'
-            }
-            alt="@dcdevs"
-            height={28}
-            width={28}
-          />
-        </div>
-
-        <div className="max-w-32 lg:max-w-[60px]">
-          <CardTitle className="line-clamp-1 text-sm">{title}</CardTitle>
-        </div>
-      </Card>
-    </a>
-  );
-};
