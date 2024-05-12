@@ -15,7 +15,12 @@ export function CustomLayout({ children }: { children: ReactNode }) {
     <div>
       <Analytics />
 
-      <ThemeProvider attribute="class">
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
         <QueryClientProvider client={queryClient}>
           <Header />
 

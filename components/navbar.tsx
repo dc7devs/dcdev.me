@@ -56,11 +56,6 @@ const nav_items = [
     icon: <Icons.BoxMultipleSearchFill className="size-5 sm:size-5" />,
     path: '/projects'
   },
-  // {
-  //   name: 'Articles',
-  //   icon: <Icons.NoteStackFill className='size-5 sm:size-5' />,
-  //   path: '/articles'
-  // },
   {
     name: 'Studying...',
     icon: <Icons.BooksFill className="size-5 sm:size-5" />,

@@ -20,12 +20,12 @@ export const projects = defineCollection({
       }),
       my_role: s
         .array(s.string())
-        .transform((data) => data.map((role) => role.trim()))
+        .transform(data => data.map(role => role.trim()))
         .default(['(none)']),
       timeline: s.string().trim().default('(none)'),
       tools: s
         .array(s.string())
-        .transform((data) => data.map((tool) => tool.trim())),
+        .transform(data => data.map(tool => tool.trim())),
       type: s.enum([
         'API',
         'FEATURE',
@@ -71,7 +71,7 @@ export const projects = defineCollection({
           }
         ])
     })
-    .transform((data) => ({
+    .transform(data => ({
       ...data,
       slug: slug(data.title)
     }))
