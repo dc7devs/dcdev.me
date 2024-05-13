@@ -11,7 +11,7 @@ on:
 jobs:
     call-sync-main:
         name: Call sync-main-branch.yml
-        uses: dc7devs/dcdev.me/.github/workflows/sync-main-branch.yml@dev
+        uses: dc7devs/dcdev.me/.github/workflows/sync-main-branch.yml@main
         if: startsWith(github.event.head_commit.message, 'chore(release)')
     
     # call-release:
@@ -22,7 +22,7 @@ jobs:
     
     call-lint:
         name: Call lint.yml
-        uses: dc7devs/dcdev.me/.github/workflows/lint.yml@dev
+        uses: dc7devs/dcdev.me/.github/workflows/lint.yml@main
 
     # preview:
     #     name: Deploy to preview
