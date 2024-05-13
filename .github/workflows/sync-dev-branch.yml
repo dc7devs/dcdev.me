@@ -1,0 +1,47 @@
+name: 'Sync dev branch'
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  create-sync-pr:
+    runs-on: ubuntu-latest
+    name: Sync dev branch
+
+    outputs:
+      PULL_REQUEST_NUMBER: ${{ steps.pull.outputs.PULL_REQUEST_NUMBER }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.13.x
+
+      - name: Opening pull request
+        id: pull
+        uses: tretuna/sync-branches@1.4.0
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          FROM_BRANCH: "main"
+          TO_BRANCH: "dev"
+          PULL_REQUEST_TITLE: "chore(git): merge `main` into `dev`"
+          CONTENT_COMPARISON: true
+          PULL_REQUEST_AUTO_MERGE_METHOD: "merge"
+
+  add-automerge-label:
+    runs-on: ubuntu-latest
+    name: Add "automerge" label
+    needs: create-sync-pr
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Add "automerge" label
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_NUMBER: ${{needs.create-sync-pr.outputs.PULL_REQUEST_NUMBER}}
+        run: gh pr edit $PULL_REQUEST_NUMBER --add-label automerge

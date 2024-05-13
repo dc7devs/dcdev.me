@@ -1,6 +1,8 @@
 {
-  "name": "portfolio",
+  "name": "dcdevs.me",
   "version": "0.1.0",
+  "homepage": "https://dcdevs.me",
+  "author": "Diego C. Silva <diegocaetano444@outlook.com>",
   "private": true,
   "scripts": {
     "dev:content": "velite --watch",

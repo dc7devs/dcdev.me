@@ -1,0 +1,14 @@
+name: "[CI] pull request"
+
+on: pull_request
+
+permissions:
+  contents: read
+  pull-requests: write
+  statuses: write
+  checks: write
+
+jobs:
+  call-lint:
+    name: Call lint.yml
+    uses: mateusfg7/mateusf.com/.github/workflows/lint.yml@main
