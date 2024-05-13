@@ -11,4 +11,4 @@ permissions:
 jobs:
   call-lint:
     name: Call lint.yml
-    uses: mateusfg7/mateusf.com/.github/workflows/lint.yml@main
+    uses: dc7devs/dcdev.me/.github/workflows/lint.yml@main
