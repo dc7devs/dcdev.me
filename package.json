@@ -9,8 +9,6 @@
     "build:content": "velite --clean",
     "dev": "next dev",
     "build": "pnpm build:content && next build",
-    "deploy:vercel": "vercel --prod",
-    "deploy:vercel:preview": "vercel",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
