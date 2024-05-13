@@ -30,7 +30,6 @@ jobs:
           TO_BRANCH: "dev"
           PULL_REQUEST_TITLE: "chore(git): merge `main` into `dev`"
           CONTENT_COMPARISON: true
-          PULL_REQUEST_AUTO_MERGE_METHOD: "merge"
 
   add-automerge-label:
     runs-on: ubuntu-latest
