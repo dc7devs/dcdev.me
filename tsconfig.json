@@ -38,7 +38,7 @@
     ".next/types/**/*.ts",
     ".velite/*.ts",
     "velite.config.ts",
-    "content/collections/*.ts",
+    "content/collections/*.ts", "commitlint.config.ts",
   ],
   "mdx": {
     "plugins": [
