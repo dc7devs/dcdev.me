@@ -22,33 +22,33 @@ jobs:
         name: Call sync-dev-branch.yml
         uses: dc7devs/dcdev.me/.github/workflows/sync-dev-branch.yml@main
 
-    # deploy:
-    #     name: Deploy to production
-    #     runs-on: ubuntu-latest
+    deploy:
+        name: Deploy to production
+        runs-on: ubuntu-latest
 
-    #     steps:
-    #         - name: Checkout
-    #           uses: actions/checkout@v4
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
             
-    #         - name: Setup Node
-    #           uses: actions/setup-node@v4
-    #           with:
-    #             node-version: 20.13.x
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20.13.x
       
-    #         - name: Install PNPM
-    #           run: npm i -g pnpm
+            - name: Install PNPM
+              run: npm i -g pnpm
 
-    #         - name: Install vercel CLI
-    #           run: |
-    #             pnpm install
-    #             pnpm i --global vercel@latest
+            - name: Install vercel CLI
+              run: |
+                pnpm install
+                pnpm i --global vercel@latest
 
-    #         - name: Pull vercel environment information
-    #           run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+            - name: Pull vercel environment information
+              run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-    #         - name: Build Project Artifacts
-    #           run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+            - name: Build Project Artifacts
+              run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-    #         - name: Deploy project artifacts to vercel
-    #           run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+            - name: Deploy project artifacts to vercel
+              run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
