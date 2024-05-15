@@ -12,6 +12,8 @@ on:
         branches:
             - develop
         types: [opened, synchronize, reopened]
+    pull_request_review:
+        types: [submitted, edited, dismissed]
 jobs:
     call-sync-main:
         name: Call sync-main-branch.yml
