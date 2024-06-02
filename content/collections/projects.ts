@@ -36,9 +36,9 @@ export const projects = defineCollection({
         'CORPORATE PORTALS',
         'RESERVATION & SHEDULING',
         'AUTOMATIONS & INTEGRATIONS',
-        'DASHBOARDS',
         'E-LEARNING',
-        'BLOGS & PORTFOLIO'
+        'BLOGS & PORTFOLIO',
+        'SAAS'
       ]),
       classification: s
         .enum(['personal study', 'sketch study', 'professional'])
@@ -52,7 +52,7 @@ export const projects = defineCollection({
       video: s.string().url().optional(),
       metadata: s.metadata(),
       content: s.mdx(),
-      repository: s.string().url(),
+      repository: s.string().url().default('https://github.com/dc7devs'),
       deployment: s.string().url().optional(),
       contributors: s
         .array(
