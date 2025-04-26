@@ -1,3 +1,4 @@
+// 'use client';
 import Icons from './ui/icons';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,7 +12,7 @@ import Unavailable from './unavailable';
 import { Project, projects } from '@/.velite';
 import DownloadCV from './cv-download-button';
 
-export default async function RecentWorkUnderDev({
+export default function RecentWorkUnderDev({
   className
 }: {
   className?: string;

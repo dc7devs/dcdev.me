@@ -23,8 +23,7 @@ const nextConfig = {
         pathname: '**'
       }
     ]
-  },
-  swcMinify: true
+  }
 };
 
 module.exports = nextConfig;

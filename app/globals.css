@@ -1,79 +1,127 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-inter: "Inter", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+    --font-roboto-condensed: "Roboto Condensed", sans-serif;
+    --font-righteous: "Righteous", cursive;
+    --font-montserrat: "Montserrat", sans-serif;
+  
+    --radius: 0.5rem;
+    --radius-md: calc(0.5rem - 2px);
+    --radius-sm: calc(0.5rem - 4px);
+  
+    --breakpoint-2xl: 1400px;
+  
+    --color-separator: #3F3F3F;
+    --color-black: #000;
+    --color-white: #fff;
+  
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+  
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+
+    --background-image-paper-pattern: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.94) 100%), linear-gradient(rgba(170,170,170, 0.18) 1.3px, transparent 1.3px), linear-gradient(to right, rgba(170,170,170,0.18) 1.3px, #ffffff 1.3px);
+    --background-image-paper-pattern-dark: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.94) 100%), linear-gradient(rgba(170,170,170, .15) 1.3px, transparent 1.3px), linear-gradient(to right, rgba(170, 170, 170, .15) 1.3px, #000000 1.3px);
+
+    --background-paper-pattern-size: cover, 35px 35px, 35px 35px;
+    --background-paper-pattern-position: center, center, center;
+}
+
+:root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+
+    --c-bg: transparent;
+    --c-scrollbar: rgb(173, 173, 173);
+}
+
+.dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --c-bg: transparent;
+    --c-scrollbar: rgb(23, 23, 23);
+}
+
+@layer utilities {
+    .screen-content-w {
+        @apply max-w-6xl sm:w-5/6 md:w-3/4
+    }
+}
 
 @layer base {
-
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
-
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
-
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
-
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
-
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
-
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 10% 3.9%;
-
-        --radius: 0.5rem;
-
-        --c-bg: transparent;
-        --c-scrollbar: rgb(173, 173, 173);
-    }
-
-    .dark {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
-
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
-
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
-
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
-
-        --c-bg: transparent;
-        --c-scrollbar: rgb(23, 23, 23);
-    }
-
-    
-
     ::selection {
         background-color: rgba(136,136,136, .35);
     }
@@ -92,16 +140,18 @@
     }
 
     body {
-        @apply text-foreground
+        @apply
+
+        bg-paper-pattern
+        bg-size-(--background-paper-pattern-size)
+        bg-position-(--background-paper-pattern-position)
+        dark:bg-paper-pattern-dark
+
         overflow-auto
         scroll-smooth
         bg-fixed
         bg-white
         dark:bg-black
-        bg-paper-pattern
-        bg-paper-pattern-size
-        bg-paper-pattern-position
-        dark:bg-paper-pattern-dark
         antialiased
         hover:subpixel-antialiased
     }
@@ -147,12 +197,6 @@
   
 .prose *:hover > .anchor {
     @apply visible;
-}
-
-@layer utilities {
-    .screen-content-w {
-        @apply max-w-6xl sm:w-5/6 md:w-3/4
-    }
 }
 
 [data-rehype-pretty-code-figure] pre {
