@@ -194,7 +194,7 @@
 .prose .anchor:after {
     content: '#';
 }
-  
+
 .prose *:hover > .anchor {
     @apply visible;
 }

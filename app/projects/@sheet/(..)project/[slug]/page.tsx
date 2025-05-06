@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { use, useCallback, useContext, useEffect, useState } from 'react';
 
 import {
   SheetHeader,
@@ -22,10 +22,12 @@ import { Badge } from '@/components/ui/badge';
 import Icons from '@/components/ui/icons';
 
 export default function SheetProjectPage({
-  params: { slug }
+  params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = use(params);
+
   const project = projects.find((project: Project) => project.slug == slug);
   if (!project) notFound();
 
@@ -88,25 +90,21 @@ export default function SheetProjectPage({
                 'sticky -top-5 z-50 border-b border-input py-2 transition-transform duration-150 ease-out lg:-top-6'
             )}
           >
-            <SheetTitle>
-              <h1
-                className={cn(
-                  'font-poppins font-light',
-                  !didScroll && 'text-4xl'
-                )}
-              >
-                {title}
-              </h1>
+            <SheetTitle
+              className={cn(
+                'font-poppins font-light',
+                !didScroll && 'text-4xl'
+              )}
+            >
+              {title}
             </SheetTitle>
-            <SheetDescription>
-              <p
-                className={cn(
-                  'font-inter',
-                  didScroll ? 'line-clamp-1 text-ellipsis' : 'my-2 text-sm'
-                )}
-              >
-                {description}
-              </p>
+            <SheetDescription
+              className={cn(
+                'font-inter',
+                didScroll ? 'line-clamp-1 text-ellipsis' : 'my-2 text-sm'
+              )}
+            >
+              {description}
             </SheetDescription>
           </SheetHeader>
 
