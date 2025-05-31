@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { NoteCard } from '@/components/note-card';
 import BackButton from '@/components/go-back-button';
-import Icons from '@/components/ui/icons';
+import { MaterialSymbolsArrowLeftAltRounded } from '@/components/ui/icons';
 
 import { Note, notes } from '@/.velite';
 import { Separator } from '@/components/ui/separator';
@@ -25,7 +25,7 @@ export default function NotesPage() {
       <Separator orientation="horizontal" className="mx-auto mt-14" />
 
       <BackButton className="mb-7 flex gap-1 p-0 align-middle text-muted-foreground	hover:text-foreground">
-        <Icons.MaterialSymbolsArrowLeftAltRounded />
+        <MaterialSymbolsArrowLeftAltRounded />
         <small className="text-sm">back</small>
       </BackButton>
 

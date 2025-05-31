@@ -1,90 +1,90 @@
-import Icons from '@/components/ui/icons';
+import { DeviconPlainJava, DeviconPlainJavascript, DeviconPlainLinux, DeviconPlainNodejs, DeviconPlainNestjs, DeviconPlainTypescript, DeviconPlainVscode, DeviconPlainDocker, DeviconPlainInsomnia, DeviconPlainNotion, DeviconPlainFigma, DeviconPlainGraphql, RiBootstrapFill, SimpleIconsTailwindcss, SimpleIconsVite, AkarIconsNextjsFill, SkillIconsExpressjsLight, FileIconsWebpackOld, MdiReact, SimpleIconsSass, SimpleIconsSpring } from '@/components/ui/icons';
 
 const masteryTools = (classNameIcon?: string) => {
   return [
     {
       toolName: 'Java',
-      toolIcon: <Icons.DeviconPlainJava className={classNameIcon} />
+      toolIcon: <DeviconPlainJava className={classNameIcon} />
     },
     {
       toolName: 'Javascript',
-      toolIcon: <Icons.DeviconPlainJavascript className={classNameIcon} />
+      toolIcon: <DeviconPlainJavascript className={classNameIcon} />
     },
     {
       toolName: 'Linux',
-      toolIcon: <Icons.DeviconPlainLinux className={classNameIcon} />
+      toolIcon: <DeviconPlainLinux className={classNameIcon} />
     },
     {
       toolName: 'Nextjs',
-      toolIcon: <Icons.AkarIconsNextjsFill className={classNameIcon} />
+      toolIcon: <AkarIconsNextjsFill className={classNameIcon} />
     },
     {
       toolName: 'Typescript',
-      toolIcon: <Icons.DeviconPlainTypescript className={classNameIcon} />
+      toolIcon: <DeviconPlainTypescript className={classNameIcon} />
     },
     {
       toolName: 'Nodejs',
-      toolIcon: <Icons.DeviconPlainNodejs className={classNameIcon} />
+      toolIcon: <DeviconPlainNodejs className={classNameIcon} />
     },
     {
       toolName: 'Expressjs',
-      toolIcon: <Icons.SkillIconsExpressjsLight className={classNameIcon} />
+      toolIcon: <SkillIconsExpressjsLight className={classNameIcon} />
     },
     {
       toolName: 'GraphQL',
-      toolIcon: <Icons.DeviconPlainGraphql className={classNameIcon} />
+      toolIcon: <DeviconPlainGraphql className={classNameIcon} />
     },
     {
       toolName: 'Nestjs',
-      toolIcon: <Icons.DeviconPlainNestjs className={classNameIcon} />
+      toolIcon: <DeviconPlainNestjs className={classNameIcon} />
     },
     {
       toolName: 'Webpack',
-      toolIcon: <Icons.FileIconsWebpackOld className={classNameIcon} />
+      toolIcon: <FileIconsWebpackOld className={classNameIcon} />
     },
     {
       toolName: 'React',
-      toolIcon: <Icons.MdiReact className={classNameIcon} />
+      toolIcon: <MdiReact className={classNameIcon} />
     },
     {
       toolName: 'Vitejs',
-      toolIcon: <Icons.SimpleIconsVite className={classNameIcon} />
+      toolIcon: <SimpleIconsVite className={classNameIcon} />
     },
     {
       toolName: 'sass',
-      toolIcon: <Icons.SimpleIconsSass className={classNameIcon} />
+      toolIcon: <SimpleIconsSass className={classNameIcon} />
     },
     {
       toolName: 'TailwindCSS',
-      toolIcon: <Icons.SimpleIconsTailwindcss className={classNameIcon} />
+      toolIcon: <SimpleIconsTailwindcss className={classNameIcon} />
     },
     {
       toolName: 'Bootstrap',
-      toolIcon: <Icons.RiBootstrapFill className={classNameIcon} />
+      toolIcon: <RiBootstrapFill className={classNameIcon} />
     },
     {
       toolName: 'Spring',
-      toolIcon: <Icons.SimpleIconsSpring className={classNameIcon} />
+      toolIcon: <SimpleIconsSpring className={classNameIcon} />
     },
     {
       toolName: 'Docker',
-      toolIcon: <Icons.DeviconPlainDocker className={classNameIcon} />
+      toolIcon: <DeviconPlainDocker className={classNameIcon} />
     },
     {
       toolName: 'Insominia',
-      toolIcon: <Icons.DeviconPlainInsomnia className={classNameIcon} />
+      toolIcon: <DeviconPlainInsomnia className={classNameIcon} />
     },
     {
       toolName: 'Notion',
-      toolIcon: <Icons.DeviconPlainNotion className={classNameIcon} />
+      toolIcon: <DeviconPlainNotion className={classNameIcon} />
     },
     {
       toolName: 'VSCode',
-      toolIcon: <Icons.DeviconPlainVscode className={classNameIcon} />
+      toolIcon: <DeviconPlainVscode className={classNameIcon} />
     },
     {
       toolName: 'Figma',
-      toolIcon: <Icons.DeviconPlainFigma className={classNameIcon} />
+      toolIcon: <DeviconPlainFigma className={classNameIcon} />
     }
   ];
 };

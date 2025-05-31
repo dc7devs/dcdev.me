@@ -7,7 +7,16 @@ import EmailSubscribe from '@/components/email/email-subscribe';
 import RecentWorkUnderDev from '@/components/recent-work-under-dev';
 import ToolTip from '@/components/tooltip';
 import masteryTools from '@/content/_mastery-tools';
-import Icons from '@/components/ui/icons';
+import {
+  DeviconJava,
+  DeviconJavascript,
+  DeviconNextjs,
+  DeviconReact,
+  DeviconSpring,
+  DeviconTypescript,
+  FluentEmojiHighContrastMagnifyingGlassTiltedLeft,
+  MdiWechat
+} from '@/components/ui/icons';
 import { memo } from 'react';
 
 export default function Page() {
@@ -49,7 +58,7 @@ export default function Page() {
         <Presentation />
 
         <small className="my-4 inline-flex items-center gap-1">
-          <Icons.MdiWechat className="size-4" />
+          <MdiWechat className="size-4" />
           <strong>Find me on</strong>
         </small>
 
@@ -74,7 +83,7 @@ export default function Page() {
 
       <div className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal md:col-span-full md:mt-3 lg:col-start-2 lg:col-end-12 2xl:mt-0 2xl:flex-1">
         <small className="my-4 inline-flex items-center gap-1">
-          <Icons.FluentEmojiHighContrastMagnifyingGlassTiltedLeft />
+          <FluentEmojiHighContrastMagnifyingGlassTiltedLeft />
           <strong>I&#39;m in the loop</strong>
         </small>
 
@@ -99,32 +108,32 @@ const Presentation = memo(function p() {
         <strong>clean</strong> and <strong>maintainable code</strong>. I work
         with technologies from the{' '}
         <TechBadge href="https://www.javascript.com/">
-          <Icons.DeviconJavascript className="size-3" />
+          <DeviconJavascript className="size-3" />
           <span>Javascript</span>
         </TechBadge>
         ,{' '}
         <TechBadge href="https://www.typescriptlang.org/">
-          <Icons.DeviconTypescript className="size-3" />
+          <DeviconTypescript className="size-3" />
           <span>Typescript</span>
         </TechBadge>
         ,{' '}
         <TechBadge href="https://react.dev/">
-          <Icons.DeviconReact className="size-3" />
+          <DeviconReact className="size-3" />
           <span>React</span>
         </TechBadge>
         ,{' '}
         <TechBadge href="https://nextjs.org/">
-          <Icons.DeviconNextjs className="size-3" />
+          <DeviconNextjs className="size-3" />
           <span>Next</span>
         </TechBadge>
         ,{' '}
         <TechBadge href="https://www.java.com/">
-          <Icons.DeviconJava className="size-3" />
+          <DeviconJava className="size-3" />
           <span>Java</span>
         </TechBadge>{' '}
         and{' '}
         <TechBadge href="https://spring.io/">
-          <Icons.DeviconSpring className="size-3" />
+          <DeviconSpring className="size-3" />
           <span>Spring Boot</span>
         </TechBadge>{' '}
         ecosystem.

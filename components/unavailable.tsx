@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import Icons from './ui/icons';
+import { IonIosHammer } from './ui/icons';
 
 export default function Unavailable({ className }: { className?: string }) {
   return (
@@ -10,7 +10,7 @@ export default function Unavailable({ className }: { className?: string }) {
       )}
       style={{ backdropFilter: 'blur(2px)' }}
     >
-      <Icons.IonIosHammer />
+      <IonIosHammer />
       <small>
         <strong>unavailable, building...</strong>
       </small>

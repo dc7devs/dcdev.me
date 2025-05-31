@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/carousel';
 
 import { Sketchs } from '@/components/ui/sketchs';
-import Icons from '@/components/ui/icons';
+import { PhArrowSquareOutDuotone, PhDotsThreeOutlineFill } from '@/components/ui/icons';
 
 import { Project, Roadmap, notes, projects, roadmaps } from '@/.velite';
 import { Button } from '@/components/ui/button';
@@ -117,7 +117,7 @@ export default function LearningPathPage() {
               all projects
             </small>
 
-            <Icons.PhArrowSquareOutDuotone className="size-3" />
+            <PhArrowSquareOutDuotone className="size-3" />
           </Link>
         </div>
 
@@ -152,7 +152,7 @@ export default function LearningPathPage() {
             <small className="text-xs underline-offset-2 group-hover:underline">
               all notes
             </small>
-            <Icons.PhArrowSquareOutDuotone className="size-3" />
+            <PhArrowSquareOutDuotone className="size-3" />
           </Link>
         </div>
 
@@ -181,7 +181,7 @@ export default function LearningPathPage() {
             variant="secondary"
             className="hover:bg-text-secondary-foreground h-auto w-14 space-x-1.5"
           >
-            <Icons.PhDotsThreeOutlineFill className="size-6 text-primary/50" />
+            <PhDotsThreeOutlineFill className="size-6 text-primary/50" />
           </Button>
         </div>
       </section>

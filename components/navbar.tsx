@@ -2,10 +2,39 @@ import Link from 'next/link';
 import ToggleThemeBtn from './btn-toggle-theme';
 import { cn } from '@/lib/utils';
 
-import Icons from './ui/icons';
+import {
+  HomeFill,
+  BoxMultipleSearchFill,
+  BooksFill,
+  ChatFill,
+} from './ui/icons';
 import { Separator } from '@/components/ui/separator';
 
 export default function NavBar({ didScroll }: { didScroll: boolean }) {
+
+  const nav_items = [
+    {
+      name: 'Home',
+      icon: <HomeFill className="size-5 sm:size-5" />,
+      path: '/'
+    },
+    {
+      name: 'Projects',
+      icon: <BoxMultipleSearchFill className="size-5 sm:size-5" />,
+      path: '/projects'
+    },
+    {
+      name: 'Studying...',
+      icon: <BooksFill className="size-5 sm:size-5" />,
+      path: '/studying'
+    },
+    {
+      name: 'Contact',
+      icon: <ChatFill className="size-5 sm:size-5" />,
+      path: '/contact'
+    }
+  ];
+
   return (
     <div className={'flex items-center justify-center'}>
       <ul
@@ -44,26 +73,3 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
     </div>
   );
 }
-
-const nav_items = [
-  {
-    name: 'Home',
-    icon: <Icons.HomeFill className="size-5 sm:size-5" />,
-    path: '/'
-  },
-  {
-    name: 'Projects',
-    icon: <Icons.BoxMultipleSearchFill className="size-5 sm:size-5" />,
-    path: '/projects'
-  },
-  {
-    name: 'Studying...',
-    icon: <Icons.BooksFill className="size-5 sm:size-5" />,
-    path: '/studying'
-  },
-  {
-    name: 'Contact',
-    icon: <Icons.ChatFill className="size-5 sm:size-5" />,
-    path: '/contact'
-  }
-];

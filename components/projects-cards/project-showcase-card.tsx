@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import format from 'date-fns/format';
+import { format } from 'date-fns';
 
 import {
   Card,
@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import ToolTip from '../tooltip';
 import { Badge } from '../ui/badge';
-import Icons from '../ui/icons';
+import { GithubIconFill, MdiBookOpenPageVariant, MajesticonsExternalLink } from '../ui/icons';
 
 import { cn } from '@/lib/utils';
 import { Project } from '@/.velite';
@@ -107,7 +107,7 @@ export const ProjectShowcaseCard = ({
               aria-label="access the project's github code"
             >
               <ToolTip message="source code">
-                <Icons.GithubIconFill className="size-4" />
+                <GithubIconFill className="size-4" />
               </ToolTip>
             </Link>
           )}
@@ -116,7 +116,7 @@ export const ProjectShowcaseCard = ({
             aria-label="access the project's documentation"
           >
             <ToolTip message="documentation">
-              <Icons.MdiBookOpenPageVariant className="size-4" />
+              <MdiBookOpenPageVariant className="size-4" />
             </ToolTip>
           </Link>
 
@@ -126,7 +126,7 @@ export const ProjectShowcaseCard = ({
               target="_blank"
               aria-label="access project deployment"
             >
-              <Icons.MajesticonsExternalLink className="size-4" />
+              <MajesticonsExternalLink className="size-4" />
             </Link>
           )}
         </div>

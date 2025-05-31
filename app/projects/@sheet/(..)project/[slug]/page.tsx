@@ -19,7 +19,11 @@ import { Separator } from '@/components/ui/separator';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 
-import Icons from '@/components/ui/icons';
+import {
+  GithubIconFill,
+  PhArrowUpRightBold,
+  PhPlayCircleFill
+} from '@/components/ui/icons';
 
 export default function SheetProjectPage({
   params
@@ -232,11 +236,11 @@ export default function SheetProjectPage({
                   className="flex h-full items-center"
                 >
                   <div className="flex items-center lowercase">
-                    <Icons.GithubIconFill className="mr-1 size-4" />
+                    <GithubIconFill className="mr-1 size-4" />
                     <span className="line-clamp-1 max-w-32 text-sm lg:max-w-[63px]">
                       {title}
                     </span>
-                    <Icons.PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
+                    <PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
                   </div>
                 </a>
 
@@ -250,9 +254,9 @@ export default function SheetProjectPage({
                   )}
                 >
                   <div className="line-clamp-1 flex items-center text-sm lowercase">
-                    <Icons.PhPlayCircleFill className="mr-1 size-4" />
+                    <PhPlayCircleFill className="mr-1 size-4" />
                     <span>demo</span>
-                    <Icons.PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
+                    <PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
                   </div>
                 </a>
               </div>

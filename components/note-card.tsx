@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-import Icons from './ui/icons';
+import { PhBookmarkSimpleFill } from './ui/icons';
 
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
@@ -50,7 +50,7 @@ export function NoteCard({ title, created_at, description, tags }: Note) {
         </div>
       </CardHeader>
 
-      <Icons.PhBookmarkSimpleFill className="absolute -top-1.5 right-2 size-6" />
+      <PhBookmarkSimpleFill className="absolute -top-1.5 right-2 size-6" />
 
       <CardContent className="grow space-y-1 px-3 pb-1.5">
         <CardTitle>{title}</CardTitle>

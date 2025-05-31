@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Icons from '../ui/icons';
+import { BiSpotify, GithubIconFill, Fa6BrandsHackerrank, SimpleIconsLeetcode } from '../ui/icons';
 
 import { GithubOverviewCard } from './github-overview-card';
 import { SpotifyOverviewCard } from './spotify-overview-card';
@@ -17,7 +17,7 @@ export const MediaTabs = () => {
           value="spotify"
           name="spotify option"
         >
-          <Icons.BiSpotify className="size-4" />
+          <BiSpotify className="size-4" />
         </TabsTrigger>
 
         <TabsTrigger
@@ -25,7 +25,7 @@ export const MediaTabs = () => {
           value="github"
           name="github option"
         >
-          <Icons.GithubIconFill className="size-4" />
+          <GithubIconFill className="size-4" />
         </TabsTrigger>
       </TabsList>
 
@@ -52,7 +52,7 @@ export const ChallengeTabs = () => {
           value="hackerrank"
           name="hackerrank option"
         >
-          <Icons.Fa6BrandsHackerrank className="size-4" />
+          <Fa6BrandsHackerrank className="size-4" />
         </TabsTrigger>
 
         <TabsTrigger
@@ -60,7 +60,7 @@ export const ChallengeTabs = () => {
           value="leetcode"
           name="leetcode option"
         >
-          <Icons.SimpleIconsLeetcode className="size-4" />
+          <SimpleIconsLeetcode className="size-4" />
         </TabsTrigger>
       </TabsList>
 

@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
-import Icons from '@/components/ui/icons';
+import { MaterialSymbolsArrowLeftAltRounded } from '@/components/ui/icons';
 import { Separator } from '@/components/ui/separator';
 
 export default function AllProjectsPage() {
@@ -25,7 +25,7 @@ export default function AllProjectsPage() {
       <Separator orientation="horizontal" className="mx-auto mt-14" />
 
       <BackButton className="flex gap-1 p-0 align-middle text-muted-foreground hover:text-foreground">
-        <Icons.MaterialSymbolsArrowLeftAltRounded />
+        <MaterialSymbolsArrowLeftAltRounded />
         <small className="text-sm">back</small>
       </BackButton>
 

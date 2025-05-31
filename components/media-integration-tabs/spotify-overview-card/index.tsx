@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Artists } from './artists';
 
 import { Separator } from '@/components/ui/separator';
-import Icons from '@/components/ui/icons';
+import { BiSpotify } from '@/components/ui/icons';
 
 import { fetchWithAuthorization } from '@/lib/spotify';
 import { cn } from '@/lib/utils';
@@ -156,7 +156,7 @@ export const SpotifyOverviewCard = () => {
               <Artists data={trackArtists} />
             </div>
 
-            <Icons.BiSpotify
+            <BiSpotify
               className={cn(isPlaying ? 'text-green-400' : 'text-primary')}
             />
           </div>

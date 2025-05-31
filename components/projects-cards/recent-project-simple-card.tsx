@@ -1,5 +1,5 @@
-import Icons from '../ui/icons';
-import format from 'date-fns/format';
+import { GithubIconFill, MajesticonsExternalLink, MdiBookOpenPageVariant, MaterialSymbolsLightBoxRounded } from '../ui/icons';
+import { format } from 'date-fns';
 import LiveStatus from '../live-status';
 
 import masteryTools from '@/content/_mastery-tools';
@@ -13,7 +13,7 @@ export const RecentProjectSimpleCard = (project: Project) => (
           icon.toolName.toLocaleLowerCase().trim() ===
           project.core_tech.name.toLocaleLowerCase().trim()
       )?.toolIcon ?? (
-        <Icons.MaterialSymbolsLightBoxRounded className="size-4 basis-4" />
+        <MaterialSymbolsLightBoxRounded className="size-4 basis-4" />
       )}
 
       <p className="grow basis-60 truncate text-base sm:text-sm">
@@ -28,7 +28,7 @@ export const RecentProjectSimpleCard = (project: Project) => (
             aria-label="access the project's github code"
             rel="noreferrer"
           >
-            <Icons.GithubIconFill className="size-4.5 sm:size-3.5" />
+            <GithubIconFill className="size-4.5 sm:size-3.5" />
           </a>
         )}
 
@@ -38,7 +38,7 @@ export const RecentProjectSimpleCard = (project: Project) => (
             target="projectblank"
             aria-label="access notes on the development of the project"
           >
-            <Icons.MdiBookOpenPageVariant className="size-4.5 sm:size-3.5" />
+            <MdiBookOpenPageVariant className="size-4.5 sm:size-3.5" />
           </Link>
         )} */}
 
@@ -49,7 +49,7 @@ export const RecentProjectSimpleCard = (project: Project) => (
             aria-label="access project deployment"
             rel="noreferrer"
           >
-            <Icons.MajesticonsExternalLink className="size-4.5 sm:size-3.5" />
+            <MajesticonsExternalLink className="size-4.5 sm:size-3.5" />
           </a>
         )}
 

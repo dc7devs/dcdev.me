@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
-import Icons from '@/components/ui/icons';
+import { GithubIconFill, FlowbiteUsersGroupSolid, RiGitRepositoryFill, MaterialSymbolsLightFolder } from '@/components/ui/icons'
 
 export const GithubOverviewCard = async () => {
   const res = await fetch('https://api.github.com/users/dc7devs');
@@ -36,7 +36,7 @@ export const GithubOverviewCard = async () => {
           </div>
           <Link href={data.html_url} target="_blank">
             <span className="sr-only">Github Link</span>
-            <Icons.GithubIconFill className="text-black dark:text-[#e6edf2ff]" />
+            <GithubIconFill className="text-black dark:text-[#e6edf2ff]" />
           </Link>
         </div>
 
@@ -44,15 +44,15 @@ export const GithubOverviewCard = async () => {
 
         <div className="flex flex-wrap gap-2">
           <Badge className="space-x-2" variant="secondary">
-            <Icons.FlowbiteUsersGroupSolid />
+            <FlowbiteUsersGroupSolid />
             <span>{data.followers} Followers</span>
           </Badge>
           <Badge className="space-x-2" variant="secondary">
-            <Icons.RiGitRepositoryFill />
+            <RiGitRepositoryFill />
             <span>{data.public_repos} Repositories</span>
           </Badge>
           <Badge className="space-x-2" variant="secondary">
-            <Icons.MaterialSymbolsLightFolder />
+            <MaterialSymbolsLightFolder />
             <span>{data.public_gists} Gists</span>
           </Badge>
         </div>

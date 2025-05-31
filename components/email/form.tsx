@@ -22,7 +22,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import Icons from '@/components/ui/icons';
+import { MingcuteSendPlaneFill } from '@/components/ui/icons';
 
 export function CustomForm() {
   const [isSending, setIsSending] = useState(false);
@@ -136,7 +136,7 @@ export function CustomForm() {
           <span className="align-middle">
             {isSending ? 'Sending...' : 'Submit'}
           </span>
-          {!isSending && <Icons.MingcuteSendPlaneFill />}
+          {!isSending && <MingcuteSendPlaneFill />}
         </Button>
       </form>
     </Form>

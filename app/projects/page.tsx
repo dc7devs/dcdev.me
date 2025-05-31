@@ -2,7 +2,7 @@ import { compareDesc } from 'date-fns';
 
 import { Cards } from '@/components/projects-cards';
 import Link from 'next/link';
-import Icons from '@/components/ui/icons';
+import { MaterialSymbolsArrowRightAltRounded } from '@/components/ui/icons';
 
 import { Project, projects } from '@/.velite';
 
@@ -26,7 +26,7 @@ export default function ProjectPage() {
           <Link href={'/projects/all'} className="group ml-auto">
             <small className="text-sm font-medium underline-offset-2 group-hover:underline">
               all projects
-              <Icons.MaterialSymbolsArrowRightAltRounded className="ml-0.5 inline size-3.5 md:size-3.5" />
+              <MaterialSymbolsArrowRightAltRounded className="ml-0.5 inline size-3.5 md:size-3.5" />
             </small>
           </Link>
         </div>

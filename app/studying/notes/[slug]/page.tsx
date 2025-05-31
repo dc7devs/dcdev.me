@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import BackButton from '@/components/go-back-button';
-import Icons from '@/components/ui/icons';
+import { MaterialSymbolsArrowLeftAltRounded } from '@/components/ui/icons';
 
 import { format, parseISO } from 'date-fns';
 
@@ -28,7 +28,7 @@ export default function NotePage({
         )}
       >
         <BackButton className="absolute -left-1 -top-11 flex gap-1 p-0 align-middle text-muted-foreground hover:text-foreground lg:-left-24 lg:top-8 xl:-left-32">
-          <Icons.MaterialSymbolsArrowLeftAltRounded className="size-4" />
+          <MaterialSymbolsArrowLeftAltRounded className="size-4" />
           <small className="text-base">back</small>
         </BackButton>
 

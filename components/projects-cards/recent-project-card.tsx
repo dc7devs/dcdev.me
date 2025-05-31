@@ -7,11 +7,11 @@ import {
   CardTitle
 } from '@/components/ui/card';
 import LiveStatus from '@/components/live-status';
-import Icons from '@/components/ui/icons';
+import { GithubIconFill, MajesticonsExternalLink, MdiBookOpenPageVariant } from '@/components/ui/icons';
 import ToolTip from '@/components/tooltip';
 import { Badge } from '@/components/ui/badge';
 
-import format from 'date-fns/format';
+import { format } from 'date-fns';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -67,9 +67,9 @@ export const RecentProjectCard = ({
                 aria-label="access the project's github code"
               >
                 <ToolTip message="source code">
-                  {/* <Icons.TabOpenSourceFill className="size-4" /> */}
+                  {/* <TabOpenSourceFill className="size-4" /> */}
                   {/* ou */}
-                  <Icons.GithubIconFill className="size-4" />
+                  <GithubIconFill className="size-4" />
                 </ToolTip>
               </Link>
             )}
@@ -81,7 +81,7 @@ export const RecentProjectCard = ({
                 aria-label="access notes on the development of the project"
               >
                 <ToolTip message="documentation">
-                  <Icons.MdiBookOpenPageVariant className="size-4" />
+                  <MdiBookOpenPageVariant className="size-4" />
                 </ToolTip>
               </Link>
             )} */}
@@ -92,7 +92,7 @@ export const RecentProjectCard = ({
                 target="_blank"
                 aria-label="access project deployment"
               >
-                <Icons.MajesticonsExternalLink className="size-4" />
+                <MajesticonsExternalLink className="size-4" />
               </Link>
             )}
           </div>
