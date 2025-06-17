@@ -1,4 +1,4 @@
-import './globals.css';
+import './tailwind.css';
 import { Metadata } from 'next';
 import { CustomLayout } from '@/components/custom-root-layout';
 import React from 'react';

@@ -37,7 +37,7 @@ const sharedComponents = {
     );
 
     const finalClassName = isTextOnly
-      ? `${props.className} before:invisible after:invisible bg-neutral-200 dark:bg-neutral-800 text-orange-400 font-light py-px px-1 rounded`
+      ? `${props.className} before:invisible after:invisible bg-neutral-200 dark:bg-neutral-800 text-orange-400 font-light py-px px-1 rounded-sm`
       : props.className;
 
     return <code className={finalClassName} {...props} />;

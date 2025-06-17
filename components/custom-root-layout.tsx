@@ -26,7 +26,7 @@ export function CustomLayout({ children }: { children: ReactNode }) {
 
           <main
             className={
-              'mx-auto mt-5 size-auto px-4 pb-7 sm:px-10 2xl:mx-auto 2xl:max-w-screen-2xl'
+              'mx-auto mt-5 size-auto px-4 pb-7 sm:px-10 2xl:mx-auto 2xl:max-w-[1536px]'
             }
           >
             <>{children}</>

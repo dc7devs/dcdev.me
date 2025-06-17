@@ -14,7 +14,7 @@ export const GithubOverviewCard = async () => {
       <CardContent className="relative h-28 overflow-hidden p-0">
         <Image
           alt="Muggs Shop"
-          className="absolute left-0 top-0 w-full rounded object-cover object-center brightness-75"
+          className="absolute top-0 left-0 w-full rounded-sm object-cover object-center brightness-75"
           src="https://res.cloudinary.com/dyxtcsnna/image/upload/v1706989464/dcdev/code_tavjxu.png"
           fill
         />

@@ -40,7 +40,7 @@ export default function Header() {
     >
       <div
         className={
-          'flex w-full items-center justify-between px-4 py-2 sm:gap-5 sm:px-10 sm:py-0 2xl:mx-auto 2xl:max-w-screen-2xl'
+          'flex w-full items-center justify-between px-4 py-2 sm:gap-5 sm:px-10 sm:py-0 2xl:mx-auto 2xl:max-w-[1536px]'
         }
       >
         <Link href="/" aria-label="Logotipo dcdevs">

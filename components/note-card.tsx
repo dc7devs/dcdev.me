@@ -20,7 +20,7 @@ export function NoteCard({ title, created_at, description, tags }: Note) {
   return (
     <Card
       className={
-        'relative flex min-h-full w-full cursor-pointer flex-col text-balance rounded-sm border-input bg-background md:transition md:duration-100 md:ease-linear md:hover:-translate-y-3'
+        'border-input bg-background relative flex min-h-full w-full cursor-pointer flex-col rounded-xs text-balance md:transition md:duration-100 md:ease-linear md:hover:-translate-y-3'
       }
     >
       <CardHeader className="px-0 pb-2 pt-0">

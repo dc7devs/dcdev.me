@@ -14,8 +14,8 @@ import { Separator } from '@/components/ui/separator';
 export default function AllProjectsPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="prose prose-zinc mx-auto text-center dark:prose-invert prose-p:my-3 prose-p:leading-normal">
-        <h1 className="mx-auto max-w-max rounded-sm bg-accent px-2 text-xl font-medium text-black dark:text-white">
+      <div className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal mx-auto text-center">
+        <h1 className="bg-accent mx-auto max-w-max rounded-xs px-2 text-xl font-medium text-black dark:text-white">
           Projects I&#39;m working on
         </h1>
 

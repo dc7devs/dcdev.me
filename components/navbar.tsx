@@ -40,9 +40,9 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
       <ul
         className={cn(
           'mr-2 flex justify-stretch space-x-4 sm:m-0 sm:items-center sm:space-x-5',
-          'rounded-2xl border border-transparent px-2.5 py-2 sm:rounded-sm sm:py-1 md:rounded-md',
+          'rounded-2xl border border-transparent px-2.5 py-2 sm:rounded-xs sm:py-1 md:rounded-md',
           didScroll &&
-            'border-border bg-background/60 shadow-sm backdrop-blur-sm'
+            'border-border bg-background/60 shadow-xs backdrop-blur-xs'
         )}
       >
         {nav_items.map(({ name, icon, path }, index: number) => (

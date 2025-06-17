@@ -5,15 +5,15 @@ import { CustomForm } from '@/components/email/form';
 export default function ContactPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="prose prose-zinc mx-auto mb-14 text-center dark:prose-invert prose-p:my-3 prose-p:leading-normal">
-        <h1 className="mx-auto max-w-max rounded-sm bg-accent px-2 text-xl font-medium text-black dark:text-white">
+      <div className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal mx-auto mb-14 text-center">
+        <h1 className="bg-accent mx-auto max-w-max rounded-xs px-2 text-xl font-medium text-black dark:text-white">
           Contact-me
         </h1>
 
         <Description />
       </div>
 
-      <div className="prose prose-zinc relative mx-auto mb-20 max-w-3xl bg-white p-5 shadow-md dark:prose-invert prose-p:leading-normal dark:bg-black">
+      <div className="prose prose-zinc dark:prose-invert prose-p:leading-normal relative mx-auto mb-20 max-w-3xl bg-white p-5 shadow-md dark:bg-black">
         <CustomForm />
       </div>
     </div>

@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer
       className={
-        'mx-auto mb-5 flex w-full px-4 font-inter text-sm sm:px-10 md:grid md:grid-cols-2 lg:grid-cols-12 2xl:flex 2xl:max-w-screen-2xl'
+        'font-inter mx-auto mb-5 flex w-full px-4 text-xs sm:px-10 md:grid md:grid-cols-2 lg:grid-cols-12 2xl:flex 2xl:max-w-[1536px]'
       }
     >
       <p

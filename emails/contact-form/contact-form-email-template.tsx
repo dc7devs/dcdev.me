@@ -29,7 +29,7 @@ export default function ContactFormEmailTemplate({
       <Preview>Nova mensagem de contato do seu portifólio</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-black/70 px-2 font-sans text-white">
-          <Container className="mx-auto my-10 rounded bg-black/90 p-5 ring-1 ring-input">
+          <Container className="mx-auto my-10 rounded-sm bg-black/90 p-5 ring-3 ring-input">
             <Section className="mt-8">
               <Img
                 src={
