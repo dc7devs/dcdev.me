@@ -16,7 +16,10 @@ import {
 } from '@/components/ui/carousel';
 
 import { Sketchs } from '@/components/ui/sketchs';
-import { PhArrowSquareOutDuotone, PhDotsThreeOutlineFill } from '@/components/ui/icons';
+import {
+  PhArrowSquareOutDuotone,
+  PhDotsThreeOutlineFill
+} from '@/components/ui/icons';
 
 import { Project, Roadmap, notes, projects, roadmaps } from '@/.velite';
 import { Button } from '@/components/ui/button';

@@ -3,7 +3,11 @@
 import { Project, projects } from '@/.velite';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-import Icons from '@/components/ui/icons';
+import {
+  GithubIconFill,
+  PhArrowUpRightBold,
+  PhPlayCircleFill
+} from '@/components/ui/icons';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
