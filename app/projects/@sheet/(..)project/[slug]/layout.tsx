@@ -33,7 +33,7 @@ export default function LayoutSheetProject({
         <SheetContent
           ref={sheetRef}
           side={side}
-          className="overflow-auto border-l border-input bg-white dark:bg-black"
+          className="border-input overflow-auto border-l bg-white dark:bg-black"
         >
           {children}
         </SheetContent>

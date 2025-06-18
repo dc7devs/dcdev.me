@@ -1,4 +1,3 @@
-// 'use client';
 import { GameIconsCoffeeCup, PhArrowUpRightBold } from './ui/icons';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -82,7 +81,7 @@ const RecentProjects = () => {
         ))
       ) : (
         <li>
-          <div className="relative h-14 w-full bg-background outline-dashed outline-1 outline-secondary">
+          <div className="bg-background outline-secondary relative h-14 w-full outline-1 outline-dashed">
             <Unavailable />
           </div>
         </li>

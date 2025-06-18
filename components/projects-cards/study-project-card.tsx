@@ -30,10 +30,10 @@ export const StudyProjectCard = ({
   return (
     <Card
       className={
-        'relative flex min-h-full w-full flex-col text-balance rounded-lg border-input bg-background lg:w-96'
+        'border-input bg-background relative flex min-h-full w-full flex-col rounded-lg text-balance lg:w-96'
       }
     >
-      <CardHeader className="px-0 pb-2 pt-0">
+      <CardHeader className="px-0 pt-0 pb-2">
         <div className="relative h-24 w-full overflow-hidden rounded-t-lg">
           {video ? (
             <video className="h-full w-full object-cover" autoPlay loop muted>
@@ -68,7 +68,7 @@ export const StudyProjectCard = ({
             <Badge
               key={index}
               variant={'secondary'}
-              className="pointer-events-none border-none px-1 py-0 text-accent-foreground ring-1 ring-accent-foreground brightness-75"
+              className="text-accent-foreground ring-accent-foreground pointer-events-none border-none px-1 py-0 ring-1 brightness-75"
             >
               {tool}
             </Badge>

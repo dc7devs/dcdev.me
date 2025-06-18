@@ -24,7 +24,7 @@ export default function AllProjectsPage() {
 
       <Separator orientation="horizontal" className="mx-auto mt-14" />
 
-      <BackButton className="flex gap-1 p-0 align-middle text-muted-foreground hover:text-foreground">
+      <BackButton className="text-muted-foreground hover:text-foreground flex gap-1 p-0 align-middle">
         <MaterialSymbolsArrowLeftAltRounded />
         <small className="text-sm">back</small>
       </BackButton>
@@ -55,7 +55,7 @@ const SectionBuilderByProjectType = () => {
     <div>
       {Object.keys(organizedProjectsByType).map(projectType => (
         <section key={projectType}>
-          <h2 className="mb-3 mt-10 text-base font-medium text-black dark:text-white">
+          <h2 className="mt-10 mb-3 text-base font-medium text-black dark:text-white">
             {projectType}
           </h2>
 
@@ -73,8 +73,8 @@ const SectionBuilderByProjectType = () => {
               )}
             </CarouselContent>
 
-            <CarouselPrevious className="left-1 bg-secondary sm:-left-5" />
-            <CarouselNext className="right-1 bg-secondary sm:-right-5" />
+            <CarouselPrevious className="bg-secondary left-1 sm:-left-5" />
+            <CarouselNext className="bg-secondary right-1 sm:-right-5" />
           </Carousel>
         </section>
       ))}

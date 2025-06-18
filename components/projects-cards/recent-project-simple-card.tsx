@@ -1,4 +1,9 @@
-import { GithubIconFill, MajesticonsExternalLink, MdiBookOpenPageVariant, MaterialSymbolsLightBoxRounded } from '../ui/icons';
+import {
+  GithubIconFill,
+  MajesticonsExternalLink,
+  MdiBookOpenPageVariant,
+  MaterialSymbolsLightBoxRounded
+} from '../ui/icons';
 import { format } from 'date-fns';
 import LiveStatus from '../live-status';
 
@@ -6,7 +11,7 @@ import masteryTools from '@/content/_mastery-tools';
 import { Project } from '@/.velite';
 
 export const RecentProjectSimpleCard = (project: Project) => (
-  <div className="flex w-full flex-col justify-center bg-background px-3.5 py-2 ring-1 ring-ring/10">
+  <div className="bg-background ring-ring/10 flex w-full flex-col justify-center px-3.5 py-2 ring-1">
     <div className="inline-flex w-full items-center gap-x-1.5">
       {masteryTools('size-4 basis-4').find(
         icon =>
@@ -57,11 +62,11 @@ export const RecentProjectSimpleCard = (project: Project) => (
       </div>
     </div>
 
-    <small className="ml-4 text-accent-foreground/60">
+    <small className="text-accent-foreground/60 ml-4">
       {format(new Date(project.started_at), 'MMM yyyy')}
     </small>
 
-    <small className="ml-4 text-accent-foreground/80">
+    <small className="text-accent-foreground/80 ml-4">
       <p className="truncate">{project.description}</p>
     </small>
   </div>

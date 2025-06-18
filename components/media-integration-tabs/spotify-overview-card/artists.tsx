@@ -5,7 +5,7 @@ export const Artists = ({ data }: { data: Array<Artist> }) => {
   const trackArtists = data;
 
   return (
-    <div className="mt-1 inline-flex w-full gap-1 truncate text-sm text-muted-foreground">
+    <div className="text-muted-foreground mt-1 inline-flex w-full gap-1 truncate text-sm">
       {trackArtists?.map((artist: Artist, index: number) => (
         <div className="max-w-max" key={index}>
           <Link

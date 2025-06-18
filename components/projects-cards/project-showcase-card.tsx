@@ -12,7 +12,11 @@ import {
 } from '@/components/ui/card';
 import ToolTip from '../tooltip';
 import { Badge } from '../ui/badge';
-import { GithubIconFill, MdiBookOpenPageVariant, MajesticonsExternalLink } from '../ui/icons';
+import {
+  GithubIconFill,
+  MdiBookOpenPageVariant,
+  MajesticonsExternalLink
+} from '../ui/icons';
 
 import { cn } from '@/lib/utils';
 import { Project } from '@/.velite';
@@ -38,14 +42,15 @@ export const ProjectShowcaseCard = ({
   return (
     <Card
       className={cn(
-        'relative flex min-h-full w-full flex-col text-balance rounded-lg border-input bg-background transition duration-100 ease-linear md:scale-[.99] md:hover:scale-[1.01]',
+        'border-input bg-background relative flex min-h-full w-full flex-col rounded-lg text-balance transition duration-100 ease-linear md:scale-[.99] md:hover:scale-[1.01]',
         className
       )}
     >
-      <CardHeader className="px-0 pb-2 pt-0">
+      <CardHeader className="px-0 pt-0 pb-2">
         <Link
           href={`/project/${slug}`}
           aria-label="access the project's documentation"
+          className="m-0"
         >
           <div className="relative h-52 w-full overflow-hidden rounded-t-lg">
             {video ? (
@@ -81,7 +86,7 @@ export const ProjectShowcaseCard = ({
         <div className="my-3 inline-flex flex-wrap gap-1.5">
           <Badge
             variant="secondary"
-            className="pointer-events-none border-none px-1 py-0 ring-1 ring-primary brightness-75"
+            className="ring-primary pointer-events-none border-none px-1 py-0 ring-1 brightness-75"
           >
             {type}
           </Badge>
@@ -90,7 +95,7 @@ export const ProjectShowcaseCard = ({
             <Badge
               key={index}
               variant={'outline'}
-              className="pointer-events-none border-none px-1 py-0 text-accent-foreground ring-1 ring-accent-foreground brightness-75"
+              className="text-accent-foreground ring-accent-foreground pointer-events-none border-none px-1 py-0 ring-1 brightness-75"
             >
               {tool}
             </Badge>

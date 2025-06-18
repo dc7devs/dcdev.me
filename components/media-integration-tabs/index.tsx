@@ -1,5 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { BiSpotify, GithubIconFill, Fa6BrandsHackerrank, SimpleIconsLeetcode } from '../ui/icons';
+import {
+  BiSpotify,
+  GithubIconFill,
+  Fa6BrandsHackerrank,
+  SimpleIconsLeetcode
+} from '../ui/icons';
 
 import { GithubOverviewCard } from './github-overview-card';
 import { SpotifyOverviewCard } from './spotify-overview-card';
@@ -44,7 +49,7 @@ export const ChallengeTabs = () => {
   return (
     <Tabs
       defaultValue="hackerrank"
-      className="relative flex h-full w-full flex-col bg-white/50 px-1 pb-1 pt-9 ring-1 ring-input backdrop-blur-sm dark:bg-black/50"
+      className="ring-input relative flex h-full w-full flex-col bg-white/50 px-1 pt-9 pb-1 ring-1 backdrop-blur-xs dark:bg-black/50"
     >
       <TabsList className="absolute top-0 z-20 h-auto w-auto gap-1 rounded-tl-none p-0.5">
         <TabsTrigger

@@ -17,7 +17,7 @@ export default function ProjectPage({
   return (
     <article
       className={cn(
-        'prose prose-neutral relative mx-auto max-w-4xl dark:prose-invert lg:pr-5',
+        'prose prose-neutral dark:prose-invert relative mx-auto max-w-4xl lg:pr-5',
         'prose-a:font-normal prose-a:text-neutral-300 prose-a:underline-offset-2 prose-a:transition-colors prose-a:ease-linear' // a
       )}
     >

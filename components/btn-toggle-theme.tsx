@@ -21,35 +21,29 @@ export default function ToggleThemeBtn() {
 
   type tTheme = 'light' | 'dark' | 'system';
   const iconTheme = {
-    dark: (
-      <MoonStars className="size-5 text-foreground/80 md:size-[23px]" />
-    ),
-    light: (
-      <SunDim className="size-5 text-foreground/80 md:size-[23px]" />
-    ),
-    system: (
-      <BxsBrush className="size-5 text-foreground/80 md:size-[23px]" />
-    )
+    dark: <MoonStars className="text-foreground/80 size-5 md:size-[23px]" />,
+    light: <SunDim className="text-foreground/80 size-5 md:size-[23px]" />,
+    system: <BxsBrush className="text-foreground/80 size-5 md:size-[23px]" />
   };
 
   const SelectThemeMenuItem = ({ theme }: { theme: tTheme }) => (
     <DropdownMenuItem onClick={() => setTheme(theme)} className="space-x-1">
       {theme === 'dark' && (
         <>
-          <MoonStars className="size-4 text-foreground/80 md:size-5" />{' '}
+          <MoonStars className="text-foreground/80 size-4 md:size-5" />{' '}
           <span className="font-medium">Dark</span>
         </>
       )}
       {theme === 'light' && (
         <>
-          <SunDim className="size-4 text-foreground/80 md:size-5" />{' '}
+          <SunDim className="text-foreground/80 size-4 md:size-5" />{' '}
           <span className="font-medium">Light</span>
         </>
       )}
 
       {theme === 'system' && (
         <>
-          <BxsBrush className="size-4 text-foreground/80 md:size-5" />{' '}
+          <BxsBrush className="text-foreground/80 size-4 md:size-5" />{' '}
           <span className="font-medium">System</span>
         </>
       )}
@@ -60,7 +54,7 @@ export default function ToggleThemeBtn() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="rounded-full bg-background/60 align-middle backdrop-blur-sm sm:m-0 sm:rounded-md"
+          className="bg-background/60 rounded-full align-middle backdrop-blur-xs sm:m-0 sm:rounded-md"
           variant={'outline'}
           size={'icon'}
           name="change theme button"
@@ -68,7 +62,7 @@ export default function ToggleThemeBtn() {
           {mounted && currentTheme ? (
             iconTheme[currentTheme as tTheme]
           ) : (
-            <BxsBrush className="size-5 text-foreground/80 md:size-[23px]" />
+            <BxsBrush className="text-foreground/80 size-5 md:size-[23px]" />
           )}
           <span className="sr-only">Toggle theme</span>
         </Button>

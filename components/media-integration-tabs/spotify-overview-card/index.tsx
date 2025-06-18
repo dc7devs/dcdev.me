@@ -111,7 +111,7 @@ export const SpotifyOverviewCard = () => {
           )}
           <Badge
             className={cn(
-              'absolute left-2 top-2',
+              'absolute top-2 left-2',
               isPlaying
                 ? 'bg-green-400 text-black hover:bg-green-400'
                 : 'bg-primary/80 text-background hover:bg-primary/80'
@@ -121,7 +121,7 @@ export const SpotifyOverviewCard = () => {
           </Badge>
 
           <Link href={userProfile?.external_urls.spotify} target="_blank">
-            <Avatar className="absolute right-2 top-2 size-9">
+            <Avatar className="absolute top-2 right-2 size-9">
               <AvatarImage
                 src={userProfile.images[1].url}
                 className="object-cover"
@@ -141,7 +141,7 @@ export const SpotifyOverviewCard = () => {
               width={500}
             />
           )}
-          <div className="flex w-full justify-between pt-1">
+          <div className="flex w-full justify-between pt-1 mt-4">
             <div>
               {trackURL && (
                 <Link

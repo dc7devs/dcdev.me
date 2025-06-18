@@ -6,7 +6,10 @@ import {
   CardTitle
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { EmailSubscribeIcon, MingcuteSendPlaneFill } from '@/components/ui/icons';
+import {
+  EmailSubscribeIcon,
+  MingcuteSendPlaneFill
+} from '@/components/ui/icons';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import Unavailable from '@/components/unavailable';
@@ -19,7 +22,7 @@ export default function EmailSubscribe({ className }: { className?: string }) {
       <Unavailable />
 
       <CardHeader>
-        <CardTitle className="flex align-middle text-primary">
+        <CardTitle className="text-primary flex align-middle">
           <EmailSubscribeIcon className="mr-2 size-4" />
           Stay up to date
         </CardTitle>

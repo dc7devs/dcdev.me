@@ -12,7 +12,10 @@ import {
 } from '@/components/ui/card';
 import ToolTip from '../tooltip';
 import { Badge } from '../ui/badge';
-import { GithubIconFill, MajesticonsExternalLink, PhPlayCircleFill } from '../ui/icons';
+import {
+  GithubIconFill,
+  MajesticonsExternalLink
+} from '../ui/icons';
 
 import { Project } from '@/.velite';
 
@@ -29,10 +32,10 @@ export const ProjectCardByType = ({
   return (
     <Card
       className={
-        'relative flex min-h-full w-full flex-col text-balance border-input bg-background lg:w-96'
+        'border-input bg-background relative flex min-h-full w-full flex-col text-balance lg:w-96'
       }
     >
-      <CardHeader className="px-0 pb-2 pt-0">
+      <CardHeader className="px-0 pt-0 pb-2">
         <div className="relative h-32 w-full overflow-hidden rounded-t-xl">
           {video ? (
             <video className="h-full w-full object-cover" autoPlay loop muted>

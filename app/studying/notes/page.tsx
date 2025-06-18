@@ -10,8 +10,8 @@ import { Separator } from '@/components/ui/separator';
 export default function NotesPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <div className="prose prose-zinc mx-auto text-center dark:prose-invert prose-p:my-3 prose-p:leading-normal">
-        <h1 className="mx-auto max-w-max rounded-sm bg-accent px-2 text-xl font-medium text-black dark:text-white">
+      <div className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal mx-auto text-center">
+        <h1 className="bg-accent mx-auto max-w-max rounded-xs px-2 text-xl font-medium text-black dark:text-white">
           All Notes
         </h1>
 
@@ -24,7 +24,7 @@ export default function NotesPage() {
 
       <Separator orientation="horizontal" className="mx-auto mt-14" />
 
-      <BackButton className="mb-7 flex gap-1 p-0 align-middle text-muted-foreground	hover:text-foreground">
+      <BackButton className="text-muted-foreground hover:text-foreground mb-7 flex gap-1 p-0 align-middle">
         <MaterialSymbolsArrowLeftAltRounded />
         <small className="text-sm">back</small>
       </BackButton>

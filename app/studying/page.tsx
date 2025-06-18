@@ -24,14 +24,14 @@ import { Button } from '@/components/ui/button';
 export default function LearningPathPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <section className="bg-white py-2 dark:bg-black lg:p-3.5 lg:ring-1 lg:ring-input/25">
-        <div className="flex flex-col sm:grid sm:auto-rows-auto sm:grid-cols-2 sm:gap-x-3 sm:gap-y-8 lg:flex lg:h-auto lg:flex-row ">
+      <section className="lg:ring-input/25 bg-white py-2 lg:p-3.5 lg:ring-1 dark:bg-black">
+        <div className="flex flex-col sm:grid sm:auto-rows-auto sm:grid-cols-2 sm:gap-x-3 sm:gap-y-8 lg:flex lg:h-auto lg:flex-row">
           <div className="sm:col-span-full sm:col-start-1 md:row-span-1 lg:grow">
-            <h1 className="m-0 my-3 max-w-max rounded-sm text-xl font-normal text-black dark:text-white md:bg-accent md:px-1.5">
+            <h1 className="md:bg-accent m-0 my-3 max-w-max rounded-xs text-xl font-normal text-black md:px-1.5 dark:text-white">
               I&#39;m Learning...
             </h1>
 
-            <p className="prose prose-zinc italic dark:prose-invert prose-p:my-3 prose-p:leading-normal ">
+            <p className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal italic">
               Welcome to my tech labyrinth! Here, I present my bugs, my errors,
               my learnings, my bugs... Wait, sorry, I need to focus!
             </p>
@@ -59,7 +59,7 @@ export default function LearningPathPage() {
           </div>
 
           <div className="flex sm:col-start-2 sm:row-start-2 sm:mx-auto">
-            <Sketchs.SketchBooksImg className="mx-auto w-2/4 bg-white ring-1 ring-transparent dark:bg-black sm:size-full sm:w-11/12 xl:size-64" />
+            <Sketchs.SketchBooksImg className="mx-auto w-2/4 bg-white ring-1 ring-transparent sm:size-full sm:w-11/12 xl:size-64 dark:bg-black" />
           </div>
           <div className="sm:col-span-1 sm:h-auto lg:w-[420px]">
             <MediaTabs />
@@ -69,11 +69,11 @@ export default function LearningPathPage() {
 
       {/* Roadmaps */}
       <section className={'relative'}>
-        <div className="mb-2 mt-14 flex w-full items-end gap-3">
+        <div className="mt-14 mb-2 flex w-full items-end gap-3">
           <h2 className="w-max font-medium">Roadmaps</h2>
         </div>
 
-        <p className="prose prose-zinc mb-5 w-max bg-white/70 dark:prose-invert prose-p:my-3 prose-p:leading-normal dark:bg-black/70 sm:bg-transparent">
+        <p className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal mb-5 w-max bg-white/70 sm:bg-transparent dark:bg-black/70">
           Study paths I&#39;m currently following
         </p>
 
@@ -106,7 +106,7 @@ export default function LearningPathPage() {
 
       {/* Projects */}
       <section className="w-full">
-        <div className="mb-2 mt-24 flex w-full items-end gap-3">
+        <div className="mt-24 mb-2 flex w-full items-end gap-3">
           <h2 className="w-max font-medium">Study Projects</h2>
 
           <Link
@@ -121,7 +121,7 @@ export default function LearningPathPage() {
           </Link>
         </div>
 
-        <p className="prose prose-zinc mb-5 dark:prose-invert prose-p:my-3 prose-p:leading-normal ">
+        <p className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal mb-5">
           Small projects, clones of existing systems, personal projects and
           ideas.
         </p>
@@ -134,14 +134,14 @@ export default function LearningPathPage() {
             <StudyProjects />
           </CarouselContent>
 
-          <CarouselPrevious className="left-1 bg-secondary sm:-left-5" />
-          <CarouselNext className="right-1 bg-secondary sm:-right-5" />
+          <CarouselPrevious className="bg-secondary left-1 sm:-left-5" />
+          <CarouselNext className="bg-secondary right-1 sm:-right-5" />
         </Carousel>
       </section>
 
       {/* Notes */}
       <section className={'relative w-full'}>
-        <div className="mb-2 mt-24 flex w-full items-end gap-3">
+        <div className="mt-24 mb-2 flex w-full items-end gap-3">
           <h2 className="w-max font-medium">Notes</h2>
 
           <Link
@@ -156,7 +156,7 @@ export default function LearningPathPage() {
           </Link>
         </div>
 
-        <p className="prose prose-zinc mb-5 bg-white/70 dark:prose-invert prose-p:my-3 prose-p:leading-normal dark:bg-black/70 sm:bg-transparent sm:dark:bg-transparent">
+        <p className="prose prose-zinc dark:prose-invert prose-p:my-3 prose-p:leading-normal mb-5 bg-white/70 sm:bg-transparent dark:bg-black/70 sm:dark:bg-transparent">
           My little notes on study content, techniques I use in a particular
           language or technology, on the programming environment, notes on
           books, videos, tools and more.
@@ -181,7 +181,7 @@ export default function LearningPathPage() {
             variant="secondary"
             className="hover:bg-text-secondary-foreground h-auto w-14 space-x-1.5"
           >
-            <PhDotsThreeOutlineFill className="size-6 text-primary/50" />
+            <PhDotsThreeOutlineFill className="text-primary/50 size-6" />
           </Button>
         </div>
       </section>

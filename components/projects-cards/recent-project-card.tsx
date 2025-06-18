@@ -7,7 +7,11 @@ import {
   CardTitle
 } from '@/components/ui/card';
 import LiveStatus from '@/components/live-status';
-import { GithubIconFill, MajesticonsExternalLink, MdiBookOpenPageVariant } from '@/components/ui/icons';
+import {
+  GithubIconFill,
+  MajesticonsExternalLink,
+  MdiBookOpenPageVariant
+} from '@/components/ui/icons';
 import ToolTip from '@/components/tooltip';
 import { Badge } from '@/components/ui/badge';
 
@@ -36,29 +40,29 @@ export const RecentProjectCard = ({
   return (
     <Card
       className={cn(
-        'relative flex h-48 w-full space-x-1 text-balance border-input bg-background sm:w-10/12 md:rounded-lg lg:w-96 lg:rounded-md',
+        'border-input bg-background relative flex h-48 w-full space-x-1 text-balance sm:w-10/12 md:rounded-lg lg:w-96 lg:rounded-md',
         className
       )}
     >
       <div className="flex basis-9/12 flex-col">
-        <CardHeader className="flex-row pb-2 pl-4 pr-0 pt-4">
-          <div>
+        <CardHeader className="flex-row pt-4 pr-0 pb-2 pl-4">
+          <div className="m-0">
             <CardTitle>{title}</CardTitle>
             <small className="text-accent-foreground/70">
               {format(new Date(started_at), 'MMM yyyy')}
             </small>
           </div>
 
-          <LiveStatus status={status} className="mr-3 mt-auto" />
+          <LiveStatus status={status} className="mr-3 mt-2" />
         </CardHeader>
 
-        <CardContent className="grow pl-4 pr-0">
+        <CardContent className="grow pr-0 pl-4">
           <CardDescription className="line-clamp-3">
             {description}
           </CardDescription>
         </CardContent>
 
-        <CardFooter className="flex items-center justify-between pb-2 pl-4 pr-0">
+        <CardFooter className="flex items-center justify-between pr-0 pb-2 pl-4">
           <div className="flex items-center gap-x-2">
             {repository && (
               <Link

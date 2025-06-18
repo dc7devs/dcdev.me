@@ -4,8 +4,8 @@ import { SVGProps } from 'react';
 export function Logotipo() {
   return (
     <>
-      <LogotipoDark className="hidden h-auto w-24 dark:block sm:w-28" />
-      <LogotipoLight className="h-auto w-24 dark:hidden sm:w-28" />
+      <LogotipoDark className="hidden h-auto w-24 sm:w-28 dark:block" />
+      <LogotipoLight className="h-auto w-24 sm:w-28 dark:hidden" />
     </>
   );
 }
@@ -378,8 +378,8 @@ const LogotipoLight = (props: SVGProps<SVGSVGElement>) => {
 export function Logo() {
   return (
     <>
-      <LogoDark className="hidden size-9 rounded-full shadow-md ring-1 ring-input dark:block sm:size-10" />
-      <LogoLight className="size-9 rounded-full shadow-md ring-1 ring-input dark:hidden sm:size-10" />
+      <LogoDark className="ring-input hidden size-9 rounded-full shadow-md ring-1 sm:size-10 dark:block" />
+      <LogoLight className="ring-input size-9 rounded-full shadow-md ring-1 sm:size-10 dark:hidden" />
     </>
   );
 }

@@ -9,12 +9,12 @@ import { Project, projects } from '@/.velite';
 export default function ProjectPage() {
   return (
     <div className="w-full pt-14 sm:pt-10">
-      <h1 className="mx-auto max-w-max rounded-sm bg-accent px-2 text-xl font-medium text-black dark:text-white">
+      <h1 className="bg-accent mx-auto max-w-max rounded-xs px-2 text-xl font-medium text-black dark:text-white">
         Projects I&#39;m working on
       </h1>
 
       <section className="flex flex-col">
-        <div className="mx-auto mt-10 flex w-auto flex-wrap justify-center gap-3 self-center md:mt-14 ">
+        <div className="mx-auto mt-10 flex w-auto flex-wrap justify-center gap-3 self-center md:mt-14">
           <RecentProjects />
         </div>
       </section>
@@ -31,7 +31,7 @@ export default function ProjectPage() {
           </Link>
         </div>
 
-        <div className="grid-column-showcase-container grid w-full gap-5 border-t-[.7px] border-t-input bg-white pt-5 dark:bg-black md:gap-2">
+        <div className="grid-column-showcase-container border-t-input grid w-full gap-5 border-t-[.7px] bg-white pt-5 md:gap-2 dark:bg-black">
           <ShowcaseProjects />
         </div>
       </section>

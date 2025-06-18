@@ -15,7 +15,7 @@ export default function Footer() {
     >
       <p
         className={cn(
-          'text-black/60 dark:text-white/50 md:col-span-full',
+          'text-black/60 md:col-span-full dark:text-white/50',
           pathname == '/' && 'lg:col-start-2'
         )}
       >
@@ -26,7 +26,7 @@ export default function Footer() {
         >
           CC BY-NC-SA 4.0
         </Link>{' '}
-        {new Date().getFullYear()}-PRESENT ©{' '}
+        2022-{new Date().getFullYear()} ©
         <Link href={'https://dcdev.me'}>dc.devs</Link>
       </p>
 

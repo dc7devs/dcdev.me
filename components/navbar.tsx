@@ -6,12 +6,11 @@ import {
   HomeFill,
   BoxMultipleSearchFill,
   BooksFill,
-  ChatFill,
+  ChatFill
 } from './ui/icons';
 import { Separator } from '@/components/ui/separator';
 
 export default function NavBar({ didScroll }: { didScroll: boolean }) {
-
   const nav_items = [
     {
       name: 'Home',
@@ -48,11 +47,11 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
         {nav_items.map(({ name, icon, path }, index: number) => (
           <li
             key={index}
-            className={cn('flex min-w-max justify-center font-medium ')}
+            className={cn('flex min-w-max justify-center font-medium')}
           >
             <Link
               className={
-                'flex flex-col items-center align-bottom text-foreground/60 hover:text-foreground/80'
+                'text-foreground/60 hover:text-foreground/80 flex flex-col items-center align-bottom'
               }
               href={path}
               aria-label={name}

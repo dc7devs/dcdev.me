@@ -6,7 +6,7 @@ import { Roadmap } from '@/.velite';
 
 export const RoadmapCard = (roadmap: Roadmap) => {
   return (
-    <div className="group relative flex cursor-pointer flex-col justify-center rounded-lg bg-background px-3.5 py-2 ring-1 ring-ring/10 md:hover:ring-ring/50">
+    <div className="group bg-background ring-ring/10 md:hover:ring-ring/50 relative flex cursor-pointer flex-col justify-center rounded-lg px-3.5 py-2 ring-1">
       <div className="z-30 inline-flex items-center gap-x-1.5">
         <SimpleIconsRoadmapdotsh className="size-4" />
 
@@ -18,13 +18,13 @@ export const RoadmapCard = (roadmap: Roadmap) => {
       </div>
 
       <small className="z-30">
-        <p className="blend-difference truncate text-accent-foreground">
+        <p className="blend-difference text-accent-foreground truncate">
           {roadmap.description}
         </p>
       </small>
 
       {roadmap.image && (
-        <div className="absolute left-2/4 top-0 z-20 hidden h-full w-2/4 overflow-hidden rounded-r-lg md:transition-transform md:duration-150 md:group-hover:block">
+        <div className="absolute top-0 left-2/4 z-20 hidden h-full w-2/4 overflow-hidden rounded-r-lg md:transition-transform md:duration-150 md:group-hover:block">
           <Image
             className={
               'h-full w-full overflow-hidden object-cover brightness-90 dark:brightness-50'
