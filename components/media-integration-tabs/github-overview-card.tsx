@@ -3,7 +3,12 @@ import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
-import { GithubIconFill, FlowbiteUsersGroupSolid, RiGitRepositoryFill, MaterialSymbolsLightFolder } from '@/components/ui/icons'
+import {
+  GithubIconFill,
+  FlowbiteUsersGroupSolid,
+  RiGitRepositoryFill,
+  MaterialSymbolsLightFolder
+} from '@/components/ui/icons';
 
 export const GithubOverviewCard = async () => {
   const res = await fetch('https://api.github.com/users/dc7devs');
@@ -29,10 +34,10 @@ export const GithubOverviewCard = async () => {
           width={100}
         />
 
-        <div className="flex w-full justify-between">
+        <div className="flex w-full justify-between mt-4">
           <div>
             <p className="text-base">{data.name}</p>
-            <p className="text-sm text-foreground/50">{data.login}</p>
+            <p className="text-foreground/50 text-sm">{data.login}</p>
           </div>
           <Link href={data.html_url} target="_blank">
             <span className="sr-only">Github Link</span>

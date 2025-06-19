@@ -8,7 +8,7 @@ import { QueryClientProvider } from 'react-query';
 import { queryClient } from '@/lib/query-client';
 
 import { Analytics } from '@vercel/analytics/react';
-import { Toaster } from './ui/toaster';
+import { Toaster } from './ui/sonner';
 
 export function CustomLayout({ children }: { children: ReactNode }) {
   return (

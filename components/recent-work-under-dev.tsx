@@ -19,7 +19,7 @@ export default function RecentWorkUnderDev({
   return (
     <Card className={cn(className)}>
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="inline-flex w-max align-middle text-primary">
+        <CardTitle className="text-primary inline-flex my-auto w-max">
           <GameIconsCoffeeCup className="mr-2 size-4" />
           <div>Currently working...</div>
         </CardTitle>
@@ -32,7 +32,7 @@ export default function RecentWorkUnderDev({
         </Link>
       </CardHeader>
 
-      <CardContent className="inline-flex w-full gap-3">
+      <CardContent className="w-full gap-3">
         <ul className="flex w-full flex-col justify-stretch gap-2">
           <RecentProjects />
 

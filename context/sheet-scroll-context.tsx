@@ -8,10 +8,10 @@ export const SheetScrollContext = createContext<SheetScrollContextType | null>(
   null
 );
 
-export const SheetScrollProvider: React.FC<{
+export const SheetScrollProvider = ({ sheetRef, children }: {
   sheetRef: RefObject<HTMLDivElement>;
   children: React.ReactNode;
-}> = ({ sheetRef, children }) => {
+}) => {
   return (
     <SheetScrollContext.Provider value={{ sheetRef }}>
       {children}

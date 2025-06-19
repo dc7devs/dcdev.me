@@ -7,6 +7,7 @@ import { sendEmail } from '@/actions/send-email';
 import { formSchema } from '@/schemas/email-form-schema';
 
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
 import { ReloadIcon } from '@radix-ui/react-icons';
@@ -21,12 +22,10 @@ import {
 
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/components/ui/use-toast';
 import { MingcuteSendPlaneFill } from '@/components/ui/icons';
 
 export function CustomForm() {
   const [isSending, setIsSending] = useState(false);
-  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,17 +49,14 @@ export function CustomForm() {
     const response = await sendEmail(formData);
 
     if (response?.errors) {
-      toast({
-        variant: 'destructive',
-        title: 'Error',
+      toast.error('Error', {
         description: `Your message wasn't sent, there was an internal error`
       });
 
       reset();
       setIsSending(false);
     } else {
-      toast({
-        title: 'Success',
+      toast.success('Success', {
         description: 'Your message has been sent successfully.'
       });
 

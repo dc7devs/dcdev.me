@@ -14,7 +14,7 @@ export const MediaTabs = () => {
   return (
     <Tabs
       defaultValue="spotify"
-      className="relative flex h-full w-full flex-col bg-transparent pt-9 lg:p-0"
+      className="relative h-full w-full bg-transparent pt-9 lg:p-0"
     >
       <TabsList className="absolute top-0 z-20 h-auto w-auto gap-1 rounded-tl-none p-0.5 lg:flex-col">
         <TabsTrigger
