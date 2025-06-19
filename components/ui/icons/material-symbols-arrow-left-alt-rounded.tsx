@@ -1,6 +1,8 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
-export function MaterialSymbolsArrowLeftAltRounded(props: SVGProps<SVGSVGElement>) {
+export function MaterialSymbolsArrowLeftAltRounded(
+  props: SVGProps<SVGSVGElement>
+) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

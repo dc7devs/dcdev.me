@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export function DeviconJava(props: SVGProps<SVGSVGElement>) {
   return (

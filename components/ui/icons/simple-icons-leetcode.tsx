@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export function SimpleIconsLeetcode(props: SVGProps<SVGSVGElement>) {
   return (

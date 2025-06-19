@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export function DeviconVuejs(props: SVGProps<SVGSVGElement>) {
   return (

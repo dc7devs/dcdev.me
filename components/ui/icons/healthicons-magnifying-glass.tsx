@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export function HealthiconsMagnifyingGlass(props: SVGProps<SVGSVGElement>) {
   return (
@@ -20,4 +20,5 @@ export function HealthiconsMagnifyingGlass(props: SVGProps<SVGSVGElement>) {
       </g>
     </svg>
   );
-}''
+}
+('');

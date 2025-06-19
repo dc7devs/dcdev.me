@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export function IcRoundDownloadForOffline(props: SVGProps<SVGSVGElement>) {
   return (

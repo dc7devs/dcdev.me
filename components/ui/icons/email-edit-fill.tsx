@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export function EmailEditFill(props: SVGProps<SVGSVGElement>) {
   return (

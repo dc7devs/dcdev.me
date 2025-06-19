@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export function PhBookmarkSimpleFill(props: SVGProps<SVGSVGElement>) {
   return (
