@@ -1,4 +1,4 @@
-name: "[CI] pull request"
+name: '[CI] pull request'
 
 on: pull_request
 
@@ -11,4 +11,4 @@ permissions:
 jobs:
   call-lint:
     name: Call lint.yml
-    uses: dc7devs/dcdev.me/.github/workflows/lint.yml@main
+    uses: dc7devs/dcdev.me/.github/workflows/ci/lint.yml@main
