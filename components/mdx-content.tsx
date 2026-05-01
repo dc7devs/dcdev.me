@@ -1,12 +1,11 @@
-import Image from 'next/image';
+import Image, { type ImageProps } from 'next/image';
 import Link from 'next/link';
 import { Children } from 'react';
 import * as runtime from 'react/jsx-runtime';
 
 const sharedComponents = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  Image: (props: any) => {
-    return <Image className="rounded-md" {...props} />;
+  Image: (props: ImageProps) => {
+    return <Image className="rounded-md" {...props} alt={props.alt ?? ''} />;
   },
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   a: (props: any) => {
@@ -37,14 +36,14 @@ const sharedComponents = {
     );
 
     const finalClassName = isTextOnly
-      ? `${props.className} before:invisible after:invisible bg-neutral-200 dark:bg-neutral-800 text-orange-400 font-light py-px px-1 rounded`
+      ? `${props.className} before:invisible after:invisible bg-neutral-200 dark:bg-neutral-800 text-orange-400 font-light py-px px-1 rounded-sm`
       : props.className;
 
     return <code className={finalClassName} {...props} />;
   }
 };
 
-const useMDXComponent = (code: string) => {
+const getMDXComponent = (code: string) => {
   const fn = new Function(code);
   return fn({ ...runtime }).default;
 };
@@ -55,6 +54,8 @@ interface MDXProps {
 }
 
 export const MDXContent = ({ code, components }: MDXProps) => {
-  const Component = useMDXComponent(code);
+  if (!code.trim()) return null;
+
+  const Component = getMDXComponent(code);
   return <Component components={{ ...sharedComponents, ...components }} />;
 };

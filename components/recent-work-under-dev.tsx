@@ -1,4 +1,4 @@
-import Icons from './ui/icons';
+import { GameIconsCoffeeCup, PhArrowUpRightBold } from './ui/icons';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -11,7 +11,7 @@ import Unavailable from './unavailable';
 import { Project, projects } from '@/.velite';
 import DownloadCV from './cv-download-button';
 
-export default async function RecentWorkUnderDev({
+export default function RecentWorkUnderDev({
   className
 }: {
   className?: string;
@@ -19,8 +19,8 @@ export default async function RecentWorkUnderDev({
   return (
     <Card className={cn(className)}>
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="inline-flex w-max align-middle text-primary">
-          <Icons.GameIconsCoffeeCup className="mr-2 size-4" />
+        <CardTitle className="text-primary inline-flex my-auto w-max">
+          <GameIconsCoffeeCup className="mr-2 size-4" />
           <div>Currently working...</div>
         </CardTitle>
 
@@ -32,7 +32,7 @@ export default async function RecentWorkUnderDev({
         </Link>
       </CardHeader>
 
-      <CardContent className="inline-flex w-full gap-3">
+      <CardContent className="w-full gap-3">
         <ul className="flex w-full flex-col justify-stretch gap-2">
           <RecentProjects />
 
@@ -51,7 +51,7 @@ export default async function RecentWorkUnderDev({
                 className="inline-flex max-w-max items-end underline underline-offset-2 opacity-90 hover:opacity-100"
               >
                 read.cv
-                <Icons.PhArrowUpRightBold className="ml-0.5 size-3.5" />
+                <PhArrowUpRightBold className="ml-0.5 size-3.5" />
               </Button>
             </a>
           </li>
@@ -81,7 +81,7 @@ const RecentProjects = () => {
         ))
       ) : (
         <li>
-          <div className="relative h-14 w-full bg-background outline-dashed outline-1 outline-secondary">
+          <div className="bg-background outline-secondary relative h-14 w-full outline-1 outline-dashed">
             <Unavailable />
           </div>
         </li>

@@ -1,17 +1,17 @@
 import React, { createContext, RefObject } from 'react';
 
 interface SheetScrollContextType {
-  sheetRef: RefObject<HTMLDivElement>;
+  sheetRef: RefObject<HTMLDivElement | null>;
 }
 
 export const SheetScrollContext = createContext<SheetScrollContextType | null>(
   null
 );
 
-export const SheetScrollProvider: React.FC<{
-  sheetRef: RefObject<HTMLDivElement>;
+export const SheetScrollProvider = ({ sheetRef, children }: {
+  sheetRef: RefObject<HTMLDivElement | null>;
   children: React.ReactNode;
-}> = ({ sheetRef, children }) => {
+}) => {
   return (
     <SheetScrollContext.Provider value={{ sheetRef }}>
       {children}

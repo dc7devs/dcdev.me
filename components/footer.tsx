@@ -10,12 +10,12 @@ export default function Footer() {
   return (
     <footer
       className={
-        'mx-auto mb-5 flex w-full px-4 font-inter text-sm sm:px-10 md:grid md:grid-cols-2 lg:grid-cols-12 2xl:flex 2xl:max-w-screen-2xl'
+        'font-inter mx-auto mb-5 flex w-full px-4 text-xs sm:px-10 md:grid md:grid-cols-2 lg:grid-cols-12 2xl:flex 2xl:max-w-[1536px]'
       }
     >
       <p
         className={cn(
-          'text-black/60 dark:text-white/50 md:col-span-full',
+          'text-black/60 md:col-span-full dark:text-white/50',
           pathname == '/' && 'lg:col-start-2'
         )}
       >
@@ -26,7 +26,7 @@ export default function Footer() {
         >
           CC BY-NC-SA 4.0
         </Link>{' '}
-        {new Date().getFullYear()}-PRESENT ©{' '}
+        2022-{new Date().getFullYear()} ©
         <Link href={'https://dcdev.me'}>dc.devs</Link>
       </p>
 

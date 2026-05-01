@@ -3,21 +3,27 @@
 import { Project, projects } from '@/.velite';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-import Icons from '@/components/ui/icons';
+import {
+  GithubIconFill,
+  PhArrowUpRightBold,
+  PhPlayCircleFill
+} from '@/components/ui/icons';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import { notFound } from 'next/navigation';
+import { ReactNode, use } from 'react';
 
 export default function ProjectLayout({
-  params: { slug },
+  params,
   children
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
   children: ReactNode;
 }) {
+  const { slug } = use(params);
   const project = projects.find((project: Project) => project.slug == slug);
-  if (!project) return;
+  if (!project) notFound();
 
   const {
     title,
@@ -41,9 +47,9 @@ export default function ProjectLayout({
         <div className="order-2 w-full max-w-4xl lg:order-1 lg:mt-10">
           <div className="lg:pr-5">
             <h1 className={'font-poppins text-4xl font-light'}>{title}</h1>
-            <p className={'my-2 font-inter text-sm'}>{description}</p>
+            <p className={'font-inter my-2 text-sm'}>{description}</p>
 
-            <div className="relative aspect-video h-auto w-full overflow-hidden  lg:h-auto">
+            <div className="relative aspect-video h-auto w-full overflow-hidden lg:h-auto">
               {video ? (
                 <video
                   className="h-full w-full object-cover"
@@ -67,7 +73,7 @@ export default function ProjectLayout({
 
           <Separator orientation="horizontal" className="mx-auto my-5" />
 
-          <div className="mb-5 flex w-full items-start justify-stretch gap-3 pb-5 font-inter lg:gap-10 lg:py-7">
+          <div className="font-inter mb-5 flex w-full items-start justify-stretch gap-3 pb-5 lg:gap-10 lg:py-7">
             <div className="flex flex-1 flex-col justify-center gap-2">
               <small className="text-sm font-semibold">My Role</small>
               <small className="text-xs">{my_role?.join(' | ')}</small>
@@ -95,11 +101,11 @@ export default function ProjectLayout({
           <div
             className={cn(
               'flex flex-wrap items-center gap-3 lg:block lg:gap-0',
-              'h-full w-full divide-input border-l border-transparent lg:divide-y lg:border-input'
+              'divide-input lg:border-input h-full w-full border-l border-transparent lg:divide-y'
             )}
           >
             <div className="h-auto lg:py-3 lg:pl-3">
-              <small className="hidden font-inter text-sm font-normal lg:inline-block">
+              <small className="font-inter hidden text-sm font-normal lg:inline-block">
                 Contributors
               </small>
 
@@ -113,7 +119,7 @@ export default function ProjectLayout({
                       className="group -ml-2"
                       rel="noreferrer"
                     >
-                      <Avatar className="size-8 ring-1 ring-transparent group-hover:ring-ring">
+                      <Avatar className="group-hover:ring-ring size-8 ring-1 ring-transparent">
                         <AvatarImage src={avatar_url} alt={name} />
                       </Avatar>
                     </a>
@@ -123,7 +129,7 @@ export default function ProjectLayout({
             </div>
 
             <div className="h-auto p-0 lg:py-3 lg:pl-3">
-              <small className="hidden font-inter text-sm font-normal lg:block">
+              <small className="font-inter hidden text-sm font-normal lg:block">
                 Core Tech
               </small>
 
@@ -137,7 +143,7 @@ export default function ProjectLayout({
             </div>
 
             <div className="h-auto lg:py-3 lg:pl-3">
-              <small className="hidden font-inter text-sm font-normal lg:block">
+              <small className="font-inter hidden text-sm font-normal lg:block">
                 Tool List
               </small>
 
@@ -146,7 +152,7 @@ export default function ProjectLayout({
                   <Badge
                     key={index}
                     variant={'outline'}
-                    className="pointer-events-none border-none px-1 py-0 text-accent-foreground ring-1 ring-accent-foreground brightness-75"
+                    className="text-accent-foreground ring-accent-foreground pointer-events-none border-none px-1 py-0 ring-1 brightness-75"
                   >
                     {tool}
                   </Badge>
@@ -163,11 +169,11 @@ export default function ProjectLayout({
                   className="flex h-full items-center"
                 >
                   <div className="flex items-center lowercase">
-                    <Icons.GithubIconFill className="mr-1 size-4" />
+                    <GithubIconFill className="mr-1 size-4" />
                     <span className="line-clamp-1 max-w-max text-sm">
                       {title}
                     </span>
-                    <Icons.PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
+                    <PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
                   </div>
                 </a>
 
@@ -181,9 +187,9 @@ export default function ProjectLayout({
                   )}
                 >
                   <div className="line-clamp-1 flex items-center text-sm lowercase">
-                    <Icons.PhPlayCircleFill className="mr-1 size-4" />
+                    <PhPlayCircleFill className="mr-1 size-4" />
                     <span>demo</span>
-                    <Icons.PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
+                    <PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
                   </div>
                 </a>
               </div>

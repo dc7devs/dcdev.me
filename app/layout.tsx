@@ -1,4 +1,4 @@
-import './globals.css';
+import './tailwind.css';
 import { Metadata } from 'next';
 import { CustomLayout } from '@/components/custom-root-layout';
 import React from 'react';
@@ -20,6 +20,7 @@ export default function RootLayout({
     <html
       className={cn(inter.variable, poppins.variable, righteous.variable)}
       lang="en"
+      suppressHydrationWarning
     >
       <body>
         <CustomLayout>{children}</CustomLayout>

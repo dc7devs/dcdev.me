@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import Icons from './ui/icons';
+import { IcRoundDownloadForOffline } from './ui/icons';
 // import { useTheme } from 'next-themes';
 import { Button } from './ui/button';
 
@@ -21,7 +21,7 @@ export default function DownloadCV() {
         className="w-full align-middle"
       >
         Download CV
-        <Icons.IcRoundDownloadForOffline className="ml-2 size-4" />
+        <IcRoundDownloadForOffline className="ml-2 size-4" />
       </Button>
     </Link>
   );

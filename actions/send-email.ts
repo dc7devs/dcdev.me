@@ -18,7 +18,7 @@ export const sendEmail = async (formData: FormData) => {
       from: 'Contact form dcdev <noreply@dcdev.me>',
       to: [process.env.NEXT_PUBLIC_EMAIL!],
       subject: 'Messagem do formulário de contato',
-      reply_to: email,
+      replyTo: email,
       react: React.createElement(ContactFormEmailTemplate, {
         name,
         message,
@@ -30,7 +30,7 @@ export const sendEmail = async (formData: FormData) => {
       console.error(error.name, ' | ', error.message);
       throw new Error(error.message);
     }
-  } catch (error) {
+  } catch {
     return {
       errors:
         'Sorry there was an internal problem, try again or email me directly at diegocaetano444@gmail.com'

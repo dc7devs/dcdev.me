@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { use, useCallback, useContext, useEffect, useState } from 'react';
 
 import {
   SheetHeader,
@@ -19,13 +19,19 @@ import { Separator } from '@/components/ui/separator';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 
-import Icons from '@/components/ui/icons';
+import {
+  GithubIconFill,
+  PhArrowUpRightBold,
+  PhPlayCircleFill
+} from '@/components/ui/icons';
 
 export default function SheetProjectPage({
-  params: { slug }
+  params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = use(params);
+
   const project = projects.find((project: Project) => project.slug == slug);
   if (!project) notFound();
 
@@ -53,7 +59,7 @@ export default function SheetProjectPage({
     const sheet = sheetRef.current;
 
     if (sheet) {
-      const currentScrollY = sheetRef.current.scrollTop;
+      const currentScrollY = sheet.scrollTop;
 
       if (currentScrollY > 0) {
         setDidiScroll(true);
@@ -82,35 +88,31 @@ export default function SheetProjectPage({
         <div className="order-2 w-full lg:order-1">
           <SheetHeader
             className={cn(
-              'bg-background/60 backdrop-blur-md lg:pr-5 lg:backdrop-blur-sm',
+              'bg-background/60 backdrop-blur-md lg:pr-5 lg:backdrop-blur-xs',
               'transition-transform duration-200 ease-linear',
               didScroll &&
-                'sticky -top-5 z-50 border-b border-input py-2 transition-transform duration-150 ease-out lg:-top-6'
+                'border-input sticky -top-5 z-50 border-b py-2 transition-transform duration-150 ease-out lg:-top-6'
             )}
           >
-            <SheetTitle>
-              <h1
-                className={cn(
-                  'font-poppins font-light',
-                  !didScroll && 'text-4xl'
-                )}
-              >
-                {title}
-              </h1>
+            <SheetTitle
+              className={cn(
+                'font-poppins font-light',
+                !didScroll && 'text-4xl'
+              )}
+            >
+              {title}
             </SheetTitle>
-            <SheetDescription>
-              <p
-                className={cn(
-                  'font-inter',
-                  didScroll ? 'line-clamp-1 text-ellipsis' : 'my-2 text-sm'
-                )}
-              >
-                {description}
-              </p>
+            <SheetDescription
+              className={cn(
+                'font-inter',
+                didScroll ? 'line-clamp-1 text-ellipsis' : 'my-2 text-sm'
+              )}
+            >
+              {description}
             </SheetDescription>
           </SheetHeader>
 
-          <div className="relative aspect-video h-72 w-full overflow-hidden md:h-80	lg:h-96">
+          <div className="relative aspect-video h-72 w-full overflow-hidden md:h-80 lg:h-96">
             {video ? (
               <video className="h-full w-full object-cover" autoPlay loop muted>
                 <source src={video} type="video/mp4" />
@@ -129,7 +131,7 @@ export default function SheetProjectPage({
 
           <Separator orientation="horizontal" className="mx-auto my-5" />
 
-          <div className="mb-5 flex w-full items-start justify-stretch gap-3 pb-5 font-inter lg:gap-10 lg:py-7">
+          <div className="font-inter mb-5 flex w-full items-start justify-stretch gap-3 pb-5 lg:gap-10 lg:py-7">
             <div className="flex flex-1 flex-col justify-center gap-2">
               <small className="text-sm font-semibold">My Role</small>
               <small className="text-xs">{my_role?.join(' | ')}</small>
@@ -152,7 +154,7 @@ export default function SheetProjectPage({
 
           <article
             className={cn(
-              'prose prose-neutral relative mx-auto max-w-full dark:prose-invert lg:pr-5',
+              'prose prose-neutral dark:prose-invert relative mx-auto max-w-full lg:pr-5',
               'prose-a:font-normal prose-a:text-neutral-300 prose-a:underline-offset-2 prose-a:transition-colors prose-a:ease-linear' // a
             )}
           >
@@ -166,11 +168,11 @@ export default function SheetProjectPage({
           <div
             className={cn(
               'flex flex-wrap items-center gap-3 lg:block lg:gap-0',
-              'h-full w-full divide-input border-l border-transparent lg:divide-y lg:border-input'
+              'divide-input lg:border-input h-full w-full border-l border-transparent lg:divide-y'
             )}
           >
             <div className="h-auto lg:py-3 lg:pl-3">
-              <small className="hidden font-inter text-sm font-normal lg:inline-block">
+              <small className="font-inter hidden text-sm font-normal lg:inline-block">
                 Contributors
               </small>
 
@@ -184,7 +186,7 @@ export default function SheetProjectPage({
                       className="group -ml-2"
                       rel="noreferrer"
                     >
-                      <Avatar className="size-8 ring-1 ring-transparent group-hover:ring-ring">
+                      <Avatar className="group-hover:ring-ring size-8 ring-1 ring-transparent">
                         <AvatarImage src={avatar_url} alt={name} />
                       </Avatar>
                     </a>
@@ -194,7 +196,7 @@ export default function SheetProjectPage({
             </div>
 
             <div className="h-auto p-0 lg:py-3 lg:pl-3">
-              <small className="hidden font-inter text-sm font-normal lg:block">
+              <small className="font-inter hidden text-sm font-normal lg:block">
                 Core Tech
               </small>
 
@@ -208,7 +210,7 @@ export default function SheetProjectPage({
             </div>
 
             <div className="h-auto lg:py-3 lg:pl-3">
-              <small className="hidden font-inter text-sm font-normal lg:block">
+              <small className="font-inter hidden text-sm font-normal lg:block">
                 Tool List
               </small>
 
@@ -217,7 +219,7 @@ export default function SheetProjectPage({
                   <Badge
                     key={index}
                     variant={'outline'}
-                    className="pointer-events-none border-none px-1 py-0 text-accent-foreground ring-1 ring-accent-foreground brightness-75"
+                    className="text-accent-foreground ring-accent-foreground pointer-events-none border-none px-1 py-0 ring-1 brightness-75"
                   >
                     {tool}
                   </Badge>
@@ -234,11 +236,11 @@ export default function SheetProjectPage({
                   className="flex h-full items-center"
                 >
                   <div className="flex items-center lowercase">
-                    <Icons.GithubIconFill className="mr-1 size-4" />
+                    <GithubIconFill className="mr-1 size-4" />
                     <span className="line-clamp-1 max-w-32 text-sm lg:max-w-[63px]">
                       {title}
                     </span>
-                    <Icons.PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
+                    <PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
                   </div>
                 </a>
 
@@ -252,9 +254,9 @@ export default function SheetProjectPage({
                   )}
                 >
                   <div className="line-clamp-1 flex items-center text-sm lowercase">
-                    <Icons.PhPlayCircleFill className="mr-1 size-4" />
+                    <PhPlayCircleFill className="mr-1 size-4" />
                     <span>demo</span>
-                    <Icons.PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
+                    <PhArrowUpRightBold className="mb-0.5 ml-0.5 size-3.5 self-end" />
                   </div>
                 </a>
               </div>
