@@ -21,4 +21,3 @@ export function HealthiconsMagnifyingGlass(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-('');

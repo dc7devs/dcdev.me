@@ -1,7 +1,6 @@
 import {
   GithubIconFill,
   MajesticonsExternalLink,
-  MdiBookOpenPageVariant,
   MaterialSymbolsLightBoxRounded
 } from '../ui/icons';
 import { format } from 'date-fns';
@@ -36,16 +35,6 @@ export const RecentProjectSimpleCard = (project: Project) => (
             <GithubIconFill className="size-4.5 sm:size-3.5" />
           </a>
         )}
-
-        {/* {project.article && (
-          <Link
-            href={project.article}
-            target="projectblank"
-            aria-label="access notes on the development of the project"
-          >
-            <MdiBookOpenPageVariant className="size-4.5 sm:size-3.5" />
-          </Link>
-        )} */}
 
         {project.deployment && (
           <a

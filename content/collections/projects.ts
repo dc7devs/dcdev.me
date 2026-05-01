@@ -13,7 +13,6 @@ export const projects = defineCollection({
       status: s
         .enum(['to_begin', 'doing', 'progressing', 'finishing', 'done'])
         .default('doing'),
-      is_promoted_to_showcase: s.boolean().default(false),
       core_tech: s.object({
         name: s.string(),
         url: s.string().url()
