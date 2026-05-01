@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils';
 import {
   HomeFill,
   BoxMultipleSearchFill,
-  BooksFill,
   ChatFill
 } from './ui/icons';
 import { Separator } from '@/components/ui/separator';
@@ -21,11 +20,6 @@ export default function NavBar({ didScroll }: { didScroll: boolean }) {
       name: 'Projects',
       icon: <BoxMultipleSearchFill className="size-5 sm:size-5" />,
       path: '/projects'
-    },
-    {
-      name: 'Studying...',
-      icon: <BooksFill className="size-5 sm:size-5" />,
-      path: '/studying'
     },
     {
       name: 'Contact',

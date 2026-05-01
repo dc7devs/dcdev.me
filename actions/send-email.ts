@@ -30,7 +30,7 @@ export const sendEmail = async (formData: FormData) => {
       console.error(error.name, ' | ', error.message);
       throw new Error(error.message);
     }
-  } catch (error) {
+  } catch {
     return {
       errors:
         'Sorry there was an internal problem, try again or email me directly at diegocaetano444@gmail.com'

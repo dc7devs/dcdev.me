@@ -59,7 +59,7 @@ export default function SheetProjectPage({
     const sheet = sheetRef.current;
 
     if (sheet) {
-      const currentScrollY = sheetRef.current.scrollTop;
+      const currentScrollY = sheet.scrollTop;
 
       if (currentScrollY > 0) {
         setDidiScroll(true);

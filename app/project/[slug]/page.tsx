@@ -3,14 +3,17 @@ import { Project, projects } from '@/.velite/index';
 import { cn } from '@/lib/utils';
 
 import { MDXContent } from '@/components/mdx-content';
+import { notFound } from 'next/navigation';
+import { use } from 'react';
 
 export default function ProjectPage({
-  params: { slug }
+  params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = use(params);
   const project = projects.find((project: Project) => project.slug == slug);
-  if (!project) return;
+  if (!project) notFound();
 
   const { content } = project;
 

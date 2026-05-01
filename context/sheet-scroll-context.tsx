@@ -1,7 +1,7 @@
 import React, { createContext, RefObject } from 'react';
 
 interface SheetScrollContextType {
-  sheetRef: RefObject<HTMLDivElement>;
+  sheetRef: RefObject<HTMLDivElement | null>;
 }
 
 export const SheetScrollContext = createContext<SheetScrollContextType | null>(
@@ -9,7 +9,7 @@ export const SheetScrollContext = createContext<SheetScrollContextType | null>(
 );
 
 export const SheetScrollProvider = ({ sheetRef, children }: {
-  sheetRef: RefObject<HTMLDivElement>;
+  sheetRef: RefObject<HTMLDivElement | null>;
   children: React.ReactNode;
 }) => {
   return (

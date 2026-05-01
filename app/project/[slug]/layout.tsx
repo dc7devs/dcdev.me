@@ -11,17 +11,19 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import { notFound } from 'next/navigation';
+import { ReactNode, use } from 'react';
 
 export default function ProjectLayout({
-  params: { slug },
+  params,
   children
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
   children: ReactNode;
 }) {
+  const { slug } = use(params);
   const project = projects.find((project: Project) => project.slug == slug);
-  if (!project) return;
+  if (!project) notFound();
 
   const {
     title,
